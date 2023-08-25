@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ingresar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="../../../assets/img/LogoRegistrAPPLight.png" />
+    <ion-card-header class="centrado">
+      <ion-card-title>Inicio de sesión</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input placeholder="Ingrese su usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input placeholder="Ingrese su contraseña" type="password"></ion-input>
+      </ion-item>
+  </ion-card-content>
+  <ion-buttons>
+    <ion-button style="color: rgb(255, 208, 0);" fill="clear" [routerLink]="['/home']">Ingresar</ion-button>
+    <ion-button style="color: rgb(0, 17, 255);" fill="clear" [routerLink]="['/register']">Registrarse</ion-button>
+  </ion-buttons>
+  <p class="centrado" style="color: rgb(255, 0, 0); text-decoration: underline;">Olvidé mi contraseña</p>
+</ion-card>
+</ion-content>
