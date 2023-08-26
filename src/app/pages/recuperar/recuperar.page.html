@@ -4,10 +4,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">recuperar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <img alt="Silhouette of mountains" src="../../../assets/img/LogoRegistrAPPLight.png"/>
+  <ion-card class="centrado">
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Ingrese correo de recuperación</ion-label>
+          <ion-input placeholder="JairoNicoBenja@gmail.com"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Ingresar nueva contraseña</ion-label>
+          <ion-input placeholder="Ej: JairoNicoBenja123$" type="password"></ion-input>
+        </ion-item>
+          <ion-button fill="clear" [routerLink]="['/login']">Iniciar sesión</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,5 +1,10 @@
 .centrado{
     position: relative;
     text-align: center;
-    top: 40%;
 }
+
+.centrado2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }

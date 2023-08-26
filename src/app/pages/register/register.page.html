@@ -1,13 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+      <ion-title class="centrado" >Registrarse</ion-title>
+    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <img alt="Silhouette of mountains" src="../../../assets/img/LogoRegistrAPPLight.png" />
+  <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input placeholder="Ingrese su usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input placeholder="Ingrese su contraseña" type="password"></ion-input>
+        </ion-item>
+        <ion-button fill="clear" [routerLink]="['/jugadores']">Registrarse</ion-button>
+
+        <p>Ya tienes cuenta?
+          <ion-button fill="clear" [routerLink]="['/login']">Iniciar sesión</ion-button>
+        </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
