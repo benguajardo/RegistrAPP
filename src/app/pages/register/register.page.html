@@ -13,14 +13,35 @@
   <img alt="Silhouette of mountains" src="../../../assets/img/LogoRegistrAPPLight.png" />
   <ion-card>
       <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">Usuario</ion-label>
-          <ion-input placeholder="Ingrese su usuario"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input placeholder="Ingrese su contraseña" type="password"></ion-input>
-        </ion-item>
+        <ion-card>
+          <ion-card-content>
+           <ion-item>
+             <ion-input #correo type="text" label="Correo" labelPlacement="floating" placeholder="Ej: Juan.perez@duocuc.cl"></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-input #contrasena type="password" label="Contrasena" labelPlacement="floating" placeholder="Ej: 123456789"></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-input #nombre type="text" label="Nombre" labelPlacement="floating" placeholder="Ej: Juan Antonio Pérez Gómez"></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-input #rut type="text" label="Rut" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-input #imagen type="text" label="imagen" labelPlacement="floating" placeholder="Ej: https://blabal.jpg" value="https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg" [clearInput]="true"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input #docente type="boolean" label="docente" labelPlacement="floating" placeholder="NO SE QUÉ HACER ACÁ AYUDA PORFAVOR"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input #carrera type="text" label="Carrera" labelPlacement="floating" placeholder="Ingeniería en Informática"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input #sede type="text" label="Sede" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+            </ion-item>
+           <ion-button color="secondary" (click)="addUsuario(correo, contrasena, nombre, rut, imagen, docente, carrera, sede)">Agregar</ion-button>
+          </ion-card-content>
+       </ion-card>
         <ion-button fill="clear" [routerLink]="['/jugadores']">Registrarse</ion-button>
 
         <p>Ya tienes cuenta?
