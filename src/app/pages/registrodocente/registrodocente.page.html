@@ -10,7 +10,7 @@
 <ion-content>
   <img alt="Silhouette of mountains" src="../../../assets/img/LogoRegistrAPPLight.png" />
   <ion-card>
-    <ion-title class="centrado" >Registrarse</ion-title>
+    <ion-title class="centrado" >Registrar Docente</ion-title>
       <ion-card-content>
         <ion-card>
           <ion-card-content>
@@ -29,13 +29,7 @@
            <ion-item>
              <ion-input #imagen type="text" label="Imagen" labelPlacement="floating" placeholder="Ej: https://blabal.jpg" value="https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg" [clearInput]="true"></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-input #carrera type="text" label="Carrera" labelPlacement="floating" placeholder="Ingeniería en Informática"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input #sede type="text" label="Sede" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
-            </ion-item>
-           <ion-button color="secondary" (click)="addEstudiante(correo, contrasena, nombre, rut, imagen, carrera, sede)">Registrar</ion-button>
+           <ion-button color="secondary" (click)="addDocente(correo, contrasena, nombre, rut, imagen)">Registrar</ion-button>
           </ion-card-content>
        </ion-card>
         <p>Ya tienes cuenta?

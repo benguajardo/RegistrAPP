@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, booleanAttribute } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario } from '../home/profile/usuarios.model';
 
 @Component({
   selector: 'app-register',
@@ -10,12 +11,21 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class RegisterPage implements OnInit {
 
+  esDocente: boolean | undefined;
+
   constructor(private UsuarioService: UsuarioService, private router: Router, private toastController:ToastController) { }
 
   ngOnInit() {
   }
 
-  async mensajeToast(mensaje: string){
+  listaUsuarios: Usuario[] = [];
+  buscador: Usuario[] = [];
+
+  listarUsuarios(){
+    this.listaUsuarios = this.UsuarioService.GetAll()
+  }
+
+  async mensaje(mensaje: string){
     const toast = await this.toastController.create({
       message: mensaje,
       duration: 2000,
@@ -23,13 +33,18 @@ export class RegisterPage implements OnInit {
     });
     toast.present()
   }
-  
-  addUsuario(correo: any, contrasena: any, rut: any, nombre: any, imagen: any, docente: any, carrera: any, sede: any){
-    this.UsuarioService.addUsuario(correo.value, contrasena.value, rut.value, nombre.value, imagen.value, docente.value, carrera.value, sede.value);
-    //Aquí debería haber una validación que tome el correo y valide si está registrado ya.
-    //Si está registrado tira error, si no, crea la cuenta correctamente.
-    this.mensajeToast("Usuario creado con éxito!");
-    this.router.navigate(['/login'])
+
+  addEstudiante(correo: any, contrasena: any, rut: any, nombre: any, imagen: any, carrera: any, sede: any, docente: boolean=false) {
+    this.UsuarioService.addUsuario(correo.value, contrasena.value, rut.value, nombre.value, imagen.value, carrera.value, sede.value, docente);
+    // Aquí debería haber una validación que tome el correo y valide si está registrado ya.
+    this.mensaje("Estudiante registrado con éxito!");
+    this.router.navigate(['/login']);
   }
 
+  addDocente(correo: any, contrasena: any, rut: any, nombre: any, imagen: any, carrera: any, sede: any, docente: boolean=true) {
+    this.UsuarioService.addUsuario(correo.value, contrasena.value, rut.value, nombre.value, imagen.value, carrera.value, sede.value, docente);
+    // Aquí debería haber una validación que tome el correo y valide si está registrado ya.
+    this.mensaje("Docente registrado con éxito!");
+    this.router.navigate(['/login']);
+  }
 }
