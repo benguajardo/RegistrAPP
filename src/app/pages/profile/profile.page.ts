@@ -19,8 +19,10 @@ export class ProfilePage implements OnInit {
       const aux = param.get('id')
       if (aux){
         this.usuario = this.usuarioService.getUsuario(aux)
+        console.log(this.usuario);
       }
-    })
+    });
+    
   }
 
 

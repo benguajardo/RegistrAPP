@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-title class="centrado">Crear Clase</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="../../../assets/img/LogoRegistrAPPLight.png" />
+      <ion-card-content>
+        <ion-card>
+          <ion-card-content>
+           <ion-item>
+             <ion-input #nombreAsignatura type="text" label="Nombre de asignatura" labelPlacement="floating" placeholder="Ej: Programación Aplicaciones Móviles"></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-input #siglaAsignatura type="text" label="Sigla" labelPlacement="floating" placeholder="Ej: Juan Antonio Pérez Gómez"></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-input #seccion type="text" label="Sección" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-input #fecha type="text" label="Fecha" labelPlacement="floating" placeholder=""></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input #horaInicio type="text" label="Hora de inicio" labelPlacement="floating" placeholder="Ingeniería en Informática"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input #horaTermino type="text" label="Hora de término" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input #sede type="text" label="Sede" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input #sala type="text" label="Sala" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input #docente type="text" label="Docente" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+            </ion-item>
+           <ion-button color="secondary" (click)="addClase(nombreAsignatura,siglaAsignatura,seccion,fecha,horaInicio,horaTermino,sede,sala,docente)">Crear Clase</ion-button>
+          </ion-card-content>
+       </ion-card>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

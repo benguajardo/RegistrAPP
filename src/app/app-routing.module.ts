@@ -32,20 +32,31 @@ const routes: Routes = [
     loadChildren: () => import('./pages/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
   {
-    path: 'scanner',
-    loadChildren: () => import('./pages/scanner/scanner.module').then( m => m.ScannerPageModule)
-  },
-  {
     path: 'profile',
-    loadChildren: () => import('./pages/home/profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
     path: 'listado',
     loadChildren: () => import('./pages/listado/listado.module').then( m => m.ListadoPageModule)
-  },  {
+  },
+  {
     path: 'registrodocente',
     loadChildren: () => import('./pages/registrodocente/registrodocente.module').then( m => m.RegistrodocentePageModule)
+  },
+  {
+    path: 'clases',
+    children: [
+      {
+        path: "",
+        loadChildren: () => import('./pages/clases/clases.module').then( m => m.ClasesPageModule)
+      },
+      {
+        path: ":id",
+        loadChildren: () => import('./pages/clases/scanner/scanner.module').then( m => m.ScannerPageModule)
+      }
+    ]
   }
+
 
 
 

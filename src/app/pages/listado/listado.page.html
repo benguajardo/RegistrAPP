@@ -4,16 +4,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
   <ion-card>
     <ion-item *ngFor="let aux of listaUsuarios" [routerLink]="['../profile/', aux.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="aux.imagen"></ion-img>
+      </ion-avatar>
       <ion-card-header>
         <ion-card-title>{{ aux.id }}</ion-card-title>
-        <ion-card-subtitle>{{ aux.nombre }}</ion-card-subtitle>
+        <ion-card-subtitle>{{ aux.nombre }} <ion-icon *ngIf="aux.docente" name="checkmark-circle"></ion-icon></ion-card-subtitle>
       </ion-card-header>
-    
       <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
       </ion-card-content>
     </ion-item>
   </ion-card>

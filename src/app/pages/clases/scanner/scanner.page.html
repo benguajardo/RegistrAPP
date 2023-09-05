@@ -1,0 +1,26 @@
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>{{ clase.nombreAsignatura }}</ion-card-title>
+            <ion-card-subtitle>Sigla: {{ clase.siglaAsignatura }} - {{ clase.seccion }}</ion-card-subtitle>
+            <ion-card-subtitle>Docente: {{ clase.docente }}</ion-card-subtitle>
+            <ion-card-subtitle>Hora Inicio: {{ clase.horaInicio }} Hora Término: {{ clase.horaTermino }}</ion-card-subtitle>
+            <ion-button color="danger"> Eliminar Clase
+              <ion-icon (click)="deleteClase()" name="trash-outline"></ion-icon>
+            </ion-button>
+        </ion-card-header>
+        
+        <ion-card-content>
+            <ion-accordion-group>
+              <ion-accordion value="first">
+                <ion-item slot="header" color="success">
+                  <ion-label>Escanear código QR <ion-icon name="camera"></ion-icon></ion-label>
+                </ion-item>
+                <div class="ion-padding" slot="content">
+                    <img alt="Silhouette of mountains" src="../../../../assets/img/qr-code-icon.jpg" />
+                </div>
+              </ion-accordion>
+            </ion-accordion-group>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

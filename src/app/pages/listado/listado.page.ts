@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Usuario } from '../home/profile/usuarios.model';
+import { Usuario } from '../profile/usuarios.model';
 
 @Component({
   selector: 'app-listado',
