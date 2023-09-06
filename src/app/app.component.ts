@@ -9,16 +9,9 @@ export class AppComponent {
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Perfil', url: '/profile', icon: 'person' },
     { title: 'Clases', url: '/clases', icon: 'book' },
-    { title: 'Escanear código', url: '/scanner', icon: 'qr-code' },
-    { title: 'Cerrar sesión', url: '/login', icon: 'log-out' },
-    //PARA PROBAR NOMÁS
-    { title: 'Listado', url: '/listado', icon: 'log-out' },
   ];
-
   public labels = [];
   
   constructor() {}
-
-
 
 }

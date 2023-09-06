@@ -1,11 +1,11 @@
 <ion-card>
-  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+  
   <ion-card-header>
-    <ion-card-title>{{titulo}}</ion-card-title>
-    <ion-card-subtitle *ngIf="mostrarFecha">{{fecha}}</ion-card-subtitle>
+    <ion-card-title>{{ nombre }}</ion-card-title>
   </ion-card-header>
-
   <ion-card-content>
-    {{descripcion}}
+    <img alt="Silhouette of mountains" src="{{ imagen }}"/>
+    <ion-card-subtitle>Correo electrónico: {{ correo }}</ion-card-subtitle>
+    <ion-card-subtitle>Sede: {{ sede }}</ion-card-subtitle>
   </ion-card-content>
 </ion-card>

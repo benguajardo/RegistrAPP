@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { usuarioIniciado } from '../profile/usuarios.model';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor(private usuarioService : UsuarioService) { }
+  listaUsuarioIniciado : usuarioIniciado [] = []
   
+  ngOnInit() {
+    this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
+    console.log(this.listaUsuarioIniciado)
+  }
 
 }

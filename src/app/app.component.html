@@ -7,7 +7,7 @@
             <ion-list-header>RegistrApp</ion-list-header>
             <ion-menu-button slot="end"><ion-icon name="arrow-back"></ion-icon></ion-menu-button>
           </ion-buttons>
-          <ion-note>Ola esto es pa pasar la asistencia</ion-note>
+          <ion-note>Marca la asistencia de tus clases desde aquí!</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
@@ -18,7 +18,7 @@
         </ion-list>
 
         <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
+          <ion-list-header></ion-list-header>
 
           <ion-item *ngFor="let label of labels" lines="none">
             <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>

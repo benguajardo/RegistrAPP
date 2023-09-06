@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Usuario } from '../pages/profile/usuarios.model';
+import { Usuario, usuarioIniciado } from '../pages/profile/usuarios.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-
+  usuarioIniciado : usuarioIniciado[] = [];
   usuarios: Usuario[] = [
     {
       id: '1',
@@ -46,6 +46,17 @@ export class UsuarioService {
       contrasena: 'julio123',
       rut: '10.089.891-k',
       nombre: 'Julio Tapia',
+      imagen: 'https://media.licdn.com/dms/image/C5603AQExyrZBcecs2A/profile-displayphoto-shrink_800_800/0/1517482337073?e=1699488000&v=beta&t=bdow3LUlu6jlieCNAlOuDvXvLh7WjwdtcPp6DH83w6U',
+      carrera: 'Ingeniería en Informática',
+      sede: 'Puente Alto',
+      docente: true
+    },
+    {
+      id: '5',
+      correo: '1',
+      contrasena: '1',
+      rut: '111111',
+      nombre: 'Test',
       imagen: 'https://media.licdn.com/dms/image/C5603AQExyrZBcecs2A/profile-displayphoto-shrink_800_800/0/1517482337073?e=1699488000&v=beta&t=bdow3LUlu6jlieCNAlOuDvXvLh7WjwdtcPp6DH83w6U',
       carrera: 'Ingeniería en Informática',
       sede: 'Puente Alto',
@@ -92,6 +103,21 @@ export class UsuarioService {
     return this.usuarios.find(aux => aux.correo === correo) || null;
   }
 
+  addUsuarioIniciado(correo: any, rut: any, nombre: any, imagen: any, carrera: any, sede: any, docente: any) {
+    this.usuarioIniciado.push({
+      correo,  rut,  nombre,  imagen,  carrera,  sede,  docente, id:  "1"
+    })
+  }
+
+  deleteUsuarioIniciado(){
+    this.usuarioIniciado = [];
+  }
+
+  GetUsuarioIniciado() {
+    return[...this.usuarioIniciado]
+  }
+
+ 
   constructor() { }
   
 }

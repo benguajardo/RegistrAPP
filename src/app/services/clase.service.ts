@@ -35,12 +35,7 @@ export class ClaseService {
   GetAll() {
     return[...this.clases]
   }
-
-  addClase(nombreAsignatura: any, siglaAsignatura: any, seccion: any, fecha: any, horaInicio: any, horaTermino: any, sede: any, sala: any, docente: any) {
-    this.clases.push({
-      nombreAsignatura,siglaAsignatura, seccion, fecha, horaInicio, horaTermino, sede, sala,docente, id: this.clases.length + 1 + ""
-    })
-  }
+  
   getClase(id: string){
     return {
       ...this.clases.find(aux => {
@@ -48,6 +43,12 @@ export class ClaseService {
       })
     }
   }
+  addClase(nombreAsignatura: any, siglaAsignatura: any, seccion: any, fecha: any, horaInicio: any, horaTermino: any, sede: any, sala: any, docente: any) {
+    this.clases.push({
+      nombreAsignatura,siglaAsignatura, seccion, fecha, horaInicio, horaTermino, sede, sala,docente, id: this.clases.length + 1 + ""
+    })
+  }
+
   deleteClase(id : string){
     this.clases = this.clases.filter(aux => {
       return aux.id !== id

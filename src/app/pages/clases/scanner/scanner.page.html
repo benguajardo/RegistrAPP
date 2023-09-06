@@ -1,3 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/clases"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ clase.nombreAsignatura }}</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
     <ion-card>
         <ion-card-header>
@@ -5,22 +15,48 @@
             <ion-card-subtitle>Sigla: {{ clase.siglaAsignatura }} - {{ clase.seccion }}</ion-card-subtitle>
             <ion-card-subtitle>Docente: {{ clase.docente }}</ion-card-subtitle>
             <ion-card-subtitle>Hora Inicio: {{ clase.horaInicio }} Hora Término: {{ clase.horaTermino }}</ion-card-subtitle>
-            <ion-button color="danger"> Eliminar Clase
-              <ion-icon (click)="deleteClase()" name="trash-outline"></ion-icon>
-            </ion-button>
+            <div class="container" *ngFor="let user of listaUsuarioIniciado">
+              <ion-button *ngIf="user.docente" (click)="deleteClase()" color="danger"> Eliminar Clase
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+                
+            </div>
         </ion-card-header>
-        
         <ion-card-content>
-            <ion-accordion-group>
-              <ion-accordion value="first">
-                <ion-item slot="header" color="success">
-                  <ion-label>Escanear código QR <ion-icon name="camera"></ion-icon></ion-label>
-                </ion-item>
-                <div class="ion-padding" slot="content">
-                    <img alt="Silhouette of mountains" src="../../../../assets/img/qr-code-icon.jpg" />
+            <div class="container" *ngFor="let user of listaUsuarioIniciado">
+              <div class="container"*ngIf="user.docente">
+                <input #idclase type="text" value="{{ clase.id }}">
+                <input #qrcode type="text">
+                <ion-button (click)="addQR(idclase.value, qrcode.value)" color="warning"> Agregar QR
+                  <ion-icon name="trash-outline"></ion-icon>
+                </ion-button>
+
+              </div>
+            </div>
+          <div *ngFor="let aux of listaQR"  class="container">
+                <div class="container" *ngFor="let user of listaUsuarioIniciado" >
+                  <div class="container" *ngIf="user.docente">
+                    <div *ngIf="aux.idclase == clase.id" class="container"><!-- si la clase tiene código QR sale la opción de quitar código qr -->
+                      <img alt="Código QR"  src="{{ aux.qrcode }}"/>
+                      <ion-button (click)="deleteQR()" color="warning"> Quitar QR
+                        <ion-icon name="trash-outline"></ion-icon>
+                      </ion-button>
+                    </div>
+                    
+                  </div>
                 </div>
-              </ion-accordion>
-            </ion-accordion-group>
-        </ion-card-content>
-    </ion-card>
+              </div>
+              <ion-accordion-group>
+                <ion-accordion value="first">
+                  <ion-item slot="header" color="success">
+                    <ion-label>Escanear código QR <ion-icon name="camera"></ion-icon></ion-label>
+                  </ion-item>
+                  <div class="ion-padding" slot="content">
+                      <img alt="Silhouette of mountains" src="../../../../assets/img/qr-code-icon.jpg" />
+                    </div>
+                  </ion-accordion>
+                </ion-accordion-group>
+          </ion-card-content>
+        </ion-card>
+          
 </ion-content>

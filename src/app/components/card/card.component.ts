@@ -7,11 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent  implements OnInit {
 
-  @Input() mostrarFecha: boolean = true;
-
-  @Input() titulo!:string;
-  @Input() fecha!:string;
-  @Input() descripcion!:string;
+  @Input() nombre!:string;
+  @Input() correo!:string;
+  @Input() imagen!:string;
+  @Input() sede!:string;
 
   constructor() { }
 
