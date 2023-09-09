@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: 'crearclase',
     loadChildren: () => import('./crearclase/crearclase.module').then( m => m.CrearclasePageModule)
+  },  {
+    path: 'asistencia',
+    loadChildren: () => import('./asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
   }
+
 ];
 
 @NgModule({

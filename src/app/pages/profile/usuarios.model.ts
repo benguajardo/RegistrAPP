@@ -8,6 +8,7 @@ export interface Usuario{
     carrera?: string;
     sede?: string;
     docente?: boolean;
+    presente?: boolean;
 }
 
 export interface UsuarioDocente{

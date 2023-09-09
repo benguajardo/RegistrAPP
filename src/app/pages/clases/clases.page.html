@@ -8,16 +8,20 @@
 </ion-header>
 
 <ion-content>
-  
-  <ion-card *ngFor ="let user of listaUsuarioIniciado">
+  <div *ngFor ="let user of listaUsuarioIniciado">
     <ion-button *ngIf="user.docente" [routerLink]="['/clases/crearclase']" color="success" expand="block">Crear Clase <ion-icon name="add-circle"></ion-icon></ion-button>
-    <app-clasecard *ngFor="let aux of listaClases" [routerLink]="['/clases/', aux.id]"
-      nombre="{{aux.nombreAsignatura}}"
-      sigla= "{{aux.siglaAsignatura}}"
-      seccion= "{{aux.seccion}}"
-      docente= "{{aux.docente}}"
-      horaInicio= "{{aux.horaInicio}}"
-      horaTermino= "{{aux.horaTermino}}"
-      ></app-clasecard>
-  </ion-card>
+    <div class="contaier" *ngFor="let aux of listaClases">
+      <ion-card>
+        <app-clasecard [routerLink]="['/clases/', aux.id]"
+          nombre="{{aux.nombreAsignatura}}"
+          sigla= "{{aux.siglaAsignatura}}"
+          seccion= "{{aux.seccion}}"
+          docente= "{{aux.docente}}"
+          horaInicio= "{{aux.horaInicio}}"
+          horaTermino= "{{aux.horaTermino}}"
+          ></app-clasecard>
+          <ion-button [routerLink]="['/clases/asistencia']" color="tertiary" expand="block">Ver asistencia <ion-icon name="list"></ion-icon></ion-button>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>
