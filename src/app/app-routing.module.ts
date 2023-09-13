@@ -55,7 +55,12 @@ const routes: Routes = [
         loadChildren: () => import('./pages/clases/scanner/scanner.module').then( m => m.ScannerPageModule)
       }
     ]
+  },
+  {
+    path: 'detalle/:id',
+    loadChildren: () => import('./pages/detalle/detalle.module').then( m => m.DetallePageModule)
   }
+
 
 
 

@@ -5,17 +5,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-item *ngFor="let aux of listaUsuarios" [routerLink]="['../profile/', aux.id]">
-      <ion-avatar slot="start">
-        <ion-img [src]="aux.imagen"></ion-img>
-      </ion-avatar>
-      <ion-card-header>
-        <ion-card-title>{{ aux.id }}</ion-card-title>
-        <ion-card-subtitle>{{ aux.nombre }} <ion-icon *ngIf="aux.docente" name="checkmark-circle"></ion-icon></ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-      </ion-card-content>
-    </ion-item>
-  </ion-card>
+  <div class="container" *ngFor="let aux of Digimones">
+    <ion-card [routerLink]="'/detalle/' + aux.id" >
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-img [src]="aux.image"></ion-img>
+        </ion-avatar>
+        <ion-card-header>
+          <ion-card-title>{{ aux.id }}</ion-card-title>
+          <ion-card-subtitle>{{ aux.name }} <ion-icon name="checkmark-circle"></ion-icon></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+      </ion-item>
+    </ion-card>
+  </div>
+  <ion-button *ngIf="validarPag() == false " (click)="cargarAnterior()">Anterior</ion-button>
+  <ion-button (click)="cargarSiguiente()">Siguiente</ion-button>
+  
 </ion-content>

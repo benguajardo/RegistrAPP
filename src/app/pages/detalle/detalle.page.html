@@ -1,0 +1,12 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngIf="Digimon">
+  <p>{{Digimon.name}}</p>
+  <img src="{{Digimon.images.href}}" alt="" srcset="">
+</div>
+</ion-content>
