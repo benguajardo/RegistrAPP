@@ -16,10 +16,16 @@ export class ClasesPage implements OnInit {
   constructor(private router: Router, private usuarioService : UsuarioService, private claseService: ClaseService) { }
 
   ngOnInit() {
+    if(this.usuarioService.usuarioIniciado.length != 1){
+      this.router.navigate(['/login'])
+    }
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
     this.listaClases = this.claseService.GetAll()
   }
   ionViewWillEnter() {
+    if(this.usuarioService.usuarioIniciado.length != 1){
+      this.router.navigate(['/login'])
+    }
     this.listaClases = this.claseService.GetAll()
   }
   

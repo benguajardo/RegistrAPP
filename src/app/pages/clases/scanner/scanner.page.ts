@@ -27,6 +27,9 @@ export class ScannerPage implements OnInit {
               private alertController: AlertController,
               private activatedRoute : ActivatedRoute) { }
   ngOnInit() {
+    if(this.usuarioService.usuarioIniciado.length != 1){
+      this.router.navigate(['/login'])
+    }
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
     this.listaQR = this.qrcodeService.GetAll()
     
@@ -37,6 +40,11 @@ export class ScannerPage implements OnInit {
       }
       return aux
     });
+  }
+  ionViewWillEnter(){
+    if(this.usuarioService.usuarioIniciado.length != 1){
+      this.router.navigate(['/login'])
+    }
   }
 
 

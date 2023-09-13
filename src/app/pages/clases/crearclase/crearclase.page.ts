@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ClaseService } from 'src/app/services/clase.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-crearclase',
@@ -10,15 +11,24 @@ import { ClaseService } from 'src/app/services/clase.service';
 })
 export class CrearclasePage implements OnInit {
 
-  constructor(private ClaseService : ClaseService, private router: Router, private toastController:ToastController) { }
+  constructor(private ClaseService : ClaseService, private router: Router, private toastController:ToastController,
+              private usuarioService : UsuarioService,) { }
 
   ngOnInit() {
+    if(this.usuarioService.usuarioIniciado.length != 1){
+      this.router.navigate(['/login'])
+    }
+  }
+  ionViewWillEnter(){
+    if(this.usuarioService.usuarioIniciado.length != 1){
+      this.router.navigate(['/login'])
+    }
   }
   async mensaje(mensaje: string){
     const toast = await this.toastController.create({
       message: mensaje,
       duration: 2000,
-      position: 'top'
+      position: 'bottom'
     });
     toast.present()
   }

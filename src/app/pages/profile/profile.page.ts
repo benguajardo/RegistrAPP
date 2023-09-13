@@ -21,11 +21,17 @@ export class ProfilePage implements OnInit {
   listaUsuarioIniciado : usuarioIniciado [] = [];
   
   ngOnInit() {
+    if(this.usuarioService.usuarioIniciado.length != 1){
+      this.router.navigate(['/login'])
+    }
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
     console.log(this.listaUsuarioIniciado)
   }
 
   ionViewWillEnter() {
+    if(this.usuarioService.usuarioIniciado.length != 1){
+      this.router.navigate(['/login'])
+    }
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
   }
   async mensajeToast(mensaje: string){

@@ -10,10 +10,12 @@ import { usuarioIniciado } from '../profile/usuarios.model';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  
 
   constructor(private toastController: ToastController, private usuarioService: UsuarioService, private router: Router) {}
 
   ngOnInit() {
+    
   }
   
 
