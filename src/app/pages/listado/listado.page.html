@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>listado</ion-title>
+    <ion-button (click)="cargarMas()">Cargar más</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -20,7 +21,10 @@
       </ion-item>
     </ion-card>
   </div>
-  <ion-button *ngIf="validarPag() == false " (click)="cargarAnterior()">Anterior</ion-button>
-  <ion-button (click)="cargarSiguiente()">Siguiente</ion-button>
+  <ion-content>
+    <ion-button *ngIf="validarPag() == false " (click)="cargarAnterior()">Anterior</ion-button>
+    <ion-button (click)="cargarSiguiente()">Siguiente</ion-button>
+
+  </ion-content>
   
 </ion-content>

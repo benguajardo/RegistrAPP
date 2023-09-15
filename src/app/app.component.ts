@@ -12,6 +12,7 @@ export class AppComponent {
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Perfil', url: '/profile', icon: 'person' },
     { title: 'Clases', url: '/clases', icon: 'book' },
+    { title: 'listado', url: '/listado', icon: 'book' },
   ];
   public labels = [];
   
