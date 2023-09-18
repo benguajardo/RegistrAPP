@@ -5,18 +5,18 @@
 </ion-header>
 
 <ion-content>
+  <h1>{{ clase.nombreAsignatura }}</h1>
   <div *ngFor="let user of listaUsuarioIniciado"  class="container">
-    <div *ngFor="let estudiante of listaUsuario" class="container">
-      <ion-item *ngIf="estudiante.docente == false" >
-        <ion-label>{{ estudiante.nombre }}</ion-label>
+    <div *ngFor="let estudiante of listaEstudiantePresente" class="container">
+      <ion-item>
+        <div *ngFor="let aux of listaUsuario">
+          <ion-label *ngIf="aux.rut==estudiante.rutEstudiante && estudiante.idClase == clase.id">{{ aux.nombre }} <ion-icon color="primary" name="checkmark-circle"></ion-icon></ion-label>
+        </div>
         <div *ngIf="user.docente">
           <ion-toggle *ngIf="estudiante.presente == true" [checked]="true"></ion-toggle><br/><br/>
           <ion-toggle *ngIf="estudiante.presente == false" [checked]="false"></ion-toggle><br/><br/>
         </div>
-        <div *ngIf="user.docente == false">
-          <ion-icon color="primary" *ngIf="estudiante.presente == true" name="checkmark-circle"></ion-icon>
-          <ion-icon color="danger" *ngIf="estudiante.presente == false" name="close-circle"></ion-icon>
-        </div>
+        
       </ion-item> 
     </div>
     <ion-button *ngIf="user.docente">

@@ -20,7 +20,7 @@
           horaInicio= "{{aux.horaInicio}}"
           horaTermino= "{{aux.horaTermino}}"
           ></app-clasecard>
-          <ion-button [routerLink]="['/clases/asistencia']" color="tertiary" expand="block">Ver asistencia <ion-icon name="list"></ion-icon></ion-button>
+          <ion-button [routerLink]="['/clases/asistencia/',aux.id]" color="tertiary" expand="block">Ver asistencia <ion-icon name="list"></ion-icon></ion-button>
       </ion-card>
     </div>
   </div>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-detalle',
@@ -11,7 +12,8 @@ export class DetallePage implements OnInit {
   Digimon : any;
   constructor( 
     private ActivatedRoute : ActivatedRoute,          
-    private httpClient : HttpClient ) { }
+    private httpClient : HttpClient,
+    private UsuarioService: UsuarioService ) { }
 
   ngOnInit() {
     const id = this.ActivatedRoute.snapshot.paramMap.get("id");

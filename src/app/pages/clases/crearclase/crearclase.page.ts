@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ClaseService } from 'src/app/services/clase.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { usuarioIniciado } from '../../profile/usuarios.model';
 
 @Component({
   selector: 'app-crearclase',
@@ -10,14 +11,17 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./crearclase.page.scss'],
 })
 export class CrearclasePage implements OnInit {
-
+  
   constructor(private ClaseService : ClaseService, private router: Router, private toastController:ToastController,
               private usuarioService : UsuarioService,) { }
-
+  listaUsuarioIniciado :usuarioIniciado[] = []
+  
   ngOnInit() {
+    
     if(this.usuarioService.usuarioIniciado.length != 1){
       this.router.navigate(['/login'])
     }
+    this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
   }
   ionViewWillEnter(){
     if(this.usuarioService.usuarioIniciado.length != 1){

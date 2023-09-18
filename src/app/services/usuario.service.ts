@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Usuario, usuarioIniciado } from '../pages/profile/usuarios.model';
+import { Usuario, estudiantePresente, usuarioIniciado } from '../pages/profile/usuarios.model';
 import { Router } from '@angular/router';
 
 
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class UsuarioService {
   usuarioIniciado : usuarioIniciado[] = [];
+  estudiantePresente : estudiantePresente[] = [];
   usuarios: Usuario[] = [
     {
       id: '1',
@@ -71,7 +72,7 @@ export class UsuarioService {
       id: '6',
       correo: '2',
       contrasena: '2',
-      rut: '111111',
+      rut: '222222',
       nombre: 'Test',
       imagen: 'https://media.licdn.com/dms/image/C5603AQExyrZBcecs2A/profile-displayphoto-shrink_800_800/0/1517482337073?e=1699488000&v=beta&t=bdow3LUlu6jlieCNAlOuDvXvLh7WjwdtcPp6DH83w6U',
       carrera: 'Ingeniería en Informática',
@@ -140,7 +141,14 @@ export class UsuarioService {
     }
   }
 
-  
+  addEstudiantePresente(idClase: any, rutEstudiante: any, horaLlegada: any){
+    this.estudiantePresente.push({
+      idClase , rutEstudiante, presente: true, horaLlegada, idPresente: this.estudiantePresente.length + 1 +""
+    })
+  }
+  GetEstudiantePresente() {
+    return[...this.estudiantePresente]
+  }
 
   constructor(private router :Router) { }
   

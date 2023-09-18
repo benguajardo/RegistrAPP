@@ -11,8 +11,9 @@ const routes: Routes = [
   {
     path: 'crearclase',
     loadChildren: () => import('./crearclase/crearclase.module').then( m => m.CrearclasePageModule)
-  },  {
-    path: 'asistencia',
+  },
+  {
+    path: 'asistencia/:id',
     loadChildren: () => import('./asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
   }
 

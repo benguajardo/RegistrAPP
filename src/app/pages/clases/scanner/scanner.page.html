@@ -25,11 +25,26 @@
         <ion-card-content>
             <div class="container" *ngFor="let user of listaUsuarioIniciado">
               <div class="container"*ngIf="user.docente">
-                <input #idclase type="text" value="{{ clase.id }}">
-                <input #qrcode type="text">
-                <ion-button (click)="addQR(idclase.value, qrcode.value)" color="warning"> Agregar QR
+                <ion-button (click)="cargarData(clase.id,clase.sala)" color="warning"> Agregar QR
                   <ion-icon name="trash-outline"></ion-icon>
                 </ion-button>
+
+              </div>
+              <ion-accordion-group>
+                <ion-accordion value="first">
+                  <ion-item slot="header" color="success" *ngIf="user.docente==false">
+                    <ion-label>Escanear código QR <ion-icon name="camera"></ion-icon></ion-label>
+                  </ion-item>
+                  <div class="ion-padding" slot="content">
+                      <img alt="qr imagen" src="../../../../assets/img/qr-code-icon.jpg" />
+                    </div>
+                  </ion-accordion>
+              </ion-accordion-group>
+              <div *ngIf="user.docente==false">
+                <div>
+                  <ion-button (click)="addEstudiantePresente(clase.id, user.rut)" color="primary"> Marcar asistencia
+                  </ion-button>
+                </div>
 
               </div>
             </div>
@@ -38,6 +53,7 @@
                   <div class="container" *ngIf="user.docente">
                     <div *ngIf="aux.idclase == clase.id" class="container"><!-- si la clase tiene código QR sale la opción de quitar código qr -->
                       <img alt="Código QR"  src="{{ aux.qrcode }}"/>
+                      <script>console.log(aux.qrcode)</script>
                       <ion-button (click)="deleteQR()" color="warning"> Quitar QR
                         <ion-icon name="trash-outline"></ion-icon>
                       </ion-button>
@@ -46,16 +62,7 @@
                   </div>
                 </div>
               </div>
-              <ion-accordion-group>
-                <ion-accordion value="first">
-                  <ion-item slot="header" color="success">
-                    <ion-label>Escanear código QR <ion-icon name="camera"></ion-icon></ion-label>
-                  </ion-item>
-                  <div class="ion-padding" slot="content">
-                      <img alt="Silhouette of mountains" src="../../../../assets/img/qr-code-icon.jpg" />
-                    </div>
-                  </ion-accordion>
-                </ion-accordion-group>
+              
           </ion-card-content>
         </ion-card>
           

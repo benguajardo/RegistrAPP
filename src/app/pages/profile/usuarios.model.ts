@@ -31,3 +31,11 @@ export interface usuarioIniciado{
     sede?: string;
     docente?: boolean;
 }
+
+export interface estudiantePresente{
+    idPresente?: string;
+    idClase?: string;
+    rutEstudiante?: string;
+    presente?: boolean;
+    horaLlegada?: string;
+}
