@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/clases"></ion-back-button>
+      <ion-back-button Href="/clases"></ion-back-button>
     </ion-buttons>
     <ion-title>{{ clase.nombreAsignatura }}</ion-title>
     
@@ -25,7 +25,8 @@
         <ion-card-content>
             <div class="container" *ngFor="let user of listaUsuarioIniciado">
               <div class="container"*ngIf="user.docente">
-                <ion-button (click)="cargarData(clase.id,clase.sala,clase. siglaAsignatura, clase.seccion, clase.sede)" color="warning"> Cargar código QR
+                
+                <ion-button (click)="cargarData(clase.id,clase.sala,clase. siglaAsignatura, clase.seccion, clase.sede)" color="warning"> Generar Código QR
                   <ion-icon name="add-outline"></ion-icon>
                 </ion-button>
 

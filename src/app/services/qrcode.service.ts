@@ -7,18 +7,7 @@ import { Qrcode } from '../pages/clases/scanner/qrcode.model';
 export class QrcodeService {
 
   constructor() { }
-  qrcodes : Qrcode [] = [
-    {
-      id: '1',
-      idclase: '1',
-      qrcode: 'https://i.pinimg.com/originals/60/c1/4a/60c14a43fb4745795b3b358868517e79.png'
-    },
-    {
-      id: '666666',
-      idclase: '6666666',
-      qrcode: 'https://i.pinimg.com/originals/60/c1/4a/60c14a43fb4745795b3b358868517e79.png'
-    }
-  ];
+  qrcodes : Qrcode [] = [];
 
   GetAll() {
     return[...this.qrcodes]
