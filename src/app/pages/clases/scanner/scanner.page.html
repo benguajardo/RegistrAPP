@@ -25,8 +25,8 @@
         <ion-card-content>
             <div class="container" *ngFor="let user of listaUsuarioIniciado">
               <div class="container"*ngIf="user.docente">
-                <ion-button (click)="cargarData(clase.id,clase.sala)" color="warning"> Agregar QR
-                  <ion-icon name="trash-outline"></ion-icon>
+                <ion-button (click)="cargarData(clase.id,clase.sala,clase. siglaAsignatura, clase.seccion, clase.sede)" color="warning"> Cargar código QR
+                  <ion-icon name="add-outline"></ion-icon>
                 </ion-button>
 
               </div>
@@ -41,9 +41,15 @@
                   </ion-accordion>
               </ion-accordion-group>
               <div *ngIf="user.docente==false">
-                <div>
-                  <ion-button (click)="addEstudiantePresente(clase.id, user.rut)" color="primary"> Marcar asistencia
-                  </ion-button>
+                
+                <div *ngFor="let aux of listaQR">
+                  <div *ngIf="aux.idclase == clase.id">
+                    <ion-item> <script>console.log(aux.qrcode)</script>
+                      <ion-input #codigo placeholder="Ingrese el código"></ion-input>
+                    </ion-item>
+                    <ion-button (click)="marcarAsistencia(codigo.value, aux.qrcode, aux.idclase, user.rut)" color="primary"> Marcar asistencia
+                    </ion-button>
+                  </div>
                 </div>
 
               </div>

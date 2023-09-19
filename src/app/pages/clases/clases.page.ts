@@ -13,6 +13,9 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class ClasesPage implements OnInit {
   listaUsuarioIniciado : usuarioIniciado [] = []
   listaClases : Clase[] = [];
+  
+  
+
   constructor(private router: Router, private usuarioService : UsuarioService, private claseService: ClaseService) { }
 
   ngOnInit() {
@@ -29,4 +32,5 @@ export class ClasesPage implements OnInit {
     this.listaClases = this.claseService.GetAll()
   }
   
+
 }

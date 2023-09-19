@@ -14,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './scanner.page.html',
   styleUrls: ['./scanner.page.scss'],
 })
+
 export class ScannerPage implements OnInit {
   listaQR : Qrcode[] = [];
   listaEstudiantePresente : estudiantePresente[]= [];
@@ -29,6 +30,7 @@ export class ScannerPage implements OnInit {
               private alertController: AlertController,
               private activatedRoute : ActivatedRoute,
               private httpClient :HttpClient,) { }
+
   ngOnInit() {
     if(this.usuarioService.usuarioIniciado.length != 1){
       this.router.navigate(['/login'])
@@ -46,9 +48,41 @@ export class ScannerPage implements OnInit {
     });
   }
 
-  cargarData(p_clase: any, p_sala: any){
-    const url = `https://api.qrserver.com/v1/create-qr-code/?data=${p_clase+'-'+p_sala}&size=150x150`
-    this.qrcodeService.addClase(p_clase, url)
+
+  async cargarData(p_clase: any, p_sala: any, p_asignatura: any, p_seccion: any, p_sede: any) {
+    const alerta = await this.alertController.create({
+      header: 'Generar código',
+      message: 'Quiere generar un código QR?',
+      buttons: [
+        {
+          text: 'Cargar',
+          handler: () => {
+            const url = `https://api.qrserver.com/v1/create-qr-code/?data=${p_clase + '-' + p_sala + '-' + p_asignatura + '-' + p_seccion + '-' + p_sede +'-'+ this.listaQR.length}&size=150x150`
+            this.qrcodeService.addClase(p_clase, url)
+            this.router.navigate(['/clases']);
+            this.mensajeToast("Código generado!");
+          }
+        },
+        {
+          text: 'Cancelar',
+          handler: () => {
+            this.mensajeToast("Acción cancelada!");
+          }
+        }
+      ]
+    });
+    await alerta.present();
+    let resultado = await alerta.onDidDismiss();
+  }
+  
+  marcarAsistencia(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any){
+    if(p_codigo === p_query){
+      this.usuarioService.addEstudiantePresente(idClase, rutEstudiante, this.hora.toLocaleTimeString())
+      this.router.navigate(['/clases/asistencia/'+idClase]);
+      this.mensajeToast('Asistencia Confirmada.')
+    }else{
+      this.mensajeToast('No Funciona')
+    }
   }
 
   ionViewWillEnter(){
@@ -124,10 +158,10 @@ export class ScannerPage implements OnInit {
     let resultado = await alerta.onDidDismiss();
   }
 
-  addQR(idclase: any, qrcode: any){
-    this.qrcodeService.addClase(idclase.value, qrcode.value)
-    this.mensajeToast("Código cargado con éxito!");
-  }
+  // addQR(idclase: any, qrcode: any){
+  //   this.qrcodeService.addClase(idclase.value, qrcode.value)
+  //   this.mensajeToast("Código cargado con éxito!");
+  // }
 
   hora = new Date()
   
