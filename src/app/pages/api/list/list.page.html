@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>listado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container" *ngFor="let aux of listaJugadores">
+    <ion-card [routerLink]="'/detalle/' + aux.id" >
+      <ion-item>
+        <ion-card-header>
+          <ion-card-title>{{ aux.id }}</ion-card-title>
+          <ion-card-subtitle>{{ aux.nombre }} <ion-icon name="checkmark-circle"></ion-icon></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+      </ion-item>
+    </ion-card>
+  </div>
+  
+</ion-content>

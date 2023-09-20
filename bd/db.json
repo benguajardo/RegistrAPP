@@ -1,0 +1,27 @@
+{
+    "jugadores" : [
+
+        {
+            "id": "1",
+            "nombre": "Benja",
+            "genero": "Masculino"
+        },
+        {
+            "id": "2",
+            "nombre": "Nico",
+            "genero": "Masculino"
+            
+        },
+        {
+            "id": "3",
+            "nombre": "Jairo",
+            "genero": "Masculino"
+        },
+        {
+            "id": "4",
+            "nombre": "Exe",
+            "genero": "Masculino"
+        }
+    ]
+        
+    }

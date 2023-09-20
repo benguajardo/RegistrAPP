@@ -59,7 +59,32 @@ const routes: Routes = [
   {
     path: 'detalle/:id',
     loadChildren: () => import('./pages/detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: 'apiHome',
+    loadChildren: () => import('./pages/api/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'apiList',
+    loadChildren: () => import('./pages/api/list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'apiAdd',
+    loadChildren: () => import('./pages/api/add/add.module').then( m => m.AddPageModule)
+  },
+  {
+    path: 'apiUpdate/:id',
+    loadChildren: () => import('./pages/api/update/update.module').then( m => m.UpdatePageModule)
+  },
+  {
+    path: 'apiDelete/:id',
+    loadChildren: () => import('./pages/api/delete/delete.module').then( m => m.DeletePageModule)
+  },
+  {
+    path: 'apiDetail/:id',
+    loadChildren: () => import('./pages/api/detail/detail.module').then( m => m.DetailPageModule)
   }
+
 
 
 

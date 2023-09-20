@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { UsuariosrandomService } from 'src/app/services/usuariosrandom.service';
 import { usuarioIniciado } from '../profile/usuarios.model';
 
 @Component({
@@ -11,13 +13,34 @@ import { usuarioIniciado } from '../profile/usuarios.model';
 })
 export class LoginPage implements OnInit {
   
+  loginForm: FormGroup // validar formulario
+  user: any   //    capturar todo del usuario random
+  emailValue?: string //Para capturar el correo del usuario random
+  passValue?: string  //Para capturar la contraseña del usuario random
 
-  constructor(private toastController: ToastController, private usuarioService: UsuarioService, private router: Router) {}
-
+  constructor(private toastController: ToastController, 
+              private usuarioService: UsuarioService, 
+              private router: Router,
+              private usuariosrandom: UsuariosrandomService,
+              private formBuilder: FormBuilder
+              ){
+                this.loginForm = this.formBuilder.group({
+                  email: ['', [Validators.required]],
+                  password: ['', [Validators.required, Validators.minLength(1)]]
+                })
+                
+              } 
+  
   ngOnInit() {
-    
+    this.usuariosrandom.getRandomUser().subscribe(
+      (data) => {
+        this.user = data.results[0] //console.log(this.user)
+        this.emailValue = this.user.email
+        this.passValue = this.user.login.password
+      })
   }
   
+
 
   usuarioIniciado : usuarioIniciado [] = [];
 
