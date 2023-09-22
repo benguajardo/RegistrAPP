@@ -1,13 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>detail</ion-title>
-  </ion-toolbar>
+  <ion-title>Detalle Jugador</ion-title>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <p>{{jugador.id}} </p>
+      <ion-card-title>{{ jugador.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ jugador.genero }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      ola
+    </ion-card-content>
+    <ion-button [routerLink]="['/apiUpdate',jugador.id]">Modificar</ion-button>
+    <ion-button color="danger" (click)="deleteJugador()">Eliminar</ion-button>
+  </ion-card>
 </ion-content>

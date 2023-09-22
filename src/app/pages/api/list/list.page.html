@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="container" *ngFor="let aux of listaJugadores">
-    <ion-card [routerLink]="'/detalle/' + aux.id" >
+    <ion-card [routerLink]="'/apiDetail/' + aux.id" >
       <ion-item>
         <ion-card-header>
           <ion-card-title>{{ aux.id }}</ion-card-title>
@@ -17,5 +17,4 @@
       </ion-item>
     </ion-card>
   </div>
-  
 </ion-content>

@@ -29,6 +29,7 @@
     "@ionic/angular": "^7.0.0",
     "ionic": "^5.4.16",
     "ionicons": "^7.0.0",
+    "json-server": "^0.17.3",
     "jsqr": "^1.4.0",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.7.28",
