@@ -99,13 +99,13 @@ export class UsuarioService {
   //Metodo para agregar usuarios  
   addUsuario(correo: any, contrasena: any, rut: any, nombre: any, imagen: any, carrera: any, sede: any, docente: boolean=false) {
     this.usuarios.push({
-      correo, contrasena, nombre, rut, imagen, carrera, sede, docente, id: this.usuarios.length + 1 + ""
+      correo, contrasena,  rut, nombre, imagen, carrera, sede, docente, id: this.usuarios.length + 1 + ""
     })
   }
 
   addUsuarioDocente(correo: any, contrasena: any, rut: any, nombre: any, imagen: any, docente: boolean=true) {
     this.usuarios.push({
-      correo, contrasena, nombre, rut, imagen, docente, id: this.usuarios.length + 1 + ""
+      correo, contrasena, rut,nombre, imagen, docente, id: this.usuarios.length + 1 + ""
     })
   }
 

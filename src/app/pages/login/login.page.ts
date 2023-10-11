@@ -17,9 +17,10 @@ export class LoginPage implements OnInit {
   user: any   //    capturar todo del usuario random
   emailValue?: string //Para capturar el correo del usuario random
   passValue?: string  //Para capturar la contraseña del usuario random
+ 
 
-  constructor(private toastController: ToastController, 
-              private usuarioService: UsuarioService, 
+  constructor(private toastController: ToastController,
+              private usuarioService: UsuarioService,
               private router: Router,
               private usuariosrandom: UsuariosrandomService,
               private formBuilder: FormBuilder
@@ -32,15 +33,16 @@ export class LoginPage implements OnInit {
               } 
   
   ngOnInit() {
+    //AQUI SE ABRE EL MODAL DE TERMINOS Y CONDICIONES PQ NO QUEREMOS HACER UNA PÁGINA MÁS
+    //COMO ABRIR UN COMPONENTE
     this.usuariosrandom.getRandomUser().subscribe(
       (data) => {
         this.user = data.results[0] //console.log(this.user)
         this.emailValue = this.user.email
         this.passValue = this.user.login.password
+        
       })
   }
-  
-
 
   usuarioIniciado : usuarioIniciado [] = [];
 

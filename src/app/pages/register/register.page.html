@@ -14,25 +14,25 @@
         <ion-card>
           <ion-card-content>
            <ion-item>
-             <ion-input #correo type="text" label="Correo" labelPlacement="floating" placeholder="Ej: Juan.perez@duocuc.cl"></ion-input>
+             <ion-input #correo type="text" [(ngModel)]="emailValue" label="Correo" labelPlacement="floating" placeholder="Ej: Juan.perez@duocuc.cl"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #contrasena type="password" label="Contraseña" labelPlacement="floating" placeholder="Ej: 123456789"></ion-input>
+             <ion-input #contrasena type="password" [(ngModel)]="passValue" label="Contraseña" labelPlacement="floating" placeholder="Ej: 123456789"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #rut type="text" label="Rut" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
+             <ion-input #rut type="text" label="Rut" [(ngModel)]="runValue" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #nombre type="text" label="Nombre" labelPlacement="floating" placeholder="Ej: Juan Antonio Pérez Gómez"></ion-input>
+             <ion-input #nombre type="text" [(ngModel)]="nameValue" label="Nombre" labelPlacement="floating" placeholder="Ej: Juan Antonio Pérez Gómez"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #imagen type="text" label="Imagen" labelPlacement="floating" placeholder="Ej: https://blabal.jpg" value="https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg" [clearInput]="true"></ion-input>
+             <ion-input #imagen type="text" [(ngModel)]="picValue" label="Imagen" labelPlacement="floating" placeholder="Ej: https://blabal.jpg" value="https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg" [clearInput]="true"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #carrera type="text" label="Carrera" labelPlacement="floating" placeholder="Ingeniería en Informática"></ion-input>
+              <ion-input #carrera type="text" value="Ingeniería en Informática" label="Carrera" labelPlacement="floating" placeholder="Ingeniería en Informática"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #sede type="text" label="Sede" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+              <ion-input #sede type="text"  [(ngModel)]="locationValue" label="Sede" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
             </ion-item>
            <ion-button color="secondary" (click)="addEstudiante(correo, contrasena, nombre, rut, imagen, carrera, sede)">Registrar</ion-button>
           </ion-card-content>
