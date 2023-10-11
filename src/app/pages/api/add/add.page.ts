@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IJugador } from 'src/app/interfaces/ijugador';
+import { IUsuario } from 'src/app/interfaces/iusuario';
 import { JugadorService } from 'src/app/services/api/jugador.service';
 
 @Component({
@@ -11,9 +11,16 @@ import { JugadorService } from 'src/app/services/api/jugador.service';
 export class AddPage implements OnInit {
 
   //TEST
-  jugador: IJugador ={
-    nombre: 'Julio',
-    genero: 'Tapia'
+  usuario: IUsuario ={
+    run: '2222',
+    dv: "1",
+    nombre: "dsasdads",
+    apellido: "saddsas",
+    docente: false,
+    correo: "ni.canalesm@duocuc.cl",
+    contraseña: "nico123",
+    carrera: 1,
+    sede: 1
   }
 
   constructor(
@@ -27,7 +34,7 @@ export class AddPage implements OnInit {
   addJugador(){
     //Capturar longitud
     
-    this.apiService.AddJugador(this.jugador).subscribe()
+    this.apiService.AddJugador(this.usuario).subscribe()
     this.router.navigate(['/apiList']);
   }
 }

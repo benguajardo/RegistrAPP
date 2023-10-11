@@ -5,15 +5,16 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <p>{{jugador.id}} </p>
-      <ion-card-title>{{ jugador.nombre }}</ion-card-title>
-      <ion-card-subtitle>{{ jugador.genero }}</ion-card-subtitle>
+      <p>{{usuario.run}} </p>
+      <ion-card-title>{{ usuario.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ usuario.apellido }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ usuario.correo }}</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
       ola
     </ion-card-content>
-    <ion-button [routerLink]="['/apiUpdate',jugador.id]">Modificar</ion-button>
+    <ion-button [routerLink]="['/apiUpdate',usuario.run]">Modificar</ion-button>
     <ion-button color="danger" (click)="deleteJugador()">Eliminar</ion-button>
   </ion-card>
 </ion-content>
