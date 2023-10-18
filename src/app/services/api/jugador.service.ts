@@ -14,29 +14,33 @@ export class JugadorService {
 
   // CRUD jugadores
   listaJugadores():Observable<IUsuarios>{
-    return this.httpClient.get<IUsuarios>(`${environment.apiURL}Usuario`);
+    return this.httpClient.get<IUsuarios>(`${'https://registrappjsonserver.onrender.com/'}Usuario`);
   }
   //Para agregar post
   AddJugador(jugador: IUsuario):Observable<IUsuario> {
-    return this.httpClient.post<IUsuario>(`${environment.apiURL}Usuario`,jugador);
+    return this.httpClient.post<IUsuario>(`${'https://registrappjsonserver.onrender.com/'}Usuario`,jugador);
   }
   // Para obtener get
   getJugador(id: number){
-    return this.httpClient.get<IUsuarios>(`${environment.apiURL}Usuario/?id=${id}`);
+    return this.httpClient.get<IUsuarios>(`${'https://registrappjsonserver.onrender.com/'}Usuario/?id=${id}`);
   }
   // Para actulizar put
   UpdateJugador(usuario: any):Observable<IUsuarios>{
-    return this.httpClient.put<IUsuarios>(`${environment.apiURL}Usuario/${usuario.id}`,usuario);
+    return this.httpClient.put<IUsuarios>(`${'https://registrappjsonserver.onrender.com/'}Usuario/${usuario.id}`,usuario);
   }
   // Para borrar delete
   DeleteJugador(usuario: any):Observable<IUsuarios>{
-    return this.httpClient.delete<IUsuarios>(`${environment.apiURL}Usuario/${usuario.id}`);
+    return this.httpClient.delete<IUsuarios>(`${'https://registrappjsonserver.onrender.com/'}Usuario/${usuario.id}`);
   }
 
   // CRUD sede
   listaSede():Observable<IUsuarios>{
-    return this.httpClient.get<IUsuarios>(`${environment.apiURL}Sede`);
+    return this.httpClient.get<IUsuarios>(`${'https://registrappjsonserver.onrender.com/'}Sede`);
   }
+  
+  //listaSede():Observable<IUsuarios>{
+  //  return this.httpClient.get<IUsuarios>(`${environment.apiURL}Sede`);
+  //}
 
 
 
