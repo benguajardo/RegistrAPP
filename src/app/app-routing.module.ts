@@ -83,7 +83,11 @@ const routes: Routes = [
   {
     path: 'apiDetail/:id',
     loadChildren: () => import('./pages/api/detail/detail.module').then( m => m.DetailPageModule)
+  },  {
+    path: 'terms',
+    loadChildren: () => import('./pages/terms/terms.module').then( m => m.TermsPageModule)
   }
+
 
 
 

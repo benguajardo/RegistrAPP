@@ -25,7 +25,15 @@
              <ion-input #seccion type="text" label="Sección" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #fecha type="text" label="Fecha" labelPlacement="floating" placeholder=""></ion-input>
+             <ion-input #fecha label="Fecha">
+              <ion-datetime-button presentation="date" datetime="date"></ion-datetime-button>
+              <ion-modal [keepContentsMounted]="true">
+                <ng-template>
+                  <ion-datetime presentation="date" id="date"></ion-datetime>
+                </ng-template>
+              </ion-modal>
+             </ion-input>
+             
             </ion-item>
             <ion-item>
               <ion-input #horaInicio type="text" label="Hora de inicio" labelPlacement="floating" placeholder="Ingeniería en Informática"></ion-input>

@@ -12,6 +12,9 @@ export class ModalComponent  implements OnInit {
 
   presentingElement = null;
 
+  @Input() titulo!:string;
+  @Input() terminos!:string;
+
   ngOnInit() {
     this.presentingElement = document.querySelector('.ion-page');
   }
@@ -21,5 +24,7 @@ export class ModalComponent  implements OnInit {
     this.canDismiss = ev.detail.checked;
   }
 }
+
+
 
 }

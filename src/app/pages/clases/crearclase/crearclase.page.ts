@@ -36,9 +36,9 @@ export class CrearclasePage implements OnInit {
     });
     toast.present()
   }
-
+  
   addClase(nombreAsignatura: any, siglaAsignatura: any, seccion: any, fecha: any, horaInicio: any, horaTermino: any, sede: any, sala: any, docente: any){
-    this.ClaseService.addClase(nombreAsignatura.value, siglaAsignatura.value, seccion.value, fecha.value, horaInicio.value,horaTermino.value, sede.value, sala.value, docente.value);
+    this.ClaseService.addClase(nombreAsignatura.value, siglaAsignatura.value, seccion.value, fecha.detail, horaInicio.value,horaTermino.value, sede.value, sala.value, docente.value);
     this.mensaje("Clase creada con éxito!")
     this.router.navigate(['/clases']);
   }

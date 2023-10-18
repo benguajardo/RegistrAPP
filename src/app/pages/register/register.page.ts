@@ -43,7 +43,7 @@ export class RegisterPage implements OnInit {
         this.passValue = this.user.login.password
         this.runValue = this.user.name.title + ' ' + this.user.name.first + ' ' + this.user.name.last
         this.nameValue = this.user.id.value
-        this.picValue = this.user.picture.large
+        this.picValue = 'https://robohash.org/'+this.nameValue
         this.locationValue = this.user.location.city
       })
   }

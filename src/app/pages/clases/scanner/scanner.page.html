@@ -14,6 +14,7 @@
             <ion-card-title>{{ clase.nombreAsignatura }}</ion-card-title>
             <ion-card-subtitle>Sigla: {{ clase.siglaAsignatura }} - {{ clase.seccion }}</ion-card-subtitle>
             <ion-card-subtitle>Docente: {{ clase.docente }}</ion-card-subtitle>
+            <ion-card-subtitle>Fecha: {{ clase.fecha }}</ion-card-subtitle>
             <ion-card-subtitle>Hora Inicio: {{ clase.horaInicio }} Hora Término: {{ clase.horaTermino }}</ion-card-subtitle>
             <div class="container" *ngFor="let user of listaUsuarioIniciado">
               <ion-button *ngIf="user.docente" (click)="deleteClase()" color="danger"> Eliminar Clase

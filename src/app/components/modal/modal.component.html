@@ -20,13 +20,7 @@
           <p class="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
           <ion-item>
             <ion-card>
-              <ion-item>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
-                  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                  reprehenderit in  voluptate velit esse cillum  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                  sunt in culpa qui officia deserunt mollit anim id est laborum."
-                </p>
-              </ion-item>
+              <app-modal titulo="Terminos y condiciones" texto="OLA"></app-modal>
             </ion-card>
             <ion-label class="ion-text-wrap" for="terms">Do you accept the terms and conditions?</ion-label>
             <ion-checkbox id="terms" (ionChange)="onTermsChanged($event)" [checked]="canDismiss"></ion-checkbox>
