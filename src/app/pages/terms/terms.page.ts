@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./terms.page.scss'],
 })
 export class TermsPage implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
   }
+
+  aceptaTerminos: boolean = false; // Valor inicial del checkbox
 
 }

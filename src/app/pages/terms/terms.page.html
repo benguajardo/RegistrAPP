@@ -89,6 +89,11 @@ Usted acepta que el texto original en inglés prevalecerá en caso de disputa.</
 <ul>
 <li>Por correo: Duoc UC Puente Alto</li>
 </ul>
+<ion-item>
+  <ion-label>Acepto los términos y condiciones.</ion-label>
+  <ion-checkbox [(ngModel)]="aceptaTerminos"></ion-checkbox>
+</ion-item>
 
+<ion-button [routerLink]="['/login']" [disabled]="!aceptaTerminos">Cerrar</ion-button>
   </ion-content>
 </div>

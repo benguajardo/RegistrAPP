@@ -9,6 +9,8 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { estudiantePresente, usuarioIniciado } from '../../profile/usuarios.model';
 import { HttpClient } from '@angular/common/http';
 
+// import { Camera } from '@capacitor/camera';
+
 @Component({
   selector: 'app-scanner',
   templateUrl: './scanner.page.html',
