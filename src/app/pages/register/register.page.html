@@ -14,25 +14,25 @@
         <ion-card>
           <ion-card-content>
            <ion-item>
-             <ion-input #correo type="text" [(ngModel)]="emailValue" label="Correo" labelPlacement="floating" placeholder="Ej: Juan.perez@duocuc.cl"></ion-input>
+             <ion-input #correo type="text" [(ngModel)]="usuario.correo" label="Correo" labelPlacement="floating" placeholder="Ej: Juan.perez@duocuc.cl"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #contrasena type="password" [(ngModel)]="passValue" label="Contraseña" labelPlacement="floating" placeholder="Ej: 123456789"></ion-input>
+             <ion-input #contrasena type="password" [(ngModel)]="usuario.contrasena" label="Contraseña" labelPlacement="floating" placeholder="Ej: 123456789"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #rut type="text" label="Rut" [(ngModel)]="runValue" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
+             <ion-input #rut type="text" label="Rut" [(ngModel)]="usuario.run" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #nombre type="text" [(ngModel)]="nameValue" label="Nombre" labelPlacement="floating" placeholder="Ej: Juan Antonio Pérez Gómez"></ion-input>
+             <ion-input #nombre type="text" [(ngModel)]="usuario.nombre" label="nombre" labelPlacement="floating" placeholder="Ej: Juan Antonio Pérez Gómez"></ion-input>
            </ion-item>
            <ion-item>
              <ion-input #imagen type="text" [(ngModel)]="picValue" label="Imagen" labelPlacement="floating" placeholder="Ej: https://blabal.jpg"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #carrera type="text" value="Ingeniería en Informática" label="Carrera" labelPlacement="floating" placeholder="Ingeniería en Informática"></ion-input>
+              <ion-input #carrera type="text" [(ngModel)]="usuario.carrera" value="Ingeniería en Informática" label="Carrera" labelPlacement="floating" placeholder="Ingeniería en Informática"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #sede type="text"  [(ngModel)]="locationValue" label="Sede" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+              <ion-input #sede type="text"  [(ngModel)]="usuario.sede" label="Sede" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
             </ion-item>
            <ion-button color="secondary" (click)="addEstudiante(correo, contrasena, nombre, rut, imagen, carrera, sede)">Registrar</ion-button>
           </ion-card-content>

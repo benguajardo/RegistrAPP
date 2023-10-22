@@ -4,6 +4,8 @@ import { ToastController } from '@ionic/angular';
 import { ClaseService } from 'src/app/services/clase.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { usuarioIniciado } from '../../profile/usuarios.model';
+import { IClase } from 'src/app/interfaces/iclase';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-crearclase',
@@ -13,9 +15,23 @@ import { usuarioIniciado } from '../../profile/usuarios.model';
 export class CrearclasePage implements OnInit {
   
   constructor(private ClaseService : ClaseService, private router: Router, private toastController:ToastController,
-              private usuarioService : UsuarioService,) { }
+              private usuarioService : UsuarioService,
+              private apiService: ApiService) { }
   listaUsuarioIniciado :usuarioIniciado[] = []
   
+  clase: IClase ={
+    sigla: '',
+    seccion: '',
+    jornada: '',
+    nombre: '',
+    docente: '',
+    dia: '',
+    horaInicio: '',
+    horaTermino: '',
+    sede: '',
+    sala: ''
+  }
+
   ngOnInit() {
     
     if(this.usuarioService.usuarioIniciado.length != 1){
@@ -37,9 +53,8 @@ export class CrearclasePage implements OnInit {
     toast.present()
   }
   
-  addClase(nombreAsignatura: any, siglaAsignatura: any, seccion: any, fecha: any, horaInicio: any, horaTermino: any, sede: any, sala: any, docente: any){
-    this.ClaseService.addClase(nombreAsignatura.value, siglaAsignatura.value, seccion.value, fecha.detail, horaInicio.value,horaTermino.value, sede.value, sala.value, docente.value);
-    this.mensaje("Clase creada con éxito!")
+  addClase(){
+    this.apiService.addClase(this.clase).subscribe()
     this.router.navigate(['/clases']);
   }
 }

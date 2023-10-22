@@ -13,8 +13,8 @@
     <div class="contaier" *ngFor="let aux of listaClases">
       <ion-card>
         <app-clasecard [routerLink]="['/clases/', aux.id]"
-          nombre="{{aux.nombreAsignatura}}"
-          sigla= "{{aux.siglaAsignatura}}"
+          nombre="{{aux.nombre}}"
+          sigla= "{{aux.sigla}}"
           seccion= "{{aux.seccion}}"
           docente= "{{aux.docente}}"
           horaInicio= "{{aux.horaInicio}}"

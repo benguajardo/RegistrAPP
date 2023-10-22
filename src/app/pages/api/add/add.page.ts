@@ -18,9 +18,11 @@ export class AddPage implements OnInit {
     apellido: "saddsas",
     docente: false,
     correo: "ni.canalesm@duocuc.cl",
-    contraseña: "nico123",
-    carrera: 1,
-    sede: 1
+    contrasena: "nico123",
+    carrera: "1",
+    sede: "1",
+    imagen:"",
+
   }
 
   constructor(

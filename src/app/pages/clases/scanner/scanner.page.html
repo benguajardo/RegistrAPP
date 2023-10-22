@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button Href="/clases"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ clase.nombreAsignatura }}</ion-title>
+    <ion-title>{{ clase.nombre }}</ion-title>
     
   </ion-toolbar>
 </ion-header>
@@ -11,10 +11,10 @@
 <ion-content>
     <ion-card>
         <ion-card-header>
-            <ion-card-title>{{ clase.nombreAsignatura }}</ion-card-title>
-            <ion-card-subtitle>Sigla: {{ clase.siglaAsignatura }} - {{ clase.seccion }}</ion-card-subtitle>
+            <ion-card-title>{{ clase.nombre }}</ion-card-title>
+            <ion-card-subtitle>Sigla: {{ clase.sigla }} - {{ clase.seccion }}</ion-card-subtitle>
             <ion-card-subtitle>Docente: {{ clase.docente }}</ion-card-subtitle>
-            <ion-card-subtitle>Fecha: {{ clase.fecha }}</ion-card-subtitle>
+            <ion-card-subtitle>Fecha: {{ clase.dia }}</ion-card-subtitle>
             <ion-card-subtitle>Hora Inicio: {{ clase.horaInicio }} Hora Término: {{ clase.horaTermino }}</ion-card-subtitle>
             <div class="container" *ngFor="let user of listaUsuarioIniciado">
               <ion-button *ngIf="user.docente" (click)="deleteClase()" color="danger"> Eliminar Clase
@@ -27,7 +27,7 @@
             <div class="container" *ngFor="let user of listaUsuarioIniciado">
               <div class="container"*ngIf="user.docente">
                 
-                <ion-button (click)="cargarData(clase.id,clase.sala,clase. siglaAsignatura, clase.seccion, clase.sede)" color="warning"> Generar Código QR
+                <ion-button (click)="cargarData(clase.id,clase.sala,clase.sigla, clase.seccion, clase.sede)" color="warning"> Generar Código QR
                   <ion-icon name="add-outline"></ion-icon>
                 </ion-button>
 

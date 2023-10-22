@@ -16,41 +16,33 @@
         <ion-card>
           <ion-card-content>
            <ion-item>
-             <ion-input #nombreAsignatura type="text" label="Nombre de asignatura" labelPlacement="floating" placeholder="Ej: Programación Aplicaciones Móviles"></ion-input>
+             <ion-input #nombreAsignatura [(ngModel)]="clase.nombre" type="text" label="Nombre de asignatura" labelPlacement="floating" placeholder="Ej: Programación Aplicaciones Móviles"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #siglaAsignatura type="text" label="Sigla" labelPlacement="floating" placeholder="Ej: Juan Antonio Pérez Gómez"></ion-input>
+             <ion-input #siglaAsignatura [(ngModel)]="clase.sigla" type="text" label="Sigla" labelPlacement="floating" placeholder="Ej: Juan Antonio Pérez Gómez"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #seccion type="text" label="Sección" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
+             <ion-input #seccion [(ngModel)]="clase.seccion" type="text" label="Sección" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #fecha label="Fecha">
-              <ion-datetime-button presentation="date" datetime="date"></ion-datetime-button>
-              <ion-modal [keepContentsMounted]="true">
-                <ng-template>
-                  <ion-datetime presentation="date" id="date"></ion-datetime>
-                </ng-template>
-              </ion-modal>
-             </ion-input>
-             
+             <ion-input #fecha [(ngModel)]="clase.dia" label="Fecha" type="text" label="Fecha" labelPlacement="floating" placeholder="2023-10-25"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #horaInicio type="text" label="Hora de inicio" labelPlacement="floating" placeholder="Ingeniería en Informática"></ion-input>
+              <ion-input #horaInicio [(ngModel)]="clase.horaInicio" type="text"  label="Hora de inicio" labelPlacement="floating" placeholder="11:30"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #horaTermino type="text" label="Hora de término" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+              <ion-input #horaTermino type="text" [(ngModel)]="clase.horaTermino" label="Hora de término" labelPlacement="floating" placeholder="13:40"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #sede type="text" label="Sede" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+              <ion-input #sede type="text" [(ngModel)]="clase.sede" label="Sede" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #sala type="text" label="Sala" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+              <ion-input #sala type="text" [(ngModel)]="clase.sala" label="Sala" labelPlacement="floating" placeholder="Lc8"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #docente type="text" label="Docente" value="{{user.nombre}}" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+              <ion-input #docente type="text" [(ngModel)]="clase.docente" label="Docente" value="{{user.nombre}}" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
             </ion-item>
-           <ion-button color="secondary" (click)="addClase(nombreAsignatura,siglaAsignatura,seccion,fecha,horaInicio,horaTermino,sede,sala,docente)">Crear Clase</ion-button>
+           <ion-button color="secondary" (click)="addClase()">Crear Clase</ion-button>
           </ion-card-content>
        </ion-card>
     </ion-card-content>

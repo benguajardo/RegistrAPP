@@ -4,6 +4,7 @@ import { Usuario, estudiantePresente, usuarioIniciado } from '../../profile/usua
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClaseService } from 'src/app/services/clase.service';
 import { Clase } from '../clases.model';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-asistencia',
@@ -14,12 +15,13 @@ export class AsistenciaPage implements OnInit {
   constructor(private usuarioService : UsuarioService,
               private claseService : ClaseService,
               private router : Router,
-              private activatedRoute: ActivatedRoute
+              private activatedRoute: ActivatedRoute,
+              private apiService :ApiService
   ) { }
   clase! : Clase;
   listaUsuario : Usuario [] = [];
   listaUsuarioIniciado : usuarioIniciado [] = [];
-  listaEstudiantePresente : estudiantePresente [] = [];
+  listaEstudiantePresente : any = [];
 
   ngOnInit() {
     if(this.usuarioService.usuarioIniciado.length != 1){
@@ -42,5 +44,14 @@ export class AsistenciaPage implements OnInit {
       this.router.navigate(['/login'])
     }
   }
+
+  listar() {
+    this.apiService.listaPresentes().subscribe((resp) => {
+      //console.log(resp)
+      let aux = JSON.stringify(resp)
+      this.listaEstudiantePresente = JSON.parse(aux)
+    })
+  }
+
 
 }

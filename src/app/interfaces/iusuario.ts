@@ -5,7 +5,8 @@ export interface IUsuario {
     apellido: String,
     docente: boolean,
     correo: String,
-    contraseña: String,
-    carrera: number,
-    sede: number,
+    contrasena: String,
+    carrera: String,
+    sede: String,
+    imagen: String,
 }
