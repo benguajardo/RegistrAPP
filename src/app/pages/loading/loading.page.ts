@@ -12,9 +12,8 @@ export class LoadingPage implements OnInit {
   constructor( private router : Router, private mensajeService: MensajeService) { }
 
   ngOnInit() {
-  this.mensajeService.loading('Cargando',2000);
   setTimeout(() => {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/terms']);
   },2000);
   }
 

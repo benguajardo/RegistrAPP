@@ -25,8 +25,7 @@
         </ion-card-header>
         <ion-card-content>
             <div class="container" *ngFor="let user of listaUsuarioIniciado">
-              <div class="container"*ngIf="user.docente">
-                
+              <div class="container" *ngIf="user.docente">
                 <ion-button (click)="cargarData(clase.id,clase.sala,clase.sigla, clase.seccion, clase.sede)" color="warning"> Generar Código QR
                   <ion-icon name="add-outline"></ion-icon>
                 </ion-button>

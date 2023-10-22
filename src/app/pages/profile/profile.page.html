@@ -13,7 +13,7 @@
 
 <ion-content>
   <ion-header>
-    <app-card *ngFor="let user of listaUsuarioIniciado" nombre="{{ user.nombre }}" rut="{{ user.rut }}" imagen="{{user.imagen}}" correo="{{user.correo}}" sede="{{user.sede}}"></app-card>
+    <app-card *ngFor="let user of listaUsuarioIniciado" nombre="{{ user.rut }}" rut="{{ user.nombre }}" imagen="{{user.imagen}}" correo="{{user.correo}}" sede="{{user.sede}}"></app-card>
   </ion-header>
 <div *ngFor="let user of listaUsuarioIniciado" class="container">
   <ion-button (click)="cerrarSesion()" color="danger" expand="full">Cerrar sesión</ion-button>

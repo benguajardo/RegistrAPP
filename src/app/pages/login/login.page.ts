@@ -68,12 +68,12 @@ export class LoginPage implements OnInit {
         this.usuarioService.addUsuarioIniciado(usuario.correo,  usuario.rut,  usuario.nombre,  usuario.imagen,  usuario.carrera,  usuario.sede,  usuario.docente);
         this.router.navigate(['home']);
         
-      } else if (usuarioDocente && usuarioDocente.contrasena === contrasena) {
-        this.usuarioService.addUsuarioIniciado(usuarioDocente.correo,  usuarioDocente.rut,  usuarioDocente.nombre,  usuarioDocente.imagen,  usuarioDocente.carrera,  usuarioDocente.sede,  usuarioDocente.docente);
-        this.router.navigate(['home']);
       } else {
         // Credenciales inválidas, mostrar mensaje de error
         this.mensaje("Credenciales inválidas. Intente nuevamente.");
       }
   }
+
+
+
 }

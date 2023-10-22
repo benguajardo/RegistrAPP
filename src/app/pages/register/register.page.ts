@@ -7,6 +7,7 @@ import { UsuariosrandomService } from 'src/app/services/usuariosrandom.service';
 import { Usuario, usuarioIniciado } from '../profile/usuarios.model';
 import { IUsuario } from 'src/app/interfaces/iusuario';
 import { ApiService } from 'src/app/services/api/api.service';
+import { timestamp } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -50,6 +51,7 @@ export class RegisterPage implements OnInit {
     imagen: "",
 
   }
+
   ngOnInit() {
     this.usuariosrandom.getRandomUser().subscribe(
       (data) => {
@@ -74,6 +76,8 @@ export class RegisterPage implements OnInit {
     this.listaUsuarios = this.UsuarioService.GetAll()
   }
 
+  listadoUsuarios = this.listarUsuarios;
+
   async mensaje(mensaje: string){
     const toast = await this.toastController.create({
       message: mensaje,
@@ -88,17 +92,56 @@ export class RegisterPage implements OnInit {
     this.apiService.addUsuario(this.usuario).subscribe(() => {
       // Aquí puedes realizar acciones adicionales si es necesario después de agregar el jugador
       //ALERTA AQUÍ
-      console.log('Jugador añadido con éxito');
+      console.log('Usuario añadido con éxito');
   });
     this.UsuarioService.addUsuarioIniciado(correo.value,  rut.value,  nombre.value,  imagen.value,  carrera.value,  sede.value,  docente);
     this.mensaje("Estudiante registrado con éxito!");
     this.router.navigate(['home']);
   }
 
-  addDocente(correo: any, contrasena: any, rut: any, nombre: any, imagen: any, carrera: any, sede: any, docente: boolean=true) {
+  addEstudiante2(correo: any, contrasena: any, rut: any, nombre: any, imagen: any, carrera: any, sede: any, docente: any) {
     this.UsuarioService.addUsuario(correo.value, contrasena.value, rut.value, nombre.value, imagen.value, carrera.value, sede.value, docente);
-    // Aquí debería haber una validación que tome el correo y valide si está registrado ya.
-    this.mensaje("Docente registrado con éxito!");
-    this.router.navigate(['/login']);
+    this.apiService.addUsuario(this.usuario).subscribe(() => {
+  });
   }
+
+  Registrar20() {
+    for (let i = 0; i < 10; i++) {
+      this.usuariosrandom.getRandomUser2().subscribe(
+        (data) => {
+          this.user = data.results[0] //console.log(this.user)
+          this.usuario.correo = this.user.email
+          this.usuario.contrasena = this.user.login.password
+          this.usuario.nombre = this.user.name.first
+          this.usuario.apellido = this.user.name.last
+          this.usuario.run = this.user.id.value
+          this.picValue = 'https://robohash.org/'+this.usuario.run
+          this.usuario.imagen = this.picValue
+          this.usuario.sede = this.user.location.city
+          this.usuario.sede = this.user.location.city
+          this.usuario.docente = false
+          this.addEstudiante('correo', 'contrasena', 'rut', 'nombre', 'imagen', 'carrera', 'sede');
+        })
+      }
+      for (let i = 0; i < 10; i++) {
+        this.usuariosrandom.getRandomUser2().subscribe(
+          (data) => {
+            this.user = data.results[0] //console.log(this.user)
+            this.usuario.correo = this.user.email
+            this.usuario.contrasena = this.user.login.password
+            this.usuario.nombre = this.user.name.first
+            this.usuario.apellido = this.user.name.last
+            this.usuario.run = this.user.id.value
+            this.picValue = 'https://robohash.org/'+this.usuario.run
+            this.usuario.imagen = this.picValue
+            this.usuario.sede = this.user.location.city
+            this.usuario.sede = this.user.location.city
+            this.usuario.docente = true
+            this.addEstudiante2('correo', 'contrasena', 'rut', 'nombre', 'imagen', 'carrera', 'sede', this.usuario.docente);
+          })
+        }
+        this.mensaje('Se han importado 20 cuentas.')
+  }
+
+  
 }

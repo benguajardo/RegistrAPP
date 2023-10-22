@@ -13,7 +13,9 @@ export class UsuariosrandomService {
     return this.HttpCient.get('https://randomuser.me/api');
   }
  
-  
+  getRandomUser2(): Observable<any>{
+    return this.HttpCient.get('https://randomuser.me/api/?results=20');
+  }
   
   
   
