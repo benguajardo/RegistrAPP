@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { IUsuario } from 'src/app/interfaces/iusuario';
 import { IUsuarios } from 'src/app/interfaces/iusuarios';
 import { environment } from 'src/environments/environment';
@@ -24,6 +24,8 @@ export class JugadorService {
   getJugador(id: number){
     return this.httpClient.get<IUsuarios>(`${'https://registrappjsonserver.onrender.com/'}Usuario/?id=${id}`);
   }
+
+
   // Para actulizar put
   UpdateJugador(usuario: any):Observable<IUsuarios>{
     return this.httpClient.put<IUsuarios>(`${'https://registrappjsonserver.onrender.com/'}Usuario/${usuario.id}`,usuario);

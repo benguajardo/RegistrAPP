@@ -121,9 +121,9 @@ export class UsuarioService {
     return this.usuarios.find(aux => aux.correo === correo) || null;
   }
 
-  addUsuarioIniciado(correo: any, rut: any, nombre: any, imagen: any, carrera: any, sede: any, docente: any) {
+  addUsuarioIniciado(correo: any, rut: any, nombre: any,apellido: any, imagen: any, carrera: any, sede: any, docente: any) {
     this.usuarioIniciado.push({
-      correo,  rut,  nombre,  imagen,  carrera,  sede,  docente, id:  "1"
+      correo,  rut,  nombre, apellido ,  imagen,  carrera,  sede,  docente, id:  "1"
     })
   }
 

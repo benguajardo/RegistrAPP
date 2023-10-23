@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { IClase } from 'src/app/interfaces/iclase';
 import { IClases } from 'src/app/interfaces/iclases';
 import { IPresente } from 'src/app/interfaces/ipresente';
@@ -19,7 +19,7 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
   apiURL= 'https://registrappjsonserver.onrender.com/'
 
-  // CRUD jugadores
+  // CRUD usuarios
   listaUsuarios():Observable<IUsuarios>{
     return this.httpClient.get<IUsuarios>(`${this.apiURL}Usuario`);
   }
@@ -40,7 +40,12 @@ export class ApiService {
     return this.httpClient.delete<IUsuarios>(`${this.apiURL}Usuario/${id}`);
   }
 
-  
+  getUsuarioPorCorreo(correo: string) {
+    return this.httpClient.get<IUsuario[]>('apiURL/Usuarios').pipe(
+      map((usuarios: any[]) => usuarios.find((usuario) => usuario.correo === correo && usuario.correo === correo))
+    );
+  }
+
   // CRUD clases
   listaClases():Observable<IClases>{
     return this.httpClient.get<IClases>(`${this.apiURL}Clase`);

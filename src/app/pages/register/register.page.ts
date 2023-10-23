@@ -39,6 +39,7 @@ export class RegisterPage implements OnInit {
     })
   }
   usuario: IUsuario ={
+    id: '',
     run: '',
     dv: "",
     nombre: "",
@@ -56,6 +57,7 @@ export class RegisterPage implements OnInit {
     this.usuariosrandom.getRandomUser().subscribe(
       (data) => {
         this.user = data.results[0] //console.log(this.user)
+        this.usuario.id = this.user.email
         this.usuario.correo = this.user.email
         this.usuario.contrasena = this.user.login.password
         this.usuario.nombre = this.user.name.first
@@ -88,19 +90,17 @@ export class RegisterPage implements OnInit {
   }
 
   addEstudiante(correo: any, contrasena: any, rut: any, nombre: any, imagen: any, carrera: any, sede: any, docente: boolean=false) {
-    this.UsuarioService.addUsuario(correo.value, contrasena.value, rut.value, nombre.value, imagen.value, carrera.value, sede.value, docente);
     this.apiService.addUsuario(this.usuario).subscribe(() => {
       // Aquí puedes realizar acciones adicionales si es necesario después de agregar el jugador
       //ALERTA AQUÍ
       console.log('Usuario añadido con éxito');
   });
-    this.UsuarioService.addUsuarioIniciado(correo.value,  rut.value,  nombre.value,  imagen.value,  carrera.value,  sede.value,  docente);
-    this.mensaje("Estudiante registrado con éxito!");
-    this.router.navigate(['home']);
+    // this.UsuarioService.addUsuarioIniciado(correo.value,  rut.value,  nombre.value,  imagen.value,  carrera.value,  sede.value,  docente);
+    // this.mensaje("Estudiante registrado con éxito!");
+    // ;
   }
 
   addEstudiante2(correo: any, contrasena: any, rut: any, nombre: any, imagen: any, carrera: any, sede: any, docente: any) {
-    this.UsuarioService.addUsuario(correo.value, contrasena.value, rut.value, nombre.value, imagen.value, carrera.value, sede.value, docente);
     this.apiService.addUsuario(this.usuario).subscribe(() => {
   });
   }
@@ -110,6 +110,7 @@ export class RegisterPage implements OnInit {
       this.usuariosrandom.getRandomUser2().subscribe(
         (data) => {
           this.user = data.results[0] //console.log(this.user)
+          this.usuario.id = this.user.email
           this.usuario.correo = this.user.email
           this.usuario.contrasena = this.user.login.password
           this.usuario.nombre = this.user.name.first
@@ -127,12 +128,13 @@ export class RegisterPage implements OnInit {
         this.usuariosrandom.getRandomUser2().subscribe(
           (data) => {
             this.user = data.results[0] //console.log(this.user)
+            this.usuario.id = this.user.email
             this.usuario.correo = this.user.email
             this.usuario.contrasena = this.user.login.password
             this.usuario.nombre = this.user.name.first
             this.usuario.apellido = this.user.name.last
             this.usuario.run = this.user.id.value
-            this.picValue = 'https://robohash.org/'+this.usuario.run
+            this.picValue = 'https://source.boringavatars.com/beam/120/'+this.usuario.run
             this.usuario.imagen = this.picValue
             this.usuario.sede = this.user.location.city
             this.usuario.sede = this.user.location.city

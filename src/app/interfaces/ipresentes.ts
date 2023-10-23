@@ -4,4 +4,6 @@ export interface IPresentes {
     rutEstudiante: String,
     presente: boolean,
     horaLlegada: String
+    nombre: String
+    apellido: String
 }

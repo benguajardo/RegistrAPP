@@ -1,5 +1,5 @@
 export interface IUsuarios {
-    id: number,
+    id: String,
     run: String,
     dv: String,
     nombre: String,

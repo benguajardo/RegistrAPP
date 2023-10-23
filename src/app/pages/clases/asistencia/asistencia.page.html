@@ -12,23 +12,12 @@
   <div *ngFor="let user of listaUsuarioIniciado"  class="container">
     <div *ngFor="let estudiante of listaEstudiantePresente" class="container">
       <ion-item>
-        <div *ngFor="let aux of listaUsuario">
-          <ion-label *ngIf="aux.rut==estudiante.rutEstudiante && estudiante.idClase == clase.id">{{ aux.nombre }} <ion-icon color="primary" name="checkmark-circle"></ion-icon></ion-label>
+        <div >
+          <ion-label *ngIf="estudiante.idClase == clase.id">{{ estudiante.nombre }} {{ estudiante.apellido}}<ion-icon color="primary" name="checkmark-circle"></ion-icon></ion-label>
         </div>
-        <div *ngIf="user.docente">
-          <ion-toggle *ngIf="estudiante.presente == true" [checked]="true"></ion-toggle><br/><br/>
-          <ion-toggle *ngIf="estudiante.presente == false" [checked]="false"></ion-toggle><br/><br/>
-        </div>
+        
         
       </ion-item> 
     </div>
-    <ion-button *ngIf="user.docente">
-      <ion-icon slot="start" name="save"></ion-icon>
-      Guardar asistencia
-    </ion-button>
-    <ion-button color="secondary"  *ngIf="user.docente">
-      <ion-icon slot="start" name="close-circle"></ion-icon>
-      Cancelar
-    </ion-button>
   </div>
 </ion-content>

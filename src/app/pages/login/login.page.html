@@ -9,7 +9,7 @@
     <ion-card-content [formGroup]="loginForm">
       <ion-item>
         <ion-label position="floating">Usuario</ion-label>
-        <ion-input  [(ngModel)]="emailValue" formControlName="email" type="email" #correo placeholder="Ingrese su correo"></ion-input>
+        <ion-input  [(ngModel)]="usuario.correo" formControlName="email" type="email" #correo placeholder="Ingrese su correo"></ion-input>
       </ion-item>
       <!-- Si el correo está vacío -->
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')">
@@ -21,7 +21,7 @@
       </ion-text>
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input [(ngModel)]="passValue" formControlName="password" #contrasena placeholder="Ingrese su contraseña" type="password"></ion-input>
+        <ion-input [(ngModel)]="usuario.contrasena" formControlName="password" #contrasena placeholder="Ingrese su contraseña" type="password"></ion-input>
       </ion-item>
       <!-- Si la contraseña está vacía -->
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')">
@@ -34,7 +34,7 @@
   </ion-card-content>
   <ion-buttons class="centrado2">
     <ion-button [disabled]="!loginForm.valid" (click)="login(correo.value, contrasena.value)" style="color: rgb(255, 208, 0);" fill="clear">Ingresar</ion-button>
-    <ion-button style="color: rgb(0, 17, 255);" fill="clear" [routerLink]="['/register']">Registrarse</ion-button>
+    <ion-button style="color: rgb(0, 17, 255);" fill="clear" [routerLink]="['/register']">Importar cuentas</ion-button>
   </ion-buttons>
 </ion-card>
 </ion-content>

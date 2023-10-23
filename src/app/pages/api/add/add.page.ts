@@ -12,6 +12,7 @@ export class AddPage implements OnInit {
 
   //TEST
   usuario: IUsuario ={
+    id: '2222',
     run: '2222',
     dv: "1",
     nombre: "dsasdads",

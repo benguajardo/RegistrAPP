@@ -26,9 +26,11 @@
         <ion-card-content>
             <div class="container" *ngFor="let user of listaUsuarioIniciado">
               <div class="container" *ngIf="user.docente">
-                <ion-button (click)="cargarData(clase.id,clase.sala,clase.sigla, clase.seccion, clase.sede)" color="warning"> Generar Código QR
-                  <ion-icon name="add-outline"></ion-icon>
-                </ion-button>
+                <div class="div" *ngIf="codQR.id != clase.id">
+                  <ion-button (click)="cargarData(clase.id,clase.sala,clase.sigla, clase.seccion, clase.sede)" color="warning"> Generar Código QR
+                    <ion-icon name="add-outline"></ion-icon>
+                  </ion-button>
+                </div>
 
               </div>
               <ion-accordion-group>
@@ -43,24 +45,24 @@
               </ion-accordion-group>
               <div *ngIf="user.docente==false">
                 
-                <div *ngFor="let aux of listaQR">
-                  <div *ngIf="aux.idclase == clase.id">
-                    <ion-item> <script>console.log(aux.qrcode)</script>
+                <div >
+                  <div *ngIf="codQR.idClase == clase.id">
+                    <ion-item> <script>console.log(codQR.imagen)</script>
                       <ion-input #codigo placeholder="Ingrese el código"></ion-input>
                     </ion-item>
-                    <ion-button (click)="marcarAsistencia(codigo.value, aux.qrcode, aux.idclase, user.rut)" color="primary"> Marcar asistencia
+                    <ion-button (click)="marcarAsistencia(codigo.value, codQR.imagen, codQR.idClase, user.rut, user.nombre, user.apellido)" color="primary"> Marcar asistencia
                     </ion-button>
                   </div>
                 </div>
 
               </div>
             </div>
-          <div *ngFor="let aux of listaQR"  class="container">
+          <div>
                 <div class="container" *ngFor="let user of listaUsuarioIniciado" >
                   <div class="container" *ngIf="user.docente">
-                    <div *ngIf="aux.idclase == clase.id" class="container"><!-- si la clase tiene código QR sale la opción de quitar código qr -->
-                      <img alt="Código QR"  src="{{ aux.qrcode }}"/>
-                      <script>console.log(aux.qrcode)</script>
+                    <div *ngIf="codQR.idClase == clase.id" class="container"><!-- si la clase tiene código QR sale la opción de quitar código qr -->
+                      <img alt="Código QR"  src="{{ codQR.imagen }}"/>
+                      <script>console.log(codQR.imagen)</script>
                       <ion-button (click)="deleteQR()" color="warning"> Quitar QR
                         <ion-icon name="trash-outline"></ion-icon>
                       </ion-button>

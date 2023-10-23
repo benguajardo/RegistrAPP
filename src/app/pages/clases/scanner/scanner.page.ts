@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApiService } from 'src/app/services/api/api.service';
 import { IQrCode } from 'src/app/interfaces/iqr-code';
 import { IPresente } from 'src/app/interfaces/ipresente';
+import { IQrCodes } from 'src/app/interfaces/iqr-codes';
 
 // import { Camera } from '@capacitor/camera';
 
@@ -42,7 +43,7 @@ export class ScannerPage implements OnInit {
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
     this.listaEstudiantePresente = this.usuarioService.GetEstudiantePresente()
     this.getClase(this.getId())
-    
+    this.getQR(this.getId())
     
   }
 
@@ -76,6 +77,11 @@ export class ScannerPage implements OnInit {
     sala: ''
   }
   
+   codQR = {
+    id : "",
+    idClase : "",
+    imagen : ""
+   }
   
   getId() {
     let url = this.router.url
@@ -83,7 +89,15 @@ export class ScannerPage implements OnInit {
     let id = parseInt(aux[2])
     return id
   }
-
+  getQR(id:number){
+    this.apiService.getQR(id).subscribe((resp:any) => {
+      this.codQR = {
+        id: resp[0].id,
+        idClase: resp[0].idClase,
+        imagen: resp[0].imagen
+      }
+    })
+  }
   getClase(id: Number) {
     this.apiService.getClase(id).subscribe((resp:any) => {
       this.clase = {
@@ -108,7 +122,8 @@ export class ScannerPage implements OnInit {
     this.router.navigate(['/clases'])
   }
 
-  qr : IQrCode ={
+  qr : IQrCodes ={
+    id: '',
     idClase: '',
     imagen: '',
     
@@ -124,6 +139,7 @@ export class ScannerPage implements OnInit {
           text: 'Cargar',
           handler: () => {
             const url = `https://api.qrserver.com/v1/create-qr-code/?data=${p_clase + '-' + p_sala + '-' + p_asignatura + '-' + p_seccion + '-' + p_sede +'-'+ this.listaQR.length}&size=150x150`
+            this.qr.id= p_clase;
             this.qr.imagen= url;
             this.qr.idClase= p_clase;
             this.apiService.addQR(this.qr).subscribe()
@@ -146,18 +162,23 @@ export class ScannerPage implements OnInit {
     rutEstudiante: "",
     idClase: 0,
     horaLlegada: "",
-    presente: false
+    presente: false,
+    nombre: "",
+    apellido: ""
   }
-  marcarAsistencia(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any){
+  marcarAsistencia(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any){
     if(p_codigo === p_query){
       this.presente.rutEstudiante = rutEstudiante;
       this.presente.idClase = idClase;
+      this.presente.presente = true;
       this.presente.horaLlegada = this.hora.toLocaleTimeString();
+      this.presente.nombre = p_nombre;
+      this.presente.apellido = p_apellido;
       this.apiService.addPresente(this.presente).subscribe()
       this.router.navigate(['/clases/asistencia/'+idClase]);
       this.mensajeToast('Asistencia Confirmada.')
     }else{
-      this.mensajeToast('No Funciona')
+      this.mensajeToast('El código es incorrecto')
     }
   }
 
@@ -180,10 +201,9 @@ export class ScannerPage implements OnInit {
         {
           text: 'Eliminar',
           handler: () => {
-            if (this.clase && this.clase.id !== undefined){
-              this.router.navigate(['/clases']);
-              this.mensajeToast("QR eliminado!");
-            }
+            this.apiService.deleteQR(this.codQR.id).subscribe()
+            this.mensajeToast("QR eliminado!");
+            this.router.navigate(['/clases']);
           }
         },
         {

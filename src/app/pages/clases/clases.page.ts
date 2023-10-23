@@ -15,9 +15,6 @@ export class ClasesPage implements OnInit {
   listaUsuarioIniciado : usuarioIniciado [] = []
   listaClases : any = [];
 
-  
-  
-
   constructor(private router: Router, private usuarioService : UsuarioService, private claseService: ClaseService,
     private apiService: ApiService) { }
 
@@ -42,6 +39,4 @@ export class ClasesPage implements OnInit {
       this.listaClases = JSON.parse(aux)
     })
   }
-
-
 }

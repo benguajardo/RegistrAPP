@@ -3,4 +3,6 @@ export interface IPresente {
     rutEstudiante: String,
     presente: boolean,
     horaLlegada: String
+    nombre: String
+    apellido: String
 }

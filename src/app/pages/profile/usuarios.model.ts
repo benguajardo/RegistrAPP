@@ -26,6 +26,7 @@ export interface usuarioIniciado{
     correo?: string;
     rut?: string;
     nombre?: string;
+    apellido?: string;
     imagen?: string;
     carrera?: string;
     sede?: string;

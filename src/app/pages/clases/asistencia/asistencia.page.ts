@@ -19,18 +19,18 @@ export class AsistenciaPage implements OnInit {
               private apiService :ApiService
   ) { }
   clase! : Clase;
-  listaUsuario : Usuario [] = [];
   listaUsuarioIniciado : usuarioIniciado [] = [];
+  
   listaEstudiantePresente : any = [];
+  listaUsuario : any = [];
 
   ngOnInit() {
     if(this.usuarioService.usuarioIniciado.length != 1){
       this.router.navigate(['/login'])
     }
-    this.listaUsuario = this.usuarioService.GetAll();
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado();
-    this.listaEstudiantePresente = this.usuarioService.GetEstudiantePresente();
-
+    this.listar();
+    this.listaUser();
     this.activatedRoute.paramMap.subscribe(param => {
       const aux = param.get('id')
       if (aux) {
@@ -39,10 +39,13 @@ export class AsistenciaPage implements OnInit {
       return aux
     });
   }
+  
   ionViewWillEnter(){
     if(this.usuarioService.usuarioIniciado.length != 1){
       this.router.navigate(['/login'])
     }
+    this.listar();
+    this.listaUser();
   }
 
   listar() {
@@ -50,6 +53,15 @@ export class AsistenciaPage implements OnInit {
       //console.log(resp)
       let aux = JSON.stringify(resp)
       this.listaEstudiantePresente = JSON.parse(aux)
+    })
+
+  }
+
+  listaUser(){
+    this.apiService.listaUsuarios().subscribe((respose) => {
+      //console.log(resp)
+      let aux = JSON.stringify(respose)
+      this.listaUsuario = JSON.parse(aux)
     })
   }
 

@@ -1,5 +1,5 @@
 export interface IQrCodes {
-    id: number,
+    id: string,
     idClase: String,
     imagen: String
 }

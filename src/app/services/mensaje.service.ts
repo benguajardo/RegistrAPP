@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { timer } from 'rxjs';
 import Swal from 'sweetalert2';
+import { UsuarioService } from './usuario.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MensajeService {
+  cerrarSession(){
+  }
+
   mensajePersonalizadoBoton(icon: any, title: any, text:any, footer: any, boton : any){
     Swal.fire({
       icon: icon,
@@ -51,5 +55,7 @@ export class MensajeService {
       timerProgressBar: true
     })
   }
-  constructor() { }
+
+ 
+  constructor( ) { }
 }
