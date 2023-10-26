@@ -101,7 +101,7 @@ export class LoginPage implements OnInit {
                                                this.usuario.carrera,  this.usuario.sede,  this.usuario.docente);
         this.router.navigate(['home']);
       } else {
-        // Credenciales inválidas, mostrar mensaje de error
+        
         this.mensaje("Credenciales inválidas. Intente nuevamente.");
       }
     })

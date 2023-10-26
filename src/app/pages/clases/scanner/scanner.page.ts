@@ -119,6 +119,7 @@ export class ScannerPage implements OnInit {
 
   deleteClase() {
     this.apiService.deleteClase(this.clase.id).subscribe();
+    this.apiService.deleteQR(this.clase.id).subscribe();
     this.router.navigate(['/clases'])
   }
 

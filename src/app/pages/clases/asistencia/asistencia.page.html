@@ -8,16 +8,14 @@
 </ion-header>
 
 <ion-content>
-  <h1>{{ clase.nombreAsignatura }}</h1>
+  <h1>{{ clase.nombre }}</h1>
   <div *ngFor="let user of listaUsuarioIniciado"  class="container">
-    <div *ngFor="let estudiante of listaEstudiantePresente" class="container">
-      <ion-item>
-        <div >
+    
+      <ion-item *ngFor="let estudiante of listaEstudiantePresente">
           <ion-label *ngIf="estudiante.idClase == clase.id">{{ estudiante.nombre }} {{ estudiante.apellido}}<ion-icon color="primary" name="checkmark-circle"></ion-icon></ion-label>
-        </div>
-        
-        
+            <ion-button *ngIf="user.docente && estudiante.idClase == clase.id" color="danger" (click)="deletePresente(estudiante.id)">
+              <ion-icon slot="icon-only" name="trash"></ion-icon>
+            </ion-button>
       </ion-item> 
-    </div>
   </div>
 </ion-content>
