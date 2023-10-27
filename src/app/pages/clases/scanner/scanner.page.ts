@@ -28,6 +28,19 @@ export class ScannerPage implements OnInit {
   // clase! : Clase;
   qrcode! :Qrcode;
   
+  handleRefresh(event: any) {
+    setTimeout(() => {
+      this.listarQR()
+      this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
+      this.listaEstudiantePresente = this.usuarioService.GetEstudiantePresente()
+      this.getClase(this.getId())
+      this.getQR(this.getId())
+      //Soy dios
+      //--Atte: Nico
+      event.target.complete();
+    }, 2000);
+  }
+
   constructor(private router : Router,
               private toastController : ToastController,
               private usuarioService : UsuarioService,
@@ -144,7 +157,7 @@ export class ScannerPage implements OnInit {
             this.qr.imagen= url;
             this.qr.idClase= p_clase;
             this.apiService.addQR(this.qr).subscribe()
-            this.router.navigate(['/clases']);
+            // this.router.navigate(['/clases']);
             this.mensajeToast("Código generado!");
           }
         },

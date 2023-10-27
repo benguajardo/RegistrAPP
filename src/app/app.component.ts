@@ -35,8 +35,6 @@ export class AppComponent {
 
   mostrarMenu(){
     return this.router.url !== '/login';
-    
-    
   }
 
   mostrarMenuApi(){

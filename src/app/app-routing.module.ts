@@ -40,10 +40,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/listado/listado.module').then( m => m.ListadoPageModule)
   },
   {
-    path: 'registrodocente',
-    loadChildren: () => import('./pages/registrodocente/registrodocente.module').then( m => m.RegistrodocentePageModule)
-  },
-  {
     path: 'clases',
     children: [
       {
@@ -55,10 +51,6 @@ const routes: Routes = [
         loadChildren: () => import('./pages/clases/scanner/scanner.module').then( m => m.ScannerPageModule)
       }
     ]
-  },
-  {
-    path: 'detalle/:id',
-    loadChildren: () => import('./pages/detalle/detalle.module').then( m => m.DetallePageModule)
   },
   {
     path: 'apiHome',
@@ -83,17 +75,11 @@ const routes: Routes = [
   {
     path: 'apiDetail/:id',
     loadChildren: () => import('./pages/api/detail/detail.module').then( m => m.DetailPageModule)
-  },  {
+  },
+  {
     path: 'terms',
     loadChildren: () => import('./pages/terms/terms.module').then( m => m.TermsPageModule)
   }
-
-
-
-
-
-
-
 
 ];
 

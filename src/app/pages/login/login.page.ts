@@ -49,8 +49,6 @@ export class LoginPage implements OnInit {
                 })
                 
               } 
-  
-  
 
   ngOnInit() {
     //AQUI SE ABRE EL MODAL DE TERMINOS Y CONDICIONES PQ NO QUEREMOS HACER UNA PÁGINA MÁS
