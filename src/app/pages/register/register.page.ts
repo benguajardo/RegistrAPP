@@ -63,7 +63,7 @@ export class RegisterPage implements OnInit {
         this.usuario.nombre = this.user.name.first
         this.usuario.apellido = this.user.name.last
         this.usuario.run = this.user.id.value
-        this.picValue = 'https://robohash.org/'+this.usuario.run
+        this.picValue = 'https://robohash.org/'+this.usuario.run+this.usuario.nombre+this.usuario.apellido
         this.usuario.imagen = this.picValue
         this.usuario.sede = this.user.location.city
         this.usuario.sede = this.user.location.city
@@ -116,7 +116,7 @@ export class RegisterPage implements OnInit {
           this.usuario.nombre = this.user.name.first
           this.usuario.apellido = this.user.name.last
           this.usuario.run = this.user.id.value
-          this.picValue = 'https://robohash.org/'+this.usuario.run
+          this.picValue = 'https://robohash.org/'+this.usuario.nombre+this.usuario.apellido
           this.usuario.imagen = this.picValue
           this.usuario.sede = this.user.location.city
           this.usuario.sede = this.user.location.city
@@ -134,7 +134,7 @@ export class RegisterPage implements OnInit {
             this.usuario.nombre = this.user.name.first
             this.usuario.apellido = this.user.name.last
             this.usuario.run = this.user.id.value
-            this.picValue = 'https://source.boringavatars.com/beam/120/'+this.usuario.run
+            this.picValue = 'https://source.boringavatars.com/beam/120/'+this.usuario.nombre+this.usuario.apellido
             this.usuario.imagen = this.picValue
             this.usuario.sede = this.user.location.city
             this.usuario.sede = this.user.location.city

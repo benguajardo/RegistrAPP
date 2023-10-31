@@ -21,7 +21,7 @@
       </ion-text>
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input [(ngModel)]="usuario.contrasena" formControlName="password" #contrasena placeholder="Ingrese su contraseña" type="password"></ion-input>
+        <ion-input [(ngModel)]="passValue" formControlName="password" #contrasena placeholder="Ingrese su contraseña" type="password"></ion-input>
       </ion-item>
       <!-- Si la contraseña está vacía -->
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')">

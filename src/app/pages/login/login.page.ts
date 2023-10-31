@@ -51,15 +51,12 @@ export class LoginPage implements OnInit {
               } 
 
   ngOnInit() {
-    //AQUI SE ABRE EL MODAL DE TERMINOS Y CONDICIONES PQ NO QUEREMOS HACER UNA PÁGINA MÁS
-    //COMO ABRIR UN COMPONENTE
-    this.usuariosrandom.getRandomUser().subscribe(
-      (data) => {
-        this.user = data.results[0] //console.log(this.user)
-        this.emailValue = this.user.email
-        this.passValue = this.user.login.password
-      })
-    console.log('users',this.listaUsuarios)
+    this.passValue=''
+    this.emailValue=''
+  }
+  ionViewWillEnter() {
+    this.passValue=''
+    this.emailValue=''
   }
 
   usuarioIniciado : usuarioIniciado [] = [];
@@ -75,6 +72,7 @@ export class LoginPage implements OnInit {
   }
 
   login(correo: any, contrasena: any) {
+    contrasena = this.passValue
     if (!correo || !contrasena) {
       this.mensaje("Debe completar todos los campos.");
       return;
