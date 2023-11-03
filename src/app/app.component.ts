@@ -15,6 +15,7 @@ export class AppComponent {
     { title: 'Perfil', url: '/profile', icon: 'person' },
     { title: 'Clases', url: '/clases', icon: 'book' },
     { title: 'listado', url: '/listado', icon: 'book' },
+    { title: 'listado', url: '/apiHome', icon: 'book' },
   ];
   
   public apiPages = [

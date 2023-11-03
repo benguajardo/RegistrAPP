@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IJugador } from 'src/app/interfaces/ijugador';
+import { IUsuario } from 'src/app/interfaces/iusuario';
 import { JugadorService } from 'src/app/services/api/jugador.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 
 @Component({
   selector: 'app-detail',
@@ -9,16 +12,18 @@ import { JugadorService } from 'src/app/services/api/jugador.service';
 })
 export class DetailPage implements OnInit {
   
-  usuario ={
+  usuario: IUsuario ={
+    id: '',
     run: '2222',
     dv: "1",
     nombre: "dsasdads",
     apellido: "saddsas",
     docente: false,
     correo: "ni.canalesm@duocuc.cl",
-    contraseña: "nico123",
-    carrera: 1,
-    sede: 1
+    contrasena: "nico123",
+    carrera: '',
+    sede: '',
+    imagen: ''
   }
 
   sede = {
@@ -29,7 +34,9 @@ export class DetailPage implements OnInit {
 
   constructor(
     private router : Router,
-    private apiService: JugadorService
+    private firestore: FirestoreService,
+    private apiService: JugadorService,
+    private route : ActivatedRoute
   ) { }
 
   
@@ -58,7 +65,7 @@ export class DetailPage implements OnInit {
   getId(){
     let url = this.router.url
     let aux = url.split("/",3)
-    let id = parseInt(aux[2])
+    let id = aux[2]
     return id
   }
 
@@ -66,20 +73,27 @@ export class DetailPage implements OnInit {
     this.getJugador(this.getId())
   }
 
-  getJugador(id: number){
-    this.apiService.getJugador(id).subscribe((resp:any) => {
-      this.usuario ={
-        run: resp[0].run,
-        dv: resp[0].dv,
-        nombre: resp[0].nombre,
-        apellido: resp[0].apellido,
-        docente: resp[0].docente,
-        correo: resp[0].correo,
-        contraseña: resp[0].contraseña,
-        carrera: resp[0].carrera,
-        sede: resp[0].sede
-      }
-    })
+  getJugador(id: string){
+    // this.apiService.getJugador(id).subscribe((resp:any) => {
+    //   this.usuario ={
+    //     run: resp[0].run,
+    //     dv: resp[0].dv,
+    //     nombre: resp[0].nombre,
+    //     apellido: resp[0].apellido,
+    //     docente: resp[0].docente,
+    //     correo: resp[0].correo,
+    //     contraseña: resp[0].contraseña,
+    //     carrera: resp[0].carrera,
+    //     sede: resp[0].sede
+    //   }
+    // })
+    const usuarioID = this.route.snapshot.paramMap.get('id');
+
+    if (usuarioID){
+      this.firestore.getUsuarioId('Usuarios',usuarioID).subscribe((usuario)=>{
+        this.usuario = usuario || {} as IUsuario
+      })
+    }
   }
 
   deleteJugador(){

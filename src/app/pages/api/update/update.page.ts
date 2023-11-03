@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IJugador } from 'src/app/interfaces/ijugador';
+import { IUsuario } from 'src/app/interfaces/iusuario';
 import { JugadorService } from 'src/app/services/api/jugador.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 
 @Component({
   selector: 'app-update',
@@ -11,15 +13,26 @@ import { JugadorService } from 'src/app/services/api/jugador.service';
 export class UpdatePage implements OnInit {
 
   //TEST
-  jugador ={
-    id: 0,
-    nombre: 'Test',
-    genero: 'Si'
+  usuario: IUsuario ={
+    id: '2222',
+    run: '2222',
+    dv: "1",
+    nombre: "dsasdads",
+    apellido: "saddsas",
+    docente: false,
+    correo: "ni.canalesm@duocuc.cl",
+    contrasena: "nico123",
+    carrera: "1",
+    sede: "1",
+    imagen:"",
+
   }
   
   constructor(
     private apiService: JugadorService,
+    private route: ActivatedRoute,
     private router : Router,
+    private firestore: FirestoreService,
   ) { }
 
   ngOnInit() {
@@ -29,7 +42,7 @@ export class UpdatePage implements OnInit {
   getId(){
     let url = this.router.url
     let aux = url.split("/",3)
-    let id = parseInt(aux[2])
+    let id = aux[2]
     return id
   }
 
@@ -37,18 +50,27 @@ export class UpdatePage implements OnInit {
     this.getJugador(this.getId())
   }
 
-  getJugador(id: number){
-    this.apiService.getJugador(id).subscribe((resp:any) => {
-      this.jugador ={
-        id: resp[0].id,
-        nombre: resp[0].nombre,
-        genero: resp[0].genero
-      }
-    })
+  getJugador(id: string){
+    // this.apiService.getJugador(id).subscribe((resp:any) => {
+    //   this.usuario ={
+    //     id: resp[0].id,
+    //     nombre: resp[0].nombre,
+    //     genero: resp[0].genero
+    //   }
+    // })
+    const usuarioID = this.route.snapshot.paramMap.get('id');
+
+    if (usuarioID){
+      this.firestore.getUsuarioId('Usuarios',usuarioID).subscribe((usuario)=>{
+        this.usuario = usuario || {} as IUsuario
+      })
+    }
   }
 
   updateJugador(){
-    this.apiService.UpdateJugador(this.jugador).subscribe();
-    this.router.navigate(['/apiList'])
+    // this.apiService.UpdateJugador(this.jugador).subscribe();
+    // this.router.navigate(['/apiList'])
+    const usuarioID = this.route.snapshot.paramMap.get('id');
+    this.firestore.updateDocument('Usuarios',usuarioID,this.usuario);
   }
 }

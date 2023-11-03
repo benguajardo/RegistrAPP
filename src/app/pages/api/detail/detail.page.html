@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card *ngIf="usuario">
     <ion-card-header>
       <p>{{usuario.run}} </p>
       <ion-card-title>{{ usuario.nombre }}</ion-card-title>
@@ -14,7 +14,7 @@
     <ion-card-content>
       ola
     </ion-card-content>
-    <ion-button [routerLink]="['/apiUpdate',usuario.run]">Modificar</ion-button>
+    <ion-button *ngIf="usuario" [routerLink]="['/apiUpdate',usuario.run]">Modificar</ion-button>
     <ion-button color="danger" (click)="deleteJugador()">Eliminar</ion-button>
   </ion-card>
 </ion-content>

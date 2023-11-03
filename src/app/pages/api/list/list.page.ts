@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JugadorService } from 'src/app/services/api/jugador.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 
 @Component({
   selector: 'app-list',
@@ -13,12 +14,16 @@ export class ListPage implements OnInit {
 
   constructor(
     private router : Router,
+    private firestore : FirestoreService,
     private jugadoresApi: JugadorService
   ) { }
 
   ngOnInit() {
-    this.jugadoresApi.listaJugadores().subscribe((resp)=>{
-      this.listaJugadores = resp
+    // this.jugadoresApi.listaJugadores().subscribe((resp)=>{
+    //   this.listaJugadores = resp
+    // })
+    this.firestore.getCollection('Usuarios').subscribe((usuarios)=>{
+      this.listaJugadores=usuarios;
     })
   }
 

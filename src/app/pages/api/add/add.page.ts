@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IUsuario } from 'src/app/interfaces/iusuario';
 import { JugadorService } from 'src/app/services/api/jugador.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 
 @Component({
   selector: 'app-add',
@@ -27,7 +28,8 @@ export class AddPage implements OnInit {
   }
 
   constructor(
-    private apiService: JugadorService,
+    // private apiService: JugadorService,
+    private firestore: FirestoreService,
     private router : Router,
   ) { }
 
@@ -37,7 +39,8 @@ export class AddPage implements OnInit {
   addJugador(){
     //Capturar longitud
     
-    this.apiService.AddJugador(this.usuario).subscribe()
+    //this.apiService.AddJugador(this.usuario).subscribe()
+    this.firestore.createDocument('Usuarios',this.usuario)
     this.router.navigate(['/apiList']);
   }
 }
