@@ -2,25 +2,32 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-      <ion-title class="centrado" *ngFor="let user of listaUsuarioIniciado">Bienvenido/a {{ user.nombre }}</ion-title>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-header>  
-    <ion-card *ngFor="let user of listaUsuarioIniciado">
+    <ion-card>
       <ion-item>
         <img alt="Logo" src="../../assets/img/LogoRegistrAPPLight.png" />
       </ion-item>
       <img alt="Silhouette of mountains" src="https://www.nubox.com/hs-fs/hubfs/01%20Brand/Material%20Kit%20de%20Contenidos/Buyer%20Empresa.png?width=600&height=600&name=Buyer%20Empresa.png" />
       <ion-card-header>
+        <ion-card-title>{{ "Bienvenido" | translate }} </ion-card-title>
         <ion-card-title>Conoce tus clases y horarios.</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
         Aquí puedes pasar la asistencia fácilmente escaneando el código QR generado por el docente a cargo de la clase.
       </ion-card-content>
+      <ion-button (click)="logout()">logout</ion-button>
     </ion-card>
   </ion-header>
+  <ion-item>
+    <ion-label></ion-label>
+    <ion-select [(ngModel)]="idioma" (ionChange)="changeLangs($event)"> 
+      <ion-select-option *ngFor="let lang of langs">{{ lang }}</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-content>

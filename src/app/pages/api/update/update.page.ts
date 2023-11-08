@@ -71,6 +71,6 @@ export class UpdatePage implements OnInit {
     // this.apiService.UpdateJugador(this.jugador).subscribe();
     // this.router.navigate(['/apiList'])
     const usuarioID = this.route.snapshot.paramMap.get('id');
-    this.firestore.updateDocument('Usuarios',usuarioID,this.usuario);
+    // this.firestore.updateDocument('Usuarios',usuarioID,this.usuario);
   }
 }

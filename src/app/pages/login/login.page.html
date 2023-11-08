@@ -33,7 +33,8 @@
       </ion-text>
   </ion-card-content>
   <ion-buttons class="centrado2">
-    <ion-button [disabled]="!loginForm.valid" (click)="login(correo.value, contrasena.value)" style="color: rgb(255, 208, 0);" fill="clear">Ingresar</ion-button>
+    <ion-button [disabled]="!loginForm.valid" (click)="login2(correo.value, contrasena.value)" style="color: rgb(255, 208, 0);" fill="clear">Ingresar</ion-button>
+    <ion-button [disabled]="!loginForm.valid" (click)="register(correo.value, contrasena.value)" style="color: rgb(255, 208, 0);" fill="clear">reg</ion-button>
     <ion-button style="color: rgb(0, 17, 255);" fill="clear" [routerLink]="['/register']">Importar cuentas</ion-button>
   </ion-buttons>
 </ion-card>

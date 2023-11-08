@@ -7,6 +7,7 @@ import { UsuariosrandomService } from 'src/app/services/usuariosrandom.service';
 import { usuarioIniciado } from '../profile/usuarios.model';
 import { ApiService } from 'src/app/services/api/api.service';
 import { IUsuario } from 'src/app/interfaces/iusuario';
+import { AuthService } from 'src/app/services/firebase/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -42,6 +43,7 @@ export class LoginPage implements OnInit {
               private usuariosrandom: UsuariosrandomService,
               private formBuilder: FormBuilder,
               private apiService: ApiService,
+              private authService: AuthService,
               ){
                 this.loginForm = this.formBuilder.group({
                   email: ['', [Validators.required]],
@@ -53,7 +55,16 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.passValue=''
     this.emailValue=''
+    this.authService.checkAuth().then((user)=>{
+      if(user){
+        this.router.navigate(['home']);
+      }
+    })
+    .catch((error) =>{
+      console.log('Error en autenticación:',error);
+    });
   }
+
   ionViewWillEnter() {
     this.passValue=''
     this.emailValue=''
@@ -69,6 +80,12 @@ export class LoginPage implements OnInit {
       position: 'bottom'
     });
     toast.present()
+  }
+  
+  login2(user:any, pass: any){
+    this.authService.login(user,pass);
+    //if de error
+    
   }
 
   login(correo: any, contrasena: any) {
@@ -101,5 +118,9 @@ export class LoginPage implements OnInit {
         this.mensaje("Credenciales inválidas. Intente nuevamente.");
       }
     })
+  }
+
+  register(correo: any, pass: any){
+    this.authService.register(correo,pass);
   }
 }
