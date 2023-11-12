@@ -6,6 +6,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { usuarioIniciado } from '../../profile/usuarios.model';
 import { IClase } from 'src/app/interfaces/iclase';
 import { ApiService } from 'src/app/services/api/api.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 
 @Component({
   selector: 'app-crearclase',
@@ -16,7 +17,8 @@ export class CrearclasePage implements OnInit {
   
   constructor(private ClaseService : ClaseService, private router: Router, private toastController:ToastController,
               private usuarioService : UsuarioService,
-              private apiService: ApiService) { }
+              private apiService: ApiService,
+              private firestore : FirestoreService) { }
   listaUsuarioIniciado :usuarioIniciado[] = []
   
   clase: IClase ={
@@ -33,16 +35,10 @@ export class CrearclasePage implements OnInit {
   }
 
   ngOnInit() {
-    
-    if(this.usuarioService.usuarioIniciado.length != 1){
-      this.router.navigate(['/login'])
-    }
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
   }
   ionViewWillEnter(){
-    if(this.usuarioService.usuarioIniciado.length != 1){
-      this.router.navigate(['/login'])
-    }
+    
   }
   async mensaje(mensaje: string){
     const toast = await this.toastController.create({
@@ -54,7 +50,7 @@ export class CrearclasePage implements OnInit {
   }
   
   addClase(){
-    this.apiService.addClase(this.clase).subscribe()
+    this.firestore.createClase('Clases',this.clase)
     this.router.navigate(['/clases']);
   }
 }

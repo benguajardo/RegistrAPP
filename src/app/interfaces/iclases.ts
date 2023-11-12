@@ -1,5 +1,5 @@
 export interface IClases {
-    id: number,
+    id: any,
     sigla: String,
     seccion: String,
     jornada: String,

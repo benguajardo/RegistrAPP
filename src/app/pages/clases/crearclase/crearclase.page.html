@@ -8,9 +8,8 @@
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let user of listaUsuarioIniciado">
-
-  <ion-card *ngIf="user.docente">
+  <div>
+  <ion-card>
     <img alt="Silhouette of mountains" src="../../../assets/img/LogoRegistrAPPLight.png" />
       <ion-card-content>
         <ion-card>
@@ -40,7 +39,7 @@
               <ion-input #sala type="text" [(ngModel)]="clase.sala" label="Sala" labelPlacement="floating" placeholder="Lc8"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #docente type="text" [(ngModel)]="clase.docente" label="Docente" value="{{user.nombre}}" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+              <ion-input #docente type="text" [(ngModel)]="clase.docente" label="Docente" value="" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
             </ion-item>
            <ion-button color="secondary" (click)="addClase()">Crear Clase</ion-button>
           </ion-card-content>

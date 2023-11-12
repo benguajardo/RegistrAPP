@@ -19,16 +19,16 @@
             <ion-card-subtitle>Docente: {{ clase.docente }}</ion-card-subtitle>
             <ion-card-subtitle>Fecha: {{ clase.dia }}</ion-card-subtitle>
             <ion-card-subtitle>Hora Inicio: {{ clase.horaInicio }} Hora Término: {{ clase.horaTermino }}</ion-card-subtitle>
-            <div class="container" *ngFor="let user of listaUsuarioIniciado">
-              <ion-button *ngIf="user.docente" (click)="deleteClase()" color="danger"> Eliminar Clase
+            <div class="container">
+              <ion-button (click)="deleteClase()" color="danger"> Eliminar Clase
                 <ion-icon name="trash-outline"></ion-icon>
               </ion-button>
                 
             </div>
         </ion-card-header>
         <ion-card-content>
-            <div class="container" *ngFor="let user of listaUsuarioIniciado">
-              <div class="container" *ngIf="user.docente">
+            <div class="container">
+              <div class="container">
                 <div class="div" *ngIf="codQR.id != clase.id">
                   <ion-button (click)="cargarData(clase.id,clase.sala,clase.sigla, clase.seccion, clase.sede)" color="warning"> Generar Código QR
                     <ion-icon name="add-outline"></ion-icon>
@@ -38,7 +38,7 @@
               </div>
               <ion-accordion-group>
                 <ion-accordion value="first">
-                  <ion-item slot="header" color="success" *ngIf="user.docente==false">
+                  <ion-item slot="header" color="success" >
                     <ion-label>Escanear código QR <ion-icon name="camera"></ion-icon></ion-label>
                   </ion-item>
                   <div class="ion-padding" slot="content">
@@ -46,14 +46,14 @@
                     </div>
                   </ion-accordion>
               </ion-accordion-group>
-              <div *ngIf="user.docente==false">
+              <div>
                 
                 <div >
                   <div *ngIf="codQR.idClase == clase.id">
                     <ion-item> <script>console.log(codQR.imagen)</script>
                       <ion-input #codigo placeholder="Ingrese el código"></ion-input>
                     </ion-item>
-                    <ion-button (click)="marcarAsistencia(codigo.value, codQR.imagen, codQR.idClase, user.rut, user.nombre, user.apellido)" color="primary"> Marcar asistencia
+                    <ion-button (click)="marcarAsistencia(codigo.value, codQR.imagen, codQR.idClase, '', '', '')" color="primary"> Marcar asistencia
                     </ion-button>
                   </div>
                 </div>

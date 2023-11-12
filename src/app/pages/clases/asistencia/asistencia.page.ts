@@ -40,9 +40,7 @@ export class AsistenciaPage implements OnInit {
   listaUsuario : any = [];
 
   ngOnInit() {
-    if(this.usuarioService.usuarioIniciado.length != 1){
-      this.router.navigate(['/login'])
-    }
+    
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado();
     this.listar();
     this.listaUser();
@@ -50,9 +48,7 @@ export class AsistenciaPage implements OnInit {
   }
   
   ionViewWillEnter(){
-    if(this.usuarioService.usuarioIniciado.length != 1){
-      this.router.navigate(['/login'])
-    }
+    
     this.listar();
     this.listaUser();
     this.getClase(this.getId())

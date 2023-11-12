@@ -41,9 +41,13 @@ export class DetailPage implements OnInit {
 
   
   ngOnInit() {
-    
+    this.getJugador(this.getId())
   }
-  
+
+  ionViewWillEnter(){
+    this.getJugador(this.getId())
+  }
+
   listar(){
     this.apiService.listaJugadores().subscribe((resp) =>{
       let aux = JSON.stringify(resp)
@@ -60,8 +64,6 @@ export class DetailPage implements OnInit {
     })
   }
 
-
-
   getId(){
     let url = this.router.url
     let aux = url.split("/",3)
@@ -69,24 +71,9 @@ export class DetailPage implements OnInit {
     return id
   }
 
-  ionViewWillEnter(){
-    this.getJugador(this.getId())
-  }
+  
 
   getJugador(id: string){
-    // this.apiService.getJugador(id).subscribe((resp:any) => {
-    //   this.usuario ={
-    //     run: resp[0].run,
-    //     dv: resp[0].dv,
-    //     nombre: resp[0].nombre,
-    //     apellido: resp[0].apellido,
-    //     docente: resp[0].docente,
-    //     correo: resp[0].correo,
-    //     contraseña: resp[0].contraseña,
-    //     carrera: resp[0].carrera,
-    //     sede: resp[0].sede
-    //   }
-    // })
     const usuarioID = this.route.snapshot.paramMap.get('id');
 
     if (usuarioID){
@@ -97,6 +84,7 @@ export class DetailPage implements OnInit {
   }
 
   deleteJugador(){
+    
     this.apiService.DeleteJugador(this.usuario).subscribe();
     this.router.navigate(['/apiList'])
   }

@@ -42,7 +42,7 @@ export class AuthService {
       this.mensaje("Usuario registrado con éxito");
     } catch (error) {
       console.error('Error en registro:',error);
-      this.mensaje("pinwino");
+      this.mensaje("error");
     }
     
   }

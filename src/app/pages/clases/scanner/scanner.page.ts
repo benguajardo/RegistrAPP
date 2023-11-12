@@ -12,6 +12,9 @@ import { ApiService } from 'src/app/services/api/api.service';
 import { IQrCode } from 'src/app/interfaces/iqr-code';
 import { IPresente } from 'src/app/interfaces/ipresente';
 import { IQrCodes } from 'src/app/interfaces/iqr-codes';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
+import { IClase } from 'src/app/interfaces/iclase';
+import { IClases } from 'src/app/interfaces/iclases';
 
 // import { Camera } from '@capacitor/camera';
 
@@ -46,12 +49,11 @@ export class ScannerPage implements OnInit {
               private usuarioService : UsuarioService,
               private qrcodeService : QrcodeService,
               private alertController: AlertController,
-              private apiService:ApiService) { }
+              private apiService:ApiService,
+              private firestore : FirestoreService,
+              private route : ActivatedRoute) { }
 
   ngOnInit() {
-    if(this.usuarioService.usuarioIniciado.length != 1){
-      this.router.navigate(['/login'])
-    }
     this.listarQR()
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
     this.listaEstudiantePresente = this.usuarioService.GetEstudiantePresente()
@@ -61,9 +63,6 @@ export class ScannerPage implements OnInit {
   }
 
   ionViewWillEnter(){
-    if(this.usuarioService.usuarioIniciado.length != 1){
-      this.router.navigate(['/login'])
-    }
     console.log(this.listaQR)
     this.getClase(this.getId())
   }
@@ -76,7 +75,7 @@ export class ScannerPage implements OnInit {
     })
   }
 
-  clase ={
+  clase : IClases ={
     id: '',
     sigla: '',
     seccion: '',
@@ -99,52 +98,41 @@ export class ScannerPage implements OnInit {
   getId() {
     let url = this.router.url
     let aux = url.split("/",3)
-    let id = parseInt(aux[2])
+    let id = aux[2]
     return id
   }
-  getQR(id:number){
-    this.apiService.getQR(id).subscribe((resp:any) => {
-      this.codQR = {
-        id: resp[0].id,
-        idClase: resp[0].idClase,
-        imagen: resp[0].imagen
-      }
-    })
+
+  getQR(id:any){
+    if (id){
+      this.firestore.getQRId('QR',id).subscribe((qr)=>{
+        this.qr = qr || {} as IQrCodes
+      })
+    }
   }
-  getClase(id: Number) {
-    this.apiService.getClase(id).subscribe((resp:any) => {
-      this.clase = {
-        id: resp[0].id,
-        sigla: resp[0].sigla,
-        seccion: resp[0].seccion,
-        jornada: resp[0].jornada,
-        nombre: resp[0].nombre,
-        docente: resp[0].docente,
-        dia: resp[0].dia,
-        horaInicio: resp[0].horaInicio,
-        horaTermino: resp[0].horaTermino,
-        sede: resp[0].sede,
-        sala: resp[0].sala,
-        
-      }
-    })
+
+  getClase(id: any) {
+    if (id){
+      this.firestore.getClaseId('Clases',id).subscribe((clase)=>{
+        this.clase = clase || {} as IClases
+      })
+    }
   }
 
   deleteClase() {
-    this.apiService.deleteClase(this.clase.id).subscribe();
-    this.apiService.deleteQR(this.clase.id).subscribe();
-    this.router.navigate(['/clases'])
+    const classId = this.route.snapshot.paramMap.get('id')
+    if (classId){
+      this.firestore.deleteClase('Clases',classId);
+      this.router.navigate(['/clases'])
+    }
   }
 
   qr : IQrCodes ={
-    id: '',
+    id: this.clase.id,
     idClase: '',
-    imagen: '',
-    
+    imagen: this.clase.id,
   }
  
   async cargarData(p_clase: any, p_sala: any, p_asignatura: any, p_seccion: any, p_sede: any) {
-    
     const alerta = await this.alertController.create({
       header: 'Generar código',
       message: 'Quiere generar un código QR?',
@@ -153,11 +141,10 @@ export class ScannerPage implements OnInit {
           text: 'Cargar',
           handler: () => {
             const url = `https://api.qrserver.com/v1/create-qr-code/?data=${p_clase + '-' + p_sala + '-' + p_asignatura + '-' + p_seccion + '-' + p_sede +'-'+ this.listaQR.length}&size=150x150`
-            this.qr.id= p_clase;
-            this.qr.imagen= url;
-            this.qr.idClase= p_clase;
-            this.apiService.addQR(this.qr).subscribe()
-            // this.router.navigate(['/clases']);
+            
+            this.qr.imagen = url;
+            console.log(this.qr)
+            // this.firestore.createQR('QR',this.qr)
             this.mensajeToast("Código generado!");
           }
         },
@@ -232,10 +219,7 @@ export class ScannerPage implements OnInit {
     let resultado = await alerta.onDidDismiss();
   }
 
-  // addQR(idclase: any, qrcode: any){
-  //   this.qrcodeService.addClase(idclase.value, qrcode.value)
-  //   this.mensajeToast("Código cargado con éxito!");
-  // }
+ 
 
   hora = new Date()
   

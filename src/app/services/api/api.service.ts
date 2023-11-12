@@ -90,7 +90,7 @@ export class ApiService {
   }
   
 
-  // CRUD QR
+  // CRUD Presente
   listaPresentes():Observable<IPresentes>{
     return this.httpClient.get<IPresentes>(`${this.apiURL}estudiantePresente`);
   }
