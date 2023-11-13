@@ -1,3 +1,146 @@
 {
-    "Bienvenido" : "Willkommen"
+    "Términos y Condiciones" : "Geschäftsbedingungen",
+    "Última actualización: 17 de octubre de 2023": "Letzte Aktualisierung: 17. Oktober 2023",
+    "Por favor, lea estos términos y condiciones detenidamente antes de utilizar Nuestro Servicio." :     
+    "Bitte lesen Sie diese Allgemeinen Geschäftsbedingungen sorgfältig durch, bevor Sie unseren Service nutzen.",
+    "Interpretación y Definiciones" : "Interpretation und Definitionen",
+    "Interpretación": "Interpretation",
+    "Las palabras cuya letra inicial está en mayúscula tienen significados definidos bajo las siguientes condiciones. Las siguientes definiciones tendrán el mismo significado, independientemente de si aparecen en singular o en plural.":
+    "Wörter, deren Anfangsbuchstaben groß geschrieben werden, haben eine Bedeutung, die unter den folgenden Bedingungen definiert ist. Die folgenden Definitionen haben die gleiche Bedeutung, unabhängig davon, ob sie im Singular oder Plural erscheinen.",
+    "Definiciones": "Definitionen",
+    "Para los fines de estos Términos y Condiciones:": "Für die Zwecke dieser Allgemeinen Geschäftsbedingungen:",
+    "Aplicación": "Anwendung",
+    "significa el programa de software proporcionado por la Compañía descargado por Usted en cualquier dispositivo electrónico, denominado Registrapp.":
+    "bezeichnet das vom Unternehmen bereitgestellte Softwareprogramm namens Registrapp, das Sie auf ein elektronisches Gerät heruntergeladen haben.",
+    "Tienda de Aplicaciones": "Appstore",
+    "significa el servicio de distribución digital operado y desarrollado por Apple Inc. (Apple App Store) o Google Inc. (Google Play Store) en el que se ha descargado la Aplicación.":
+    "bezeichnet den von Apple Inc. (Apple App Store) oder Google Inc. (Google Play Store) betriebenen und entwickelten digitalen Vertriebsdienst, auf den die Anwendung heruntergeladen wurde.",
+    "Afiliado": "Affiliate",
+    "significa una entidad que controla, es controlada por o está bajo el control común de una parte, donde control significa la propiedad del 50% o más de las acciones, intereses de capital u otros valores con derecho a voto para la elección de directores u otra autoridad de gestión.":
+    "bezeichnet ein Unternehmen, das eine Partei kontrolliert, von dieser kontrolliert wird oder unter gemeinsamer Kontrolle mit dieser steht, wobei „Kontrolle“ den Besitz von 50 % oder mehr der Anteile, Beteiligungen oder anderen Wertpapiere bedeutet, die zur Wahl von Direktoren oder anderen Verwaltungsbefugnissen berechtigt sind.",
+    "País": "Land",
+    "se refiere a: Chile": "bezieht sich auf: Chile",
+    "Compañía": "Unternehmen",
+    "(referida como 'la Compañía', 'Nosotros', 'Nos' o 'Nuestro' en este Acuerdo) se refiere a Registrapp.":
+    "(in dieser Vereinbarung als „das Unternehmen“, „wir“, „uns“ oder „unser“ bezeichnet) bezieht sich auf Registrapp.",
+    "Dispositivo": "Gerät",
+    "significa cualquier dispositivo que puede acceder al Servicio, como una computadora, un teléfono celular o una tableta digital.":
+    "bezeichnet jedes Gerät, das auf den Dienst zugreifen kann, z. B. einen Computer, ein Mobiltelefon oder ein digitales Tablet.",
+    "Servicio": "Service",
+    "se refiere a la Aplicación.": "bezieht sich auf die Anwendung.",
+    "(también referidos como 'Términos') significan estos Términos y Condiciones que conforman el acuerdo completo entre Usted y la Compañía con respecto al uso del Servicio.":
+    "(auch als „Bedingungen“ bezeichnet) bezeichnet diese Allgemeinen Geschäftsbedingungen, die die gesamte Vereinbarung zwischen Ihnen und dem Unternehmen hinsichtlich der Nutzung des Dienstes bilden.",
+    "Servicio de Medios Sociales de Terceros":"Social-Media-Dienst eines Drittanbieters",
+    "significa cualquier servicio o contenido (incluidos datos, información, productos o servicios) proporcionado por un tercero que puede ser mostrado, incluido o puesto a disposición a través del Servicio.":
+    "bezeichnet alle von Dritten bereitgestellten Dienste oder Inhalte (einschließlich Daten, Informationen, Produkte oder Dienstleistungen), die über den Dienst angezeigt, eingebunden oder verfügbar gemacht werden können.",
+    "Usted": "Du",
+    "significa el individuo que accede o utiliza el Servicio, o la empresa u otra entidad legal en nombre de la cual dicho individuo está accediendo o utilizando el Servicio, según corresponda.":
+    "bezeichnet die Person, die auf den Dienst zugreift oder ihn nutzt, oder das Unternehmen oder eine andere juristische Person, in deren Namen diese Person auf den Dienst zugreift oder ihn nutzt, je nach Fall.",
+    "Reconocimiento":"Erkennung",
+    "Estos son los Términos y Condiciones que rigen el uso de este Servicio y el acuerdo que opera entre Usted y la Compañía. Estos Términos y Condiciones establecen los derechos y obligaciones de todos los usuarios con respecto al uso del Servicio.":
+    "Dies sind die Allgemeinen Geschäftsbedingungen, die die Nutzung dieses Dienstes und die Vereinbarung zwischen Ihnen und dem Unternehmen regeln. Diese Allgemeinen Geschäftsbedingungen legen die Rechte und Pflichten aller Benutzer in Bezug auf die Nutzung des Dienstes fest.",
+    "Su acceso y uso del Servicio están condicionados a su aceptación y cumplimiento de estos Términos y Condiciones. Estos Términos y Condiciones se aplican a todos los visitantes, usuarios y otras personas que acceden o utilizan el Servicio.":
+    "Ihr Zugang und Ihre Nutzung des Dienstes setzen voraus, dass Sie diese Allgemeinen Geschäftsbedingungen akzeptieren und einhalten. Diese Allgemeinen Geschäftsbedingungen gelten für alle Besucher, Benutzer und andere, die auf den Dienst zugreifen oder ihn nutzen.",
+    "Al acceder o utilizar el Servicio, usted acepta quedar vinculado por estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos Términos y Condiciones, no podrá acceder al Servicio.":
+    "Indem Sie auf den Dienst zugreifen oder ihn nutzen, erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden. Wenn Sie mit irgendeinem Teil dieser Allgemeinen Geschäftsbedingungen nicht einverstanden sind, können Sie nicht auf den Dienst zugreifen.",
+    "Usted declara que tiene más de 18 años. La Compañía no permite que las personas menores de 18 años utilicen el Servicio.":
+    "Sie erklären, dass Sie über 18 Jahre alt sind. Das Unternehmen gestattet Personen unter 18 Jahren nicht, den Dienst zu nutzen.",
+    "Su acceso y uso del Servicio también están condicionados a su aceptación y cumplimiento de la Política de Privacidad de la Compañía. Nuestra Política de Privacidad describe nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de su información personal cuando utiliza la Aplicación o el Sitio web y le informa sobre sus derechos de privacidad y cómo la ley lo protege. Lea nuestra Política de Privacidad detenidamente antes de utilizar nuestro Servicio.":
+    "Ihr Zugang und Ihre Nutzung des Dienstes hängen auch davon ab, dass Sie die Datenschutzrichtlinie des Unternehmens akzeptieren und einhalten. Unsere Datenschutzrichtlinie beschreibt unsere Richtlinien und Verfahren zur Erhebung, Nutzung und Offenlegung Ihrer persönlichen Daten, wenn Sie die Anwendung oder die Website nutzen, und informiert Sie über Ihre Datenschutzrechte und darüber, wie das Gesetz Sie schützt. Bitte lesen Sie unsere Datenschutzrichtlinie sorgfältig durch, bevor Sie unseren Service nutzen.",
+    "Enlaces a Otros Sitios Web":"Links zu anderen Websites",
+    "Nuestro Servicio puede contener enlaces a sitios web o servicios de terceros que no son propiedad ni están controlados por la Compañía.":
+    "Unser Dienst kann Links zu Websites oder Diensten Dritter enthalten, die nicht Eigentum des Unternehmens sind oder von diesem kontrolliert werden.",
+    "La Compañía no tiene control sobre, y no asume responsabilidad por, el contenido, las políticas de privacidad o las prácticas de ningún sitio web o servicio de terceros. Además, usted reconoce y acepta que la Compañía no será responsable ni tendrá responsabilidad, directa o indirectamente, por cualquier daño o pérdida causada o presuntamente causada por o en relación con el uso o la dependencia de dicho contenido, bienes o servicios disponibles en o a través de dichos sitios web o servicios.":
+    "Das Unternehmen hat keine Kontrolle über die Inhalte, Datenschutzrichtlinien oder Praktiken von Websites oder Diensten Dritter und übernimmt keine Verantwortung dafür. Sie erkennen ferner an und stimmen zu, dass das Unternehmen weder direkt noch indirekt für Schäden oder Verluste verantwortlich oder haftbar ist, die durch oder im Zusammenhang mit der Nutzung oder dem Vertrauen auf solche Inhalte, Waren oder Dienstleistungen, die auf oder verfügbar sind, verursacht oder angeblich verursacht werden über solche Websites oder Dienste.",
+    "Le recomendamos encarecidamente que lea los términos y condiciones y las políticas de privacidad de cualquier sitio web o servicio de terceros que visite.":
+    "Wir empfehlen Ihnen dringend, die Allgemeinen Geschäftsbedingungen und Datenschutzrichtlinien aller Websites oder Dienste Dritter zu lesen, die Sie besuchen.",
+    "Terminación": "Beendigung",
+    "Podemos terminar o suspender su acceso de inmediato, sin previo aviso ni responsabilidad, por cualquier motivo, incluso, sin limitación, si usted incumple estos Términos y Condiciones.":
+    "Wir können Ihren Zugang ohne vorherige Ankündigung oder Haftung aus beliebigem Grund sofort kündigen oder sperren, insbesondere wenn Sie gegen diese Allgemeinen Geschäftsbedingungen verstoßen.",
+    "Al finalizar, su derecho a utilizar el Servicio cesará de inmediato.": "Mit der Kündigung erlischt Ihr Recht zur Nutzung des Dienstes sofort.",
+    "Límite de Responsabilidad": "Haftungsbeschränkung",
+    "No obstante cualquier daño que usted pueda sufrir, la responsabilidad total de la Compañía y cualquiera de sus proveedores en virtud de cualquier disposición de estos Términos y su recurso exclusivo por todo lo anterior se limitará a la cantidad que realmente haya pagado usted a través del Servicio o 100 USD si no ha comprado nada a través del Servicio.":
+    "Ungeachtet etwaiger Schäden, die Ihnen möglicherweise entstehen, ist die gesamte Haftung des Unternehmens und seiner Lieferanten gemäß einer Bestimmung dieser Bedingungen und Ihr ausschließlicher Rechtsbehelf für alle oben genannten Punkte auf den Betrag beschränkt, den Sie tatsächlich über den Service gezahlt haben. oder 100 USD, wenn Sie nichts über den Service gekauft haben.",
+    "En la medida máxima permitida por la ley aplicable, en ningún caso la Compañía o sus proveedores serán responsables de ningún daño especial, incidental, indirecto o consecuente de ninguna índole (incluidos, entre otros, daños por pérdida de beneficios, pérdida de datos u otra información, interrupción del negocio, lesiones personales, pérdida de privacidad derivada de o de alguna manera relacionada con el uso o la imposibilidad de uso del Servicio, software de terceros y / o hardware de terceros utilizado con el Servicio, o de otro modo en relación con cualquier disposición de estos Términos), incluso si se ha informado a la Compañía o a cualquier proveedor de la posibilidad de tales daños e incluso si el recurso no cumple con su propósito esencial.":
+    "Soweit gesetzlich zulässig, haften das Unternehmen oder seine Lieferanten in keinem Fall für besondere, zufällige, indirekte oder Folgeschäden jeglicher Art (einschließlich, aber nicht beschränkt auf Schäden aus entgangenem Gewinn, Datenverlust oder anderen). Informationen, Betriebsunterbrechungen, Personenschäden, Verlust der Privatsphäre, die sich aus der Nutzung oder Unmöglichkeit der Nutzung des Dienstes, der mit dem Dienst verwendeten Software und/oder Hardware Dritter oder anderweitig im Zusammenhang mit der Bereitstellung von ergeben oder damit in Zusammenhang stehen dieser Bedingungen), selbst wenn das Unternehmen oder ein Lieferant auf die Möglichkeit solcher Schäden hingewiesen wurde und selbst wenn die Abhilfe ihren wesentlichen Zweck verfehlt.",
+    "Algunos estados no permiten la exclusión de garantías implícitas o la limitación de responsabilidad por daños incidentales o consecuentes, lo que significa que algunas de las limitaciones anteriores pueden no aplicarse. En estos estados, la responsabilidad de cada parte se limitará en la mayor medida permitida por la ley.":
+    "In einigen Staaten ist der Ausschluss stillschweigender Garantien oder die Haftungsbeschränkung für Neben- oder Folgeschäden nicht zulässig, was bedeutet, dass einige der oben genannten Einschränkungen möglicherweise nicht gelten. In diesen Staaten ist die Haftung jeder Partei auf den größtmöglichen gesetzlich zulässigen Umfang beschränkt.",
+    "Renuncia de 'TAL CUAL' y 'SEGÚN DISPONIBILIDAD'": "Haftungsausschluss „WIE BESEHEN“ und „WIE VERFÜGBAR“.",
+    "El Servicio se proporciona 'TAL CUAL' y 'SEGÚN DISPONIBILIDAD' y con todos los defectos y defectos sin garantía de ningún tipo. En la medida máxima permitida por la ley aplicable, la Compañía, en su nombre y en nombre de sus Afiliados y sus respectivos licenciantes y proveedores de servicios, renuncia expresamente a todas las garantías, ya sean expresas, implícitas, legales o de otro tipo, con respecto al Servicio, incluidas todas las garantías implícitas de comercialización, aptitud para un propósito particular, título y no infracción, y garantías que pueden surgir del curso de negociación, el curso de ejecución, el uso o la práctica comercial. Sin limitación de lo anterior, la Compañía no proporciona ninguna garantía o compromiso y no hace representación de ningún tipo de que el Servicio cumpla con sus requisitos, logre los resultados previstos, sea compatible o funcione con cualquier otro software, aplicaciones, sistemas o servicios, funcione sin interrupciones, cumpla con los estándares de rendimiento o confiabilidad o sea libre de errores o que se corrijan errores o defectos.":
+    "Der Service wird „WIE BESEHEN“ und „WIE VERFÜGBAR“ und mit allen Fehlern und Mängeln ohne Gewährleistung jeglicher Art bereitgestellt. Soweit gesetzlich zulässig, lehnt das Unternehmen im eigenen Namen und im Namen seiner verbundenen Unternehmen sowie seiner jeweiligen Lizenzgeber und Dienstanbieter ausdrücklich alle Gewährleistungen ab, ob ausdrücklich, stillschweigend, gesetzlich oder anderweitig, in Bezug auf den Dienst. einschließlich aller stillschweigenden Garantien der Marktgängigkeit, der Eignung für einen bestimmten Zweck, des Titels und der Nichtverletzung von Rechten Dritter sowie Garantien, die sich aus der Geschäftsabwicklung, dem Leistungsablauf, der Nutzung oder der Handelspraxis ergeben können. Ohne das Vorstehende einzuschränken, gibt das Unternehmen keine Garantie oder Zusicherung und macht keinerlei Zusicherungen, dass der Dienst Ihren Anforderungen entspricht, die beabsichtigten Ergebnisse erzielt, kompatibel ist oder mit anderer Software, Anwendungen, Systemen oder Diensten funktioniert und ohne Unterbrechungen funktioniert , den Leistungs- oder Zuverlässigkeitsstandards entsprechen oder fehlerfrei sind oder dass Fehler oder Mängel behoben werden.",
+    "Sin limitar lo anterior, ni la Compañía ni ninguno de los proveedores de la compañía hacen ninguna representación o garantía de ningún tipo, expresa o implícita: (i) en cuanto al funcionamiento o la disponibilidad del Servicio, o la información, el contenido y los materiales o productos incluidos en el mismo; (ii) que el Servicio será ininterrumpido o libre de errores; (iii) en cuanto a la precisión, confiabilidad o actualidad de cualquier información o contenido proporcionado a través del Servicio; o (iv) que el Servicio, sus servidores, el contenido o los correos electrónicos enviados desde o en nombre de la Compañía estén libres de virus, scripts, caballos de Troya, gusanos, malware, bombas de tiempo u otros componentes dañinos.":
+    "Ohne das Vorstehende einzuschränken, geben weder das Unternehmen noch seine Anbieter irgendeine ausdrückliche oder stillschweigende Zusicherung oder Garantie ab: (i) in Bezug auf den Betrieb oder die Verfügbarkeit des Dienstes oder der darin enthaltenen Informationen, Inhalte und Materialien oder Produkte darin; (ii) dass der Dienst ununterbrochen oder fehlerfrei ist; (iii) hinsichtlich der Genauigkeit, Zuverlässigkeit oder Aktualität aller über den Dienst bereitgestellten Informationen oder Inhalte; oder (iv) dass der Dienst, seine Server, die Inhalte oder E-Mails, die vom oder im Namen des Unternehmens gesendet werden, frei von Viren, Skripten, Trojanern, Würmern, Malware, Zeitbomben oder anderen schädlichen Komponenten sind.",
+    "Algunas jurisdicciones no permiten la exclusión de ciertos tipos de garantías o limitaciones de derechos legales aplicables a un consumidor, por lo que algunas o todas las limitaciones anteriores pueden no aplicarse a usted. Pero en tal caso, las exclusiones y limitaciones establecidas en esta sección se aplicarán en la medida máxima permitida por la ley aplicable.":
+    "In einigen Gerichtsbarkeiten ist der Ausschluss bestimmter Arten von Garantien oder Einschränkungen der für einen Verbraucher geltenden gesetzlichen Rechte nicht zulässig, sodass einige oder alle der oben genannten Einschränkungen möglicherweise nicht auf Sie zutreffen. In einem solchen Fall gelten jedoch die in diesem Abschnitt dargelegten Ausschlüsse und Beschränkungen im größtmöglichen gesetzlich zulässigen Umfang.",
+    "Ley Aplicable": "Anwendbares Recht",
+    "Las leyes del País, excluyendo sus reglas de conflicto de leyes, regirán estos Términos y su uso del Servicio. Su uso de la Aplicación también puede estar sujeto a otras leyes locales, estatales, nacionales o internacionales.":
+    "Für diese Bedingungen und Ihre Nutzung des Dienstes gelten die Gesetze des Landes, mit Ausnahme der Kollisionsnormen. Ihre Nutzung der Anwendung kann auch anderen lokalen, staatlichen, nationalen oder internationalen Gesetzen unterliegen.",
+    "Resolución de Disputas": "Streitbeilegung",
+    "Si tiene alguna preocupación o disputa sobre el Servicio, acepta intentar resolver la disputa de manera informal poniéndose en contacto con la Compañía.":
+    "Wenn Sie Bedenken oder Streitigkeiten bezüglich des Dienstes haben, erklären Sie sich damit einverstanden, zu versuchen, den Streit informell beizulegen, indem Sie sich an das Unternehmen wenden.",
+    "Para Usuarios de la Unión Europea (UE)": "Für Benutzer in der Europäischen Union (EU)",
+    "Si es un consumidor de la Unión Europea, se beneficiará de cualquier disposición obligatoria de la ley del país en el que resida.":
+    "Wenn Sie ein Verbraucher in der Europäischen Union sind, profitieren Sie von allen zwingenden Bestimmungen des Rechts des Landes, in dem Sie Ihren Wohnsitz haben.",
+    "Cumplimiento Legal en los Estados Unidos": "Rechtskonformität in den Vereinigten Staaten",
+    "Usted declara y garantiza que (i) no se encuentra en un país sujeto al embargo del gobierno de Estados Unidos, ni ha sido designado por el gobierno de Estados Unidos como un país que 'apoya el terrorismo', y (ii) no figura en ninguna lista del gobierno de Estados Unidos de partes prohibidas o restringidas.":
+    "Sie sichern zu und garantieren, dass (i) Sie sich nicht in einem Land befinden, das dem Embargo der US-Regierung unterliegt, noch von der US-Regierung als Land eingestuft wurde, das den Terrorismus unterstützt, und (ii) Sie sich nicht in einem Land befinden, das dem Embargo der US-Regierung unterliegt auf keiner Liste verbotener oder eingeschränkter Parteien der US-Regierung aufgeführt.",
+    "Divisibilidad y Renuncia": "Teilbarkeit und Verzicht",
+    "Divisibilidad": "Teilbarkeit",
+    "Si alguna disposición de estos Términos se considera inaplicable o inválida, dicha disposición se modificará e interpretará para lograr los objetivos de dicha disposición en la mayor medida posible según la ley aplicable, y las disposiciones restantes continuarán en pleno vigor y efecto.":
+    "Sollte sich eine Bestimmung dieser Bedingungen als nicht durchsetzbar oder ungültig erweisen, wird diese Bestimmung geändert und ausgelegt, um die Ziele dieser Bestimmung im größtmöglichen Umfang nach geltendem Recht zu erreichen, und die übrigen Bestimmungen bleiben in vollem Umfang in Kraft und wirksam.",
+    "Renuncia": "Rücktritt", 
+    "Excepto según se establece en este documento, la falta de ejercer un derecho o exigir el cumplimiento de una obligación en virtud de estos Términos no afectará la capacidad de una parte para ejercer dicho derecho o exigir dicho cumplimiento en cualquier momento posterior ni constituirá una renuncia a un incumplimiento posterior.":
+    "Sofern hierin nichts anderes bestimmt ist, hat das Versäumnis, ein Recht auszuüben oder die Erfüllung einer Verpflichtung gemäß diesen Bedingungen zu verlangen, keinen Einfluss auf die Fähigkeit einer Partei, dieses Recht auszuüben oder eine solche Leistung zu einem späteren Zeitpunkt zu verlangen, und stellt auch keinen Verzicht auf einen späteren Verstoß dar.",
+    "Interpretación de la Traducción": "Übersetzungsinterpretation",
+    "Estos Términos y Condiciones pueden haber sido traducidos si los hemos puesto a su disposición en nuestro Servicio.": "Diese Allgemeinen Geschäftsbedingungen wurden möglicherweise übersetzt, wenn wir sie Ihnen in unserem Service zur Verfügung gestellt haben.",
+    "Usted acepta que el texto original en inglés prevalecerá en caso de disputa.": "Sie stimmen zu, dass im Streitfall der englische Originaltext maßgebend ist.",
+    "Modificaciones a Estos Términos y Condiciones" : "Änderungen dieser Allgemeinen Geschäftsbedingungen",
+    "Nos reservamos el derecho, a nuestra entera discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es sustancial, haremos esfuerzos razonables para proporcionar al menos 30 días de aviso antes de que entren en vigor los nuevos términos. Lo que constituye un cambio sustancial se determinará a nuestra entera discreción.":
+    "Wir behalten uns das Recht vor, diese Bedingungen nach eigenem Ermessen jederzeit zu ändern oder zu ersetzen. Wenn eine Überarbeitung wesentlich ist, werden wir angemessene Anstrengungen unternehmen, um Sie mindestens 30 Tage vor dem Inkrafttreten neuer Bedingungen zu benachrichtigen. Was eine wesentliche Änderung darstellt, liegt in unserem alleinigen Ermessen.",
+    "Al continuar accediendo o utilizando nuestro Servicio después de que estas revisiones entren en vigor, acepta quedar vinculado por los términos revisados. Si no está de acuerdo con los nuevos términos, en su totalidad o en parte, deje de utilizar el sitio web y el Servicio.":
+    "Indem Sie nach Inkrafttreten dieser Änderungen weiterhin auf unseren Service zugreifen oder ihn nutzen, erklären Sie sich mit den geänderten Bedingungen einverstanden. Wenn Sie den neuen Bedingungen ganz oder teilweise nicht zustimmen, stellen Sie bitte die Nutzung der Website und des Dienstes ein.",
+    "Contáctenos": "Kontaktiere uns",
+    "Si tiene alguna pregunta sobre estos Términos y Condiciones, puede ponerse en contacto con nosotros:": "Wenn Sie Fragen zu diesen Allgemeinen Geschäftsbedingungen haben, können Sie uns kontaktieren:",
+    "Por correo:": "Per Mail:",
+    "Acepto los términos y condiciones.": "Ich akzeptiere die allgemeinen Geschäftsbedingungen.",
+    "Cerrar" : "Schließen",
+
+    "El correo es requerido": "E-Mail ist erforderlich",
+    "Correo electrónico": "E-Mail",
+    "Inicio de sesión": "Anmeldung",
+    "Contraseña": "Passwort",
+    "La contraseña es requerida": "Passwort wird benötigt",
+    "La contraseña debe poseer 6 caracteres mínimo": "Das Passwort muss mindestens 6 Zeichen lang sein",
+    "Ingresar": "Verbinden",
+    "Registrarse": "Einchecken",
+    "Importar cuentas": "Konten importieren",
+    "Ver términos y condiciones": "Siehe AGB",
+
+
+    "Bienvenido" : "Willkommen",
+    "Conoce tus clases y horarios." : "Kennen Sie Ihre Kurse und Stundenpläne.",
+    "Aquí puedes pasar la asistencia fácilmente escaneando el código QR generado por el docente a cargo de la clase." :
+    "Hier können Sie die Anwesenheit ganz einfach bestehen, indem Sie den vom für die Klasse verantwortlichen Lehrer generierten QR-Code scannen.",
+    "Cerrar sesión": "Abmelden",
+
+    "Docente": "Lehrer",
+    "Estudiante": "Studenten",
+
+    "Configuración": "Einstellung",
+    "Seleccionar idioma" : "Sprache auswählen",
+    "Idioma predeterminado: Español" : "Standardsprache: Spanisch",
+    
+    "Clases": "Klassen",
+    "Crear clase" : "Klasse erstellen",
+    "Ver asistencia" : "Siehe Assistenz",
+
+    "Sigla:" : "Akronym:",
+    "Docente:" : "Lehrer:",
+    "Fecha:" : "Datum:",
+    "Hora Inicio:" : "Startzeit:",
+    "Hora Término:" : "Endzeit:",
+    "Eliminar Clase" : "Klasse löschen:",
+    "Escanear código QR" : "QR-Code scannen",
+    "Marcar asistencia" : "Anwesenheit markieren",
+    "Quitar QR" : "QR entfernen"
 }

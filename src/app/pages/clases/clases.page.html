@@ -2,14 +2,14 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-      <ion-title class="centrado">Clases</ion-title>
+      <ion-title class="centrado">{{"Clases" | translate}}</ion-title>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div>
-    <ion-button [routerLink]="['/clases/crearclase']" color="success" expand="block">Crear Clase <ion-icon name="add-circle"></ion-icon></ion-button>
+    <ion-button [routerLink]="['/clases/crearclase']" color="success" expand="block">{{"Crear clase" | translate}}<ion-icon name="add-circle"></ion-icon></ion-button>
     <div class="contaier" *ngFor="let aux of listaClases">
       <ion-card>
         <app-clasecard [routerLink]="['/clases/', aux.id]"
@@ -20,7 +20,7 @@
           horaInicio= "{{aux.horaInicio}}"
           horaTermino= "{{aux.horaTermino}}"
           ></app-clasecard>
-          <ion-button [routerLink]="['/clases/asistencia/',aux.id]" color="tertiary" expand="block">Ver asistencia <ion-icon name="list"></ion-icon></ion-button>
+          <ion-button [routerLink]="['/clases/asistencia/',aux.id]" color="tertiary" expand="block">{{"Ver asistencia" | translate}}<ion-icon name="list"></ion-icon></ion-button>
       </ion-card>
     </div>
   </div>

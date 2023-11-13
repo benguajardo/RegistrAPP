@@ -3,7 +3,7 @@ import { usuarioIniciado } from './usuarios.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
@@ -16,18 +16,18 @@ export class ProfilePage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private alertController: AlertController, 
     private toastController : ToastController,
-    private router : Router) { }
+    private router : Router,
+    private transService: TranslateService){
+      this.langs = this.transService.getLangs();
+    }
     
   listaUsuarioIniciado : usuarioIniciado [] = [];
+  langs: string[] =[];
   
   ngOnInit() {
-    this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
-    console.log(this.listaUsuarioIniciado)
   }
 
   ionViewWillEnter() {
-    
-    this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
   }
   async mensajeToast(mensaje: string){
     const toast = await this.toastController.create({

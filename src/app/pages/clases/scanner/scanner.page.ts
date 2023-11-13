@@ -15,7 +15,7 @@ import { IQrCodes } from 'src/app/interfaces/iqr-codes';
 import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 import { IClase } from 'src/app/interfaces/iclase';
 import { IClases } from 'src/app/interfaces/iclases';
-
+import { TranslateService } from '@ngx-translate/core';
 // import { Camera } from '@capacitor/camera';
 
 @Component({
@@ -30,7 +30,8 @@ export class ScannerPage implements OnInit {
   listaQR : any = [];
   // clase! : Clase;
   qrcode! :Qrcode;
-  
+  langs: string[] =[];
+
   handleRefresh(event: any) {
     setTimeout(() => {
       this.listarQR()
@@ -51,7 +52,9 @@ export class ScannerPage implements OnInit {
               private alertController: AlertController,
               private apiService:ApiService,
               private firestore : FirestoreService,
-              private route : ActivatedRoute) { }
+              private route : ActivatedRoute,
+              private transService: TranslateService
+              ){this.langs = this.transService.getLangs();}
 
   ngOnInit() {
     this.listarQR()

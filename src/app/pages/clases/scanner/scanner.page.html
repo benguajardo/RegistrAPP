@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button Href="/clases"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>{{ clase.nombre }}</ion-title>
     
@@ -15,12 +15,12 @@
     <ion-card>
         <ion-card-header>
             <ion-card-title>{{ clase.nombre }}</ion-card-title>
-            <ion-card-subtitle>Sigla: {{ clase.sigla }} - {{ clase.seccion }}</ion-card-subtitle>
-            <ion-card-subtitle>Docente: {{ clase.docente }}</ion-card-subtitle>
-            <ion-card-subtitle>Fecha: {{ clase.dia }}</ion-card-subtitle>
-            <ion-card-subtitle>Hora Inicio: {{ clase.horaInicio }} Hora Término: {{ clase.horaTermino }}</ion-card-subtitle>
+            <ion-card-subtitle>{{"Sigla:" | translate}} {{ clase.sigla }} - {{ clase.seccion }}</ion-card-subtitle>
+            <ion-card-subtitle>{{"Docente" | translate}}: {{ clase.docente }}</ion-card-subtitle>
+            <ion-card-subtitle>{{"Fecha:" | translate}} {{ clase.dia }}</ion-card-subtitle>
+            <ion-card-subtitle>{{"Hora Inicio:" | translate}} {{ clase.horaInicio }} {{"Hora Término:" | translate}} {{ clase.horaTermino }}</ion-card-subtitle>
             <div class="container">
-              <ion-button (click)="deleteClase()" color="danger"> Eliminar Clase
+              <ion-button (click)="deleteClase()" color="danger"> {{"Eliminar Clase" | translate}}
                 <ion-icon name="trash-outline"></ion-icon>
               </ion-button>
                 

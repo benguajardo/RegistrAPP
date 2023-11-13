@@ -7,6 +7,7 @@ import { usuarioIniciado } from '../../profile/usuarios.model';
 import { IClase } from 'src/app/interfaces/iclase';
 import { ApiService } from 'src/app/services/api/api.service';
 import { FirestoreService } from 'src/app/services/firebase/firestore.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-crearclase',
@@ -15,10 +16,15 @@ import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 })
 export class CrearclasePage implements OnInit {
   
+  langs: string[] =[];
+
   constructor(private ClaseService : ClaseService, private router: Router, private toastController:ToastController,
               private usuarioService : UsuarioService,
               private apiService: ApiService,
-              private firestore : FirestoreService) { }
+              private firestore : FirestoreService,
+              private transService: TranslateService) {
+                this.langs = this.transService.getLangs();
+              }
   listaUsuarioIniciado :usuarioIniciado[] = []
   
   clase: IClase ={

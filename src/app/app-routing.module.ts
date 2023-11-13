@@ -79,7 +79,11 @@ const routes: Routes = [
   {
     path: 'terms',
     loadChildren: () => import('./pages/terms/terms.module').then( m => m.TermsPageModule)
+  },  {
+    path: 'config',
+    loadChildren: () => import('./pages/config/config.module').then( m => m.ConfigPageModule)
   }
+
 
 ];
 

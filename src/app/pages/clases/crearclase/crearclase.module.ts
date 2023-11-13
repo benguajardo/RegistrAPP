@@ -8,12 +8,15 @@ import { CrearclasePageRoutingModule } from './crearclase-routing.module';
 
 import { CrearclasePage } from './crearclase.page';
 
+import {TranslateModule} from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CrearclasePageRoutingModule
+    CrearclasePageRoutingModule,
+    TranslateModule
   ],
   declarations: [CrearclasePage]
 })
