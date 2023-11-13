@@ -22,7 +22,7 @@ export class AsistenciaPage implements OnInit {
               private toastController: ToastController
   ) { }
   clase : IClases= {
-    id: 0,
+    id: '',
     sigla: '',
     seccion: '',
     jornada: '',

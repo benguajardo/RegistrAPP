@@ -28,9 +28,7 @@ export class ScannerPage implements OnInit {
   listaEstudiantePresente : estudiantePresente[]= [];
   listaUsuarioIniciado : usuarioIniciado [] = [];
   listaQR : any = [];
-  // clase! : Clase;
   qrcode! :Qrcode;
-  
   handleRefresh(event: any) {
     setTimeout(() => {
       this.listarQR()
@@ -53,25 +51,25 @@ export class ScannerPage implements OnInit {
               private firestore : FirestoreService,
               private route : ActivatedRoute) { }
 
+  v_idClase:any;
   ngOnInit() {
     this.listarQR()
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
     this.listaEstudiantePresente = this.usuarioService.GetEstudiantePresente()
     this.getClase(this.getId())
     this.getQR(this.getId())
-    
+    this.v_idClase= this.getId()
   }
-
   ionViewWillEnter(){
     console.log(this.listaQR)
     this.getClase(this.getId())
   }
 
   listarQR() {
-    this.apiService.listaQR().subscribe((resp) => {
-      //console.log(resp)
-      let aux = JSON.stringify(resp)
-      this.listaQR = JSON.parse(aux)
+    this.firestore.getQR('QR').subscribe((QR)=>{
+      let aux = JSON.stringify(QR)
+      this.listaQR=JSON.parse(aux);
+      console.log(this.listaQR[0])
     })
   }
 
@@ -89,10 +87,10 @@ export class ScannerPage implements OnInit {
     sala: ''
   }
   
-   codQR = {
-    id : "",
-    idClase : "",
-    imagen : ""
+   codQR : IQrCodes = {
+    id: '',
+    idClase:'',
+    imagen:''
    }
   
   getId() {
@@ -104,8 +102,8 @@ export class ScannerPage implements OnInit {
 
   getQR(id:any){
     if (id){
-      this.firestore.getQRId('QR',id).subscribe((qr)=>{
-        this.qr = qr || {} as IQrCodes
+      this.firestore.getQR('QR').subscribe((qr)=>{
+        this.listaQR=qr
       })
     }
   }
@@ -118,18 +116,37 @@ export class ScannerPage implements OnInit {
     }
   }
 
-  deleteClase() {
-    const classId = this.route.snapshot.paramMap.get('id')
-    if (classId){
-      this.firestore.deleteClase('Clases',classId);
-      this.router.navigate(['/clases'])
-    }
+  async deleteClase() {
+    const alerta = await this.alertController.create({
+      header: 'Eliminar la clase',
+      message: 'Estás seguro que desea eliminar la clase?',
+      buttons: [
+        {
+          text: 'Eliminar',
+          handler: () => {
+            const classId = this.route.snapshot.paramMap.get('id')
+            if (classId){
+              this.firestore.deleteClase('Clases',classId);
+              this.router.navigate(['/clases'])
+            }
+                  }
+        },
+        {
+          text: 'Cancelar',
+          handler: () => {
+            this.mensajeToast("Acción cancelada!");
+          }
+        }
+      ]
+    });
+    await alerta.present();
+    let resultado = await alerta.onDidDismiss();
   }
 
   qr : IQrCodes ={
-    id: this.clase.id,
+    id: '',
     idClase: '',
-    imagen: this.clase.id,
+    imagen: '',
   }
  
   async cargarData(p_clase: any, p_sala: any, p_asignatura: any, p_seccion: any, p_sede: any) {
@@ -140,11 +157,7 @@ export class ScannerPage implements OnInit {
         {
           text: 'Cargar',
           handler: () => {
-            const url = `https://api.qrserver.com/v1/create-qr-code/?data=${p_clase + '-' + p_sala + '-' + p_asignatura + '-' + p_seccion + '-' + p_sede +'-'+ this.listaQR.length}&size=150x150`
-            
-            this.qr.imagen = url;
-            console.log(this.qr)
-            // this.firestore.createQR('QR',this.qr)
+            this.creaQR(p_clase, p_sala, p_asignatura, p_seccion, p_sede)
             this.mensajeToast("Código generado!");
           }
         },
@@ -167,6 +180,17 @@ export class ScannerPage implements OnInit {
     nombre: "",
     apellido: ""
   }
+
+  creaQR(p_clase: any, p_sala: any, p_asignatura: any, p_seccion: any, p_sede: any){
+    const url = `https://api.qrserver.com/v1/create-qr-code/?data=${p_clase + '-' + p_sala + '-' + p_asignatura + '-' + p_seccion + '-' + p_sede +'-'+ this.listaQR.length}&size=150x150` 
+    const idClase = `${p_clase}` 
+    this.qr.id = this.getId();
+    this.qr.imagen = url;
+    this.qr.idClase=this.getId();
+    this.firestore.createQR('QR',this.qr)
+  }
+
+
   marcarAsistencia(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any){
     if(p_codigo === p_query){
       this.presente.rutEstudiante = rutEstudiante;
@@ -193,7 +217,7 @@ export class ScannerPage implements OnInit {
   }
 
 
-  async deleteQR() {
+  async deleteQR(p_idQR : any) {
     //this.mensajeToast("clase ELIMINADO!");
     const alerta = await this.alertController.create({
       header: 'Eliminar la clase',
@@ -202,9 +226,8 @@ export class ScannerPage implements OnInit {
         {
           text: 'Eliminar',
           handler: () => {
-            this.apiService.deleteQR(this.codQR.id).subscribe()
+            this.firestore.deleteQR('QR',p_idQR)
             this.mensajeToast("QR eliminado!");
-            this.router.navigate(['/clases']);
           }
         },
         {
