@@ -15,8 +15,7 @@ export class AppComponent {
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Perfil', url: '/profile', icon: 'person' },
     { title: 'Clases', url: '/clases', icon: 'book' },
-    { title: 'listado', url: '/listado', icon: 'book' },
-    { title: 'listado', url: '/apiHome', icon: 'book' },
+    { title: 'Configuración', url: '/config', icon: 'settings' },
   ];
   
   public apiPages = [
@@ -35,8 +34,8 @@ export class AppComponent {
     private menuController: MenuController,
     private transService: TranslateService
   ) {
-    this.transService.setDefaultLang('de');
-    this.transService.addLangs(['es','en']);
+    this.transService.setDefaultLang('es');
+    this.transService.addLangs(['en','de']);
   }
 
   mostrarMenu(){

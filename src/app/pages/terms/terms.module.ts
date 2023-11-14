@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { TermsPageRoutingModule } from './terms-routing.module';
 
 import { TermsPage } from './terms.page';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TermsPageRoutingModule
+    TermsPageRoutingModule,
+    TranslateModule
   ],
   declarations: [TermsPage]
 })

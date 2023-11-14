@@ -8,6 +8,7 @@ import { usuarioIniciado } from '../profile/usuarios.model';
 import { ApiService } from 'src/app/services/api/api.service';
 import { IUsuario } from 'src/app/interfaces/iusuario';
 import { AuthService } from 'src/app/services/firebase/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -16,11 +17,12 @@ import { AuthService } from 'src/app/services/firebase/auth.service';
 })
 export class LoginPage implements OnInit {
   
+  langs: string[] =[];
   loginForm: FormGroup // validar formulario
   user: any   //    capturar todo del usuario random
   emailValue?: string //Para capturar el correo del usuario random
   passValue?: string  //Para capturar la contraseña del usuario random
- listaUsuarios: any = [];
+  listaUsuarios: any = [];
 
  usuario : IUsuario ={
   id: '',
@@ -37,20 +39,21 @@ export class LoginPage implements OnInit {
 
 }
 
-  constructor(private toastController: ToastController,
-              private usuarioService: UsuarioService,
-              private router: Router,
-              private usuariosrandom: UsuariosrandomService,
-              private formBuilder: FormBuilder,
-              private apiService: ApiService,
-              private authService: AuthService,
-              ){
-                this.loginForm = this.formBuilder.group({
-                  email: ['', [Validators.required]],
-                  password: ['', [Validators.required, Validators.minLength(1)]]
-                })
-                
-              } 
+constructor(private toastController: ToastController,
+  private usuarioService: UsuarioService,
+  private router: Router,
+  private usuariosrandom: UsuariosrandomService,
+  private formBuilder: FormBuilder,
+  private apiService: ApiService,
+  private authService: AuthService,
+  private transService: TranslateService
+  ){this.langs = this.transService.getLangs();
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(1)]]
+    })
+    
+  } 
 
   ngOnInit() {
     this.passValue=''

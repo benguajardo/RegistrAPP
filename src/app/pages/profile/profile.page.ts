@@ -3,7 +3,8 @@ import { usuarioIniciado } from './usuarios.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
-
+import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from 'src/app/services/firebase/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,10 +17,15 @@ export class ProfilePage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private alertController: AlertController, 
     private toastController : ToastController,
-    private router : Router) { }
+    private router : Router,
+    private auth: AuthService,
+    private transService: TranslateService){
+      this.langs = this.transService.getLangs();
+    }
     
   listaUsuarioIniciado : usuarioIniciado [] = [];
-  
+  langs: string[] =[];
+
   ngOnInit() {
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
     console.log(this.listaUsuarioIniciado)
@@ -64,5 +70,13 @@ export class ProfilePage implements OnInit {
     let resultado = await alerta.onDidDismiss();
   }
 
+  async logout(){
+    try {
+      await this.auth.logout();
+      this.router.navigate(['/login'])
+    } catch (error) {
+      console.error('Error en logout:', Error);
+    }
+  }
 
 }

@@ -3,39 +3,40 @@
   <img alt="Logo" src="../../../assets/img/LogoRegistrAPPLight.png" />
   <ion-card>
     <ion-card-header class="centrado">
-      <ion-card-title>Inicio de sesión</ion-card-title>
+      <ion-card-title>{{"Inicio de sesión" | translate}}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content [formGroup]="loginForm">
       <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input  [(ngModel)]="usuario.correo" formControlName="email" type="email" #correo placeholder="Ingrese su correo"></ion-input>
+        <ion-label position="floating">{{"Correo electrónico" | translate}}</ion-label>
+        <ion-input  [(ngModel)]="usuario.correo" formControlName="email" type="email" #correo placeholder="example@email.com"></ion-input>
       </ion-item>
       <!-- Si el correo está vacío -->
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')">
-        El correo es requerido
+        {{"El correo es requerido" | translate}}
       </ion-text>
       <!-- Si el correo no es un correo -->
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')">
         El correo es inválido
       </ion-text>
       <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input [(ngModel)]="passValue" formControlName="password" #contrasena placeholder="Ingrese su contraseña" type="password"></ion-input>
+        <ion-label position="floating">{{"Contraseña" | translate}}</ion-label>
+        <ion-input [(ngModel)]="passValue" formControlName="password" #contrasena placeholder="" type="password"></ion-input>
       </ion-item>
       <!-- Si la contraseña está vacía -->
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')">
-        La contraseña es requerida
+        {{"La contraseña es requerida" | translate}}
       </ion-text>
       <!-- Si la contraseña tiene menos de 6 caracteres -->
       <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('minlength')">
-        La contraseña debe poseer 6 caracteres mínimo
+        {{"La contraseña debe poseer 6 caracteres mínimo" | translate}}
       </ion-text>
   </ion-card-content>
   <ion-buttons class="centrado2">
-    <ion-button [disabled]="!loginForm.valid" (click)="login2(correo.value, contrasena.value)" style="color: rgb(255, 208, 0);" fill="clear">Ingresar</ion-button>
-    <ion-button [disabled]="!loginForm.valid" (click)="register(correo.value, contrasena.value)" style="color: rgb(255, 208, 0);" fill="clear">reg</ion-button>
-    <ion-button style="color: rgb(0, 17, 255);" fill="clear" [routerLink]="['/register']">Importar cuentas</ion-button>
+    <ion-button [disabled]="!loginForm.valid" (click)="login2(correo.value, contrasena.value)" style="color: rgb(255, 208, 0);" fill="clear">{{"Ingresar" | translate}}</ion-button>
+    <ion-button [disabled]="!loginForm.valid" (click)="register(correo.value, contrasena.value)" style="color: rgb(255, 208, 0);" fill="clear">{{"Registrarse" | translate}}</ion-button>
   </ion-buttons>
+  <ion-button style="color: rgb(0, 17, 255); " fill="clear" [routerLink]="['/register']">{{"Importar cuentas" | translate}}</ion-button>
+  <ion-button style="color: rgb(0, 17, 255);" fill="clear" [routerLink]="['/terms']">{{"Ver términos y condiciones" | translate}}</ion-button>
 </ion-card>
 </ion-content>

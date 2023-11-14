@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-terms',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TermsPage implements OnInit {
   
-  constructor() { }
+  langs: string[] =[];
 
-  ngOnInit() {
+
+  constructor(
+    private transService: TranslateService
+  ) { 
+    this.langs = this.transService.getLangs();
   }
+
+  ngOnInit() {}
 
   aceptaTerminos: boolean = false; // Valor inicial del checkbox
 

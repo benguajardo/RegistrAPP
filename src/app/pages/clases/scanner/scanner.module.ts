@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ScannerPageRoutingModule } from './scanner-routing.module';
 
 import { ScannerPage } from './scanner.page';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ScannerPageRoutingModule
+    ScannerPageRoutingModule,
+    TranslateModule
   ],
   declarations: [ScannerPage]
 })

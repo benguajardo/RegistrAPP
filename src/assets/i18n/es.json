@@ -1,3 +1,148 @@
 {
-    "Bienvenido" : "Bienvenido"
+    "Términos y Condiciones": "Términos y Condiciones",
+    "Última actualización: 17 de octubre de 2023": "Última actualización: 17 de octubre de 2023",
+    "Por favor, lea estos términos y condiciones detenidamente antes de utilizar Nuestro Servicio.": 
+    "Por favor, lea estos términos y condiciones detenidamente antes de utilizar Nuestro Servicio.",
+    "Interpretación y Definiciones" : "Interpretación y Definiciones",
+    "Interpretación": "Interpretación",
+    "Las palabras cuya letra inicial está en mayúscula tienen significados definidos bajo las siguientes condiciones. Las siguientes definiciones tendrán el mismo significado, independientemente de si aparecen en singular o en plural.":
+    "Las palabras cuya letra inicial está en mayúscula tienen significados definidos bajo las siguientes condiciones. Las siguientes definiciones tendrán el mismo significado, independientemente de si aparecen en singular o en plural.",
+    "Definiciones": "Definiciones",
+    "Para los fines de estos Términos y Condiciones:": "Para los fines de estos Términos y Condiciones:",
+    "Aplicación": "Aplicación",
+    "significa el programa de software proporcionado por la Compañía descargado por Usted en cualquier dispositivo electrónico, denominado Registrapp.":
+    "significa el programa de software proporcionado por la Compañía descargado por Usted en cualquier dispositivo electrónico, denominado Registrapp.",
+    "Tienda de Aplicaciones": "Tienda de Aplicaciones",
+    "significa el servicio de distribución digital operado y desarrollado por Apple Inc. (Apple App Store) o Google Inc. (Google Play Store) en el que se ha descargado la Aplicación.":
+    "significa el servicio de distribución digital operado y desarrollado por Apple Inc. (Apple App Store) o Google Inc. (Google Play Store) en el que se ha descargado la Aplicación.",
+    "Afiliado": "Afiliado",
+    "significa una entidad que controla, es controlada por o está bajo el control común de una parte, donde 'control' significa la propiedad del 50% o más de las acciones, intereses de capital u otros valores con derecho a voto para la elección de directores u otra autoridad de gestión.":
+    "significa una entidad que controla, es controlada por o está bajo el control común de una parte, donde 'control' significa la propiedad del 50% o más de las acciones, intereses de capital u otros valores con derecho a voto para la elección de directores u otra autoridad de gestión.",
+    "País": "País",
+    "se refiere a: Chile": "se refiere a: Chile",
+    "Compañía": "Compañia",
+    "(referida como 'la Compañía', 'Nosotros', 'Nos' o 'Nuestro' en este Acuerdo) se refiere a Registrapp.":
+    "(referida como 'la Compañía', 'Nosotros', 'Nos' o 'Nuestro' en este Acuerdo) se refiere a Registrapp.",
+    "Dispositivo": "Dispositivo",
+    "significa cualquier dispositivo que puede acceder al Servicio, como una computadora, un teléfono celular o una tableta digital.":
+    "significa cualquier dispositivo que puede acceder al Servicio, como una computadora, un teléfono celular o una tableta digital.",
+    "Servicio": "Servicio",
+    "se refiere a la Aplicación.": "se refiere a la Aplicación.",
+    "(también referidos como 'Términos') significan estos Términos y Condiciones que conforman el acuerdo completo entre Usted y la Compañía con respecto al uso del Servicio.":
+    "(también referidos como 'Términos') significan estos Términos y Condiciones que conforman el acuerdo completo entre Usted y la Compañía con respecto al uso del Servicio.",
+    "Servicio de Medios Sociales de Terceros":"Servicio de Medios Sociales de Terceros",
+    "significa cualquier servicio o contenido (incluidos datos, información, productos o servicios) proporcionado por un tercero que puede ser mostrado, incluido o puesto a disposición a través del Servicio.":
+    "significa cualquier servicio o contenido (incluidos datos, información, productos o servicios) proporcionado por un tercero que puede ser mostrado, incluido o puesto a disposición a través del Servicio.",
+    "Usted": "Usted",
+    "significa el individuo que accede o utiliza el Servicio, o la empresa u otra entidad legal en nombre de la cual dicho individuo está accediendo o utilizando el Servicio, según corresponda.":
+    "significa el individuo que accede o utiliza el Servicio, o la empresa u otra entidad legal en nombre de la cual dicho individuo está accediendo o utilizando el Servicio, según corresponda.",
+    "Reconocimiento":"Reconocimiento",
+    "Estos son los Términos y Condiciones que rigen el uso de este Servicio y el acuerdo que opera entre Usted y la Compañía. Estos Términos y Condiciones establecen los derechos y obligaciones de todos los usuarios con respecto al uso del Servicio.":
+    "Estos son los Términos y Condiciones que rigen el uso de este Servicio y el acuerdo que opera entre Usted y la Compañía. Estos Términos y Condiciones establecen los derechos y obligaciones de todos los usuarios con respecto al uso del Servicio.",
+    "Su acceso y uso del Servicio están condicionados a su aceptación y cumplimiento de estos Términos y Condiciones. Estos Términos y Condiciones se aplican a todos los visitantes, usuarios y otras personas que acceden o utilizan el Servicio.":
+    "Su acceso y uso del Servicio están condicionados a su aceptación y cumplimiento de estos Términos y Condiciones. Estos Términos y Condiciones se aplican a todos los visitantes, usuarios y otras personas que acceden o utilizan el Servicio.",
+    "Al acceder o utilizar el Servicio, usted acepta quedar vinculado por estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos Términos y Condiciones, no podrá acceder al Servicio.":
+    "Al acceder o utilizar el Servicio, usted acepta quedar vinculado por estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos Términos y Condiciones, no podrá acceder al Servicio.",
+    "Usted declara que tiene más de 18 años. La Compañía no permite que las personas menores de 18 años utilicen el Servicio.":
+    "Usted declara que tiene más de 18 años. La Compañía no permite que las personas menores de 18 años utilicen el Servicio.",
+    "Su acceso y uso del Servicio también están condicionados a su aceptación y cumplimiento de la Política de Privacidad de la Compañía. Nuestra Política de Privacidad describe nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de su información personal cuando utiliza la Aplicación o el Sitio web y le informa sobre sus derechos de privacidad y cómo la ley lo protege. Lea nuestra Política de Privacidad detenidamente antes de utilizar nuestro Servicio.":
+    "Su acceso y uso del Servicio también están condicionados a su aceptación y cumplimiento de la Política de Privacidad de la Compañía. Nuestra Política de Privacidad describe nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de su información personal cuando utiliza la Aplicación o el Sitio web y le informa sobre sus derechos de privacidad y cómo la ley lo protege. Lea nuestra Política de Privacidad detenidamente antes de utilizar nuestro Servicio.",
+    "Enlaces a Otros Sitios Web":"Enlaces a Otros Sitios Web",
+    "Nuestro Servicio puede contener enlaces a sitios web o servicios de terceros que no son propiedad ni están controlados por la Compañía.":
+    "Nuestro Servicio puede contener enlaces a sitios web o servicios de terceros que no son propiedad ni están controlados por la Compañía.",
+    "La Compañía no tiene control sobre, y no asume responsabilidad por, el contenido, las políticas de privacidad o las prácticas de ningún sitio web o servicio de terceros. Además, usted reconoce y acepta que la Compañía no será responsable ni tendrá responsabilidad, directa o indirectamente, por cualquier daño o pérdida causada o presuntamente causada por o en relación con el uso o la dependencia de dicho contenido, bienes o servicios disponibles en o a través de dichos sitios web o servicios.":
+    "La Compañía no tiene control sobre, y no asume responsabilidad por, el contenido, las políticas de privacidad o las prácticas de ningún sitio web o servicio de terceros. Además, usted reconoce y acepta que la Compañía no será responsable ni tendrá responsabilidad, directa o indirectamente, por cualquier daño o pérdida causada o presuntamente causada por o en relación con el uso o la dependencia de dicho contenido, bienes o servicios disponibles en o a través de dichos sitios web o servicios.",
+    "Le recomendamos encarecidamente que lea los términos y condiciones y las políticas de privacidad de cualquier sitio web o servicio de terceros que visite.":
+    "Le recomendamos encarecidamente que lea los términos y condiciones y las políticas de privacidad de cualquier sitio web o servicio de terceros que visite.",
+    "Terminación": "Terminación",
+    "Podemos terminar o suspender su acceso de inmediato, sin previo aviso ni responsabilidad, por cualquier motivo, incluso, sin limitación, si usted incumple estos Términos y Condiciones.":
+    "Podemos terminar o suspender su acceso de inmediato, sin previo aviso ni responsabilidad, por cualquier motivo, incluso, sin limitación, si usted incumple estos Términos y Condiciones.",
+    "Al finalizar, su derecho a utilizar el Servicio cesará de inmediato.": "Al finalizar, su derecho a utilizar el Servicio cesará de inmediato.",
+    "Límite de Responsabilidad": "Límite de Responsabilidad",
+    "No obstante cualquier daño que usted pueda sufrir, la responsabilidad total de la Compañía y cualquiera de sus proveedores en virtud de cualquier disposición de estos Términos y su recurso exclusivo por todo lo anterior se limitará a la cantidad que realmente haya pagado usted a través del Servicio o 100 USD si no ha comprado nada a través del Servicio.":
+    "No obstante cualquier daño que usted pueda sufrir, la responsabilidad total de la Compañía y cualquiera de sus proveedores en virtud de cualquier disposición de estos Términos y su recurso exclusivo por todo lo anterior se limitará a la cantidad que realmente haya pagado usted a través del Servicio o 100 USD si no ha comprado nada a través del Servicio.",
+    "En la medida máxima permitida por la ley aplicable, en ningún caso la Compañía o sus proveedores serán responsables de ningún daño especial, incidental, indirecto o consecuente de ninguna índole (incluidos, entre otros, daños por pérdida de beneficios, pérdida de datos u otra información, interrupción del negocio, lesiones personales, pérdida de privacidad derivada de o de alguna manera relacionada con el uso o la imposibilidad de uso del Servicio, software de terceros y / o hardware de terceros utilizado con el Servicio, o de otro modo en relación con cualquier disposición de estos Términos), incluso si se ha informado a la Compañía o a cualquier proveedor de la posibilidad de tales daños e incluso si el recurso no cumple con su propósito esencial.":
+    "En la medida máxima permitida por la ley aplicable, en ningún caso la Compañía o sus proveedores serán responsables de ningún daño especial, incidental, indirecto o consecuente de ninguna índole (incluidos, entre otros, daños por pérdida de beneficios, pérdida de datos u otra información, interrupción del negocio, lesiones personales, pérdida de privacidad derivada de o de alguna manera relacionada con el uso o la imposibilidad de uso del Servicio, software de terceros y / o hardware de terceros utilizado con el Servicio, o de otro modo en relación con cualquier disposición de estos Términos), incluso si se ha informado a la Compañía o a cualquier proveedor de la posibilidad de tales daños e incluso si el recurso no cumple con su propósito esencial.",
+    "Algunos estados no permiten la exclusión de garantías implícitas o la limitación de responsabilidad por daños incidentales o consecuentes, lo que significa que algunas de las limitaciones anteriores pueden no aplicarse. En estos estados, la responsabilidad de cada parte se limitará en la mayor medida permitida por la ley.":
+    "Algunos estados no permiten la exclusión de garantías implícitas o la limitación de responsabilidad por daños incidentales o consecuentes, lo que significa que algunas de las limitaciones anteriores pueden no aplicarse. En estos estados, la responsabilidad de cada parte se limitará en la mayor medida permitida por la ley.",
+    "Renuncia de 'TAL CUAL' y 'SEGÚN DISPONIBILIDAD'": "Renuncia de 'TAL CUAL' y 'SEGÚN DISPONIBILIDAD'",
+    "El Servicio se proporciona 'TAL CUAL' y 'SEGÚN DISPONIBILIDAD' y con todos los defectos y defectos sin garantía de ningún tipo. En la medida máxima permitida por la ley aplicable, la Compañía, en su nombre y en nombre de sus Afiliados y sus respectivos licenciantes y proveedores de servicios, renuncia expresamente a todas las garantías, ya sean expresas, implícitas, legales o de otro tipo, con respecto al Servicio, incluidas todas las garantías implícitas de comercialización, aptitud para un propósito particular, título y no infracción, y garantías que pueden surgir del curso de negociación, el curso de ejecución, el uso o la práctica comercial. Sin limitación de lo anterior, la Compañía no proporciona ninguna garantía o compromiso y no hace representación de ningún tipo de que el Servicio cumpla con sus requisitos, logre los resultados previstos, sea compatible o funcione con cualquier otro software, aplicaciones, sistemas o servicios, funcione sin interrupciones, cumpla con los estándares de rendimiento o confiabilidad o sea libre de errores o que se corrijan errores o defectos.":
+    "El Servicio se proporciona 'TAL CUAL' y 'SEGÚN DISPONIBILIDAD' y con todos los defectos y defectos sin garantía de ningún tipo. En la medida máxima permitida por la ley aplicable, la Compañía, en su nombre y en nombre de sus Afiliados y sus respectivos licenciantes y proveedores de servicios, renuncia expresamente a todas las garantías, ya sean expresas, implícitas, legales o de otro tipo, con respecto al Servicio, incluidas todas las garantías implícitas de comercialización, aptitud para un propósito particular, título y no infracción, y garantías que pueden surgir del curso de negociación, el curso de ejecución, el uso o la práctica comercial. Sin limitación de lo anterior, la Compañía no proporciona ninguna garantía o compromiso y no hace representación de ningún tipo de que el Servicio cumpla con sus requisitos, logre los resultados previstos, sea compatible o funcione con cualquier otro software, aplicaciones, sistemas o servicios, funcione sin interrupciones, cumpla con los estándares de rendimiento o confiabilidad o sea libre de errores o que se corrijan errores o defectos.",
+    "Sin limitar lo anterior, ni la Compañía ni ninguno de los proveedores de la compañía hacen ninguna representación o garantía de ningún tipo, expresa o implícita: (i) en cuanto al funcionamiento o la disponibilidad del Servicio, o la información, el contenido y los materiales o productos incluidos en el mismo; (ii) que el Servicio será ininterrumpido o libre de errores; (iii) en cuanto a la precisión, confiabilidad o actualidad de cualquier información o contenido proporcionado a través del Servicio; o (iv) que el Servicio, sus servidores, el contenido o los correos electrónicos enviados desde o en nombre de la Compañía estén libres de virus, scripts, caballos de Troya, gusanos, malware, bombas de tiempo u otros componentes dañinos.":
+    "Sin limitar lo anterior, ni la Compañía ni ninguno de los proveedores de la compañía hacen ninguna representación o garantía de ningún tipo, expresa o implícita: (i) en cuanto al funcionamiento o la disponibilidad del Servicio, o la información, el contenido y los materiales o productos incluidos en el mismo; (ii) que el Servicio será ininterrumpido o libre de errores; (iii) en cuanto a la precisión, confiabilidad o actualidad de cualquier información o contenido proporcionado a través del Servicio; o (iv) que el Servicio, sus servidores, el contenido o los correos electrónicos enviados desde o en nombre de la Compañía estén libres de virus, scripts, caballos de Troya, gusanos, malware, bombas de tiempo u otros componentes dañinos.",
+    "Algunas jurisdicciones no permiten la exclusión de ciertos tipos de garantías o limitaciones de derechos legales aplicables a un consumidor, por lo que algunas o todas las limitaciones anteriores pueden no aplicarse a usted. Pero en tal caso, las exclusiones y limitaciones establecidas en esta sección se aplicarán en la medida máxima permitida por la ley aplicable.":
+    "Algunas jurisdicciones no permiten la exclusión de ciertos tipos de garantías o limitaciones de derechos legales aplicables a un consumidor, por lo que algunas o todas las limitaciones anteriores pueden no aplicarse a usted. Pero en tal caso, las exclusiones y limitaciones establecidas en esta sección se aplicarán en la medida máxima permitida por la ley aplicable.",
+    "Ley Aplicable": "Ley Aplicable",
+    "Las leyes del País, excluyendo sus reglas de conflicto de leyes, regirán estos Términos y su uso del Servicio. Su uso de la Aplicación también puede estar sujeto a otras leyes locales, estatales, nacionales o internacionales.": 
+    "Las leyes del País, excluyendo sus reglas de conflicto de leyes, regirán estos Términos y su uso del Servicio. Su uso de la Aplicación también puede estar sujeto a otras leyes locales, estatales, nacionales o internacionales.",
+    "Resolución de Disputas": "Resolución de Disputas",
+    "Si tiene alguna preocupación o disputa sobre el Servicio, acepta intentar resolver la disputa de manera informal poniéndose en contacto con la Compañía.":
+    "Si tiene alguna preocupación o disputa sobre el Servicio, acepta intentar resolver la disputa de manera informal poniéndose en contacto con la Compañía.",
+    "Para Usuarios de la Unión Europea (UE)": "Para Usuarios de la Unión Europea (UE)",
+    "Si es un consumidor de la Unión Europea, se beneficiará de cualquier disposición obligatoria de la ley del país en el que resida.":
+    "Si es un consumidor de la Unión Europea, se beneficiará de cualquier disposición obligatoria de la ley del país en el que resida.",
+    "Cumplimiento Legal en los Estados Unidos": "Cumplimiento Legal en los Estados Unidos",
+    "Usted declara y garantiza que (i) no se encuentra en un país sujeto al embargo del gobierno de Estados Unidos, ni ha sido designado por el gobierno de Estados Unidos como un país que 'apoya el terrorismo', y (ii) no figura en ninguna lista del gobierno de Estados Unidos de partes prohibidas o restringidas.":
+    "Usted declara y garantiza que (i) no se encuentra en un país sujeto al embargo del gobierno de Estados Unidos, ni ha sido designado por el gobierno de Estados Unidos como un país que 'apoya el terrorismo', y (ii) no figura en ninguna lista del gobierno de Estados Unidos de partes prohibidas o restringidas.",
+    "Divisibilidad y Renuncia" : "Divisibilidad y Renuncia",
+    "Divisibilidad": "Divisibilidad",
+    "Si alguna disposición de estos Términos se considera inaplicable o inválida, dicha disposición se modificará e interpretará para lograr los objetivos de dicha disposición en la mayor medida posible según la ley aplicable, y las disposiciones restantes continuarán en pleno vigor y efecto.":
+    "Si alguna disposición de estos Términos se considera inaplicable o inválida, dicha disposición se modificará e interpretará para lograr los objetivos de dicha disposición en la mayor medida posible según la ley aplicable, y las disposiciones restantes continuarán en pleno vigor y efecto.",
+    "Renuncia": "Renuncia",
+    "Excepto según se establece en este documento, la falta de ejercer un derecho o exigir el cumplimiento de una obligación en virtud de estos Términos no afectará la capacidad de una parte para ejercer dicho derecho o exigir dicho cumplimiento en cualquier momento posterior ni constituirá una renuncia a un incumplimiento posterior.":
+    "Excepto según se establece en este documento, la falta de ejercer un derecho o exigir el cumplimiento de una obligación en virtud de estos Términos no afectará la capacidad de una parte para ejercer dicho derecho o exigir dicho cumplimiento en cualquier momento posterior ni constituirá una renuncia a un incumplimiento posterior.",
+    "Interpretación de la Traducción": "Interpretación de la Traducción",
+    "Estos Términos y Condiciones pueden haber sido traducidos si los hemos puesto a su disposición en nuestro Servicio.": "Estos Términos y Condiciones pueden haber sido traducidos si los hemos puesto a su disposición en nuestro Servicio.",
+    "Usted acepta que el texto original en inglés prevalecerá en caso de disputa." : "Usted acepta que el texto original en inglés prevalecerá en caso de disputa.",
+    "Modificaciones a Estos Términos y Condiciones" : "Modificaciones a Estos Términos y Condiciones",
+    "Nos reservamos el derecho, a nuestra entera discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es sustancial, haremos esfuerzos razonables para proporcionar al menos 30 días de aviso antes de que entren en vigor los nuevos términos. Lo que constituye un cambio sustancial se determinará a nuestra entera discreción.":
+    "Nos reservamos el derecho, a nuestra entera discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es sustancial, haremos esfuerzos razonables para proporcionar al menos 30 días de aviso antes de que entren en vigor los nuevos términos. Lo que constituye un cambio sustancial se determinará a nuestra entera discreción.",
+    "Al continuar accediendo o utilizando nuestro Servicio después de que estas revisiones entren en vigor, acepta quedar vinculado por los términos revisados. Si no está de acuerdo con los nuevos términos, en su totalidad o en parte, deje de utilizar el sitio web y el Servicio.":
+    "Al continuar accediendo o utilizando nuestro Servicio después de que estas revisiones entren en vigor, acepta quedar vinculado por los términos revisados. Si no está de acuerdo con los nuevos términos, en su totalidad o en parte, deje de utilizar el sitio web y el Servicio.",
+    "Contáctenos": "Contáctenos",
+    "Si tiene alguna pregunta sobre estos Términos y Condiciones, puede ponerse en contacto con nosotros:": "Si tiene alguna pregunta sobre estos Términos y Condiciones, puede ponerse en contacto con nosotros:",
+    "Por correo:": "Por correo:",
+    "Acepto los términos y condiciones.": "Acepto los términos y condiciones.",
+    "Cerrar" : "Cerrar",
+
+    "El correo es requerido": "El correo es requerido",
+    "Correo electrónico": "Correo electrónico",
+    "Inicio de sesión": "Inicio de sesión",
+    "Contraseña": "Contraseña",
+    "La contraseña es requerida": "La contraseña es requerida",
+    "La contraseña debe poseer 6 caracteres mínimo": "La contraseña debe poseer 6 caracteres mínimo",
+    "Ingresar": "Ingresar",
+    "Registrarse": "Registrarse",
+    "Importar cuentas": "Importar cuentas",
+    "Ver términos y condiciones": "Ver términos y condiciones",
+    
+    "Bienvenido": "Bienvenido",
+    "Conoce tus clases y horarios.": "Conoce tus clases y horarios.",
+    "Aquí puedes pasar la asistencia fácilmente escaneando el código QR generado por el docente a cargo de la clase.":
+    "Aquí puedes pasar la asistencia fácilmente escaneando el código QR generado por el docente a cargo de la clase.",
+    "Cerrar sesión": "Cerrar sesión",
+
+    "Docente": "Docente",
+    "Estudiante": "Estudiante",
+
+    "Configuración": "Configuración",
+    "Seleccionar idioma" : "Seleccionar idioma",
+    "Idioma predeterminado: Español" : "Idioma predeterminado: Español",
+
+    "Clases": "Clases",
+    "Crear clase" : "Crear clase",
+    "Ver asistencia" : "Ver asistencia",
+
+    "Sigla:" : "Sigla:",
+    "Docente:" : "Docente:",
+    "Fecha:" : "Fecha:",
+    "Hora Inicio:" : "Hora Inicio:",
+    "Hora Término:" : "Hora Término:",
+    "Eliminar Clase" : "Eliminar Clase",
+    "Escanear código QR" : "Escanear código QR",
+    "Marcar asistencia" : "Marcar asistencia",
+    "Quitar QR" : "Quitar QR",
+
+    "Asistencia": "Asistencia"
+
 }

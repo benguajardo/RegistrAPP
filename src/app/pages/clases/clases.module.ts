@@ -9,12 +9,15 @@ import { ClasesPageRoutingModule } from './clases-routing.module';
 import { ClasesPage } from './clases.page';
 import { ClasecardComponent } from 'src/app/components/clasecard/clasecard.component';
 
+import {TranslateModule} from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ClasesPageRoutingModule
+    ClasesPageRoutingModule,
+    TranslateModule
   ],
   declarations: [ClasesPage, ClasecardComponent]
 })

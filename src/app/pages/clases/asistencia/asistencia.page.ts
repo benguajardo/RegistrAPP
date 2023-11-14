@@ -7,20 +7,24 @@ import { Clase } from '../clases.model';
 import { ApiService } from 'src/app/services/api/api.service';
 import { IClases } from 'src/app/interfaces/iclases';
 import { ToastController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-asistencia',
   templateUrl: './asistencia.page.html',
   styleUrls: ['./asistencia.page.scss'],
 })
+
 export class AsistenciaPage implements OnInit {
   constructor(private usuarioService : UsuarioService,
               private claseService : ClaseService,
               private router : Router,
               private activatedRoute: ActivatedRoute,
               private apiService :ApiService,
-              private toastController: ToastController
-  ) { }
+              private toastController: ToastController,
+              private transService: TranslateService) {
+      this.langs = this.transService.getLangs();
+    }
   clase : IClases= {
     id: '',
     sigla: '',
@@ -38,7 +42,8 @@ export class AsistenciaPage implements OnInit {
   
   listaEstudiantePresente : any = [];
   listaUsuario : any = [];
-
+  langs: string[] =[];
+  
   ngOnInit() {
     
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado();
