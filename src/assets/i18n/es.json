@@ -141,8 +141,12 @@
     "Eliminar Clase" : "Eliminar Clase",
     "Escanear código QR" : "Escanear código QR",
     "Marcar asistencia" : "Marcar asistencia",
+<<<<<<< HEAD
     "Quitar QR" : "Quitar QR",
 
     "Asistencia": "Asistencia"
+=======
+    "Quitar QR" : "Quitar QR"
+>>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
 
 }

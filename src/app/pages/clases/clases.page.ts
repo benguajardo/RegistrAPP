@@ -19,10 +19,19 @@ export class ClasesPage implements OnInit {
   langs: string[] =[];
 
   constructor(private router: Router, private usuarioService : UsuarioService, private claseService: ClaseService,
+<<<<<<< HEAD
     private apiService: ApiService, private firestore : FirestoreService,
               private transService: TranslateService) {
       this.langs = this.transService.getLangs();
      }
+=======
+              private apiService: ApiService, private firestore : FirestoreService,
+              private transService: TranslateService) {
+      this.langs = this.transService.getLangs();
+     }
+    
+  
+>>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
 
   ngOnInit() {
     this.listar()

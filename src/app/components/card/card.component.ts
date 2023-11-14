@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-card',
@@ -13,7 +14,11 @@ export class CardComponent  implements OnInit {
   @Input() imagen!:string;
   @Input() sede!:string;
 
-  constructor() { }
+  langs: string[] =[];
+
+  constructor(private transService: TranslateService) {
+    this.langs = this.transService.getLangs();
+   }
 
   ngOnInit() {}
   
