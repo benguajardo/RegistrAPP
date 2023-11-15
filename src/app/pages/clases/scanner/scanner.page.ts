@@ -16,10 +16,6 @@ import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 import { IClase } from 'src/app/interfaces/iclase';
 import { IClases } from 'src/app/interfaces/iclases';
 import { TranslateService } from '@ngx-translate/core';
-<<<<<<< HEAD
-
-=======
->>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
 // import { Camera } from '@capacitor/camera';
 
 @Component({
@@ -35,10 +31,6 @@ export class ScannerPage implements OnInit {
   listaQR : any = [];
   langs: string[] =[];
   qrcode! :Qrcode;
-<<<<<<< HEAD
-=======
-  langs: string[] =[];
->>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
 
   handleRefresh(event: any) {
     setTimeout(() => {

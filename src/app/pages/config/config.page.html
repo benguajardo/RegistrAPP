@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-      <ion-title class="centrado">{{"Configuración" | translate}}</ion-title>
+      <ion-title class="centrado">{{"Configuración" | translate }}</ion-title>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -14,9 +14,9 @@
       </ion-item>
     </ion-card>
   </ion-header>
-  <ion-item>{{"Seleccionar idioma" | translate}}
+  <ion-item>{{"Seleccionar idioma" | translate }}
     <ion-select [(ngModel)]="idioma" (ionChange)="changeLangs($event)" >
       <ion-select-option *ngFor="let lang of langs">{{ lang }}</ion-select-option>
-    </ion-select>{{"Idioma predeterminado: Español" | translate}}
+    </ion-select>{{"Idioma predeterminado: Español" | translate }}
   </ion-item>
 </ion-content>

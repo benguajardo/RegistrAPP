@@ -18,10 +18,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class LoginPage implements OnInit {
   
   langs: string[] =[];
-<<<<<<< HEAD
-=======
-
->>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
   loginForm: FormGroup // validar formulario
   user: any   //    capturar todo del usuario random
   emailValue?: string //Para capturar el correo del usuario random
@@ -43,7 +39,6 @@ export class LoginPage implements OnInit {
 
 }
 
-<<<<<<< HEAD
 constructor(private toastController: ToastController,
   private usuarioService: UsuarioService,
   private router: Router,
@@ -59,23 +54,6 @@ constructor(private toastController: ToastController,
     })
     
   } 
-=======
-  constructor(private toastController: ToastController,
-              private usuarioService: UsuarioService,
-              private router: Router,
-              private usuariosrandom: UsuariosrandomService,
-              private formBuilder: FormBuilder,
-              private apiService: ApiService,
-              private authService: AuthService,
-              private transService: TranslateService
-              ){this.langs = this.transService.getLangs();
-                this.loginForm = this.formBuilder.group({
-                  email: ['', [Validators.required]],
-                  password: ['', [Validators.required, Validators.minLength(1)]]
-                })
-                
-              } 
->>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
 
   ngOnInit() {
     this.passValue=''

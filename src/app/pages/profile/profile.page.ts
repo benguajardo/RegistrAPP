@@ -4,10 +4,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
-<<<<<<< HEAD
 import { AuthService } from 'src/app/services/firebase/auth.service';
-=======
->>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
 
 @Component({
   selector: 'app-profile',
@@ -21,21 +18,13 @@ export class ProfilePage implements OnInit {
     private alertController: AlertController, 
     private toastController : ToastController,
     private router : Router,
-<<<<<<< HEAD
     private auth: AuthService,
-=======
->>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
     private transService: TranslateService){
       this.langs = this.transService.getLangs();
     }
     
   listaUsuarioIniciado : usuarioIniciado [] = [];
   langs: string[] =[];
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
   ngOnInit() {
   }
 

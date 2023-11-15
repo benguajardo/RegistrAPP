@@ -16,7 +16,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class CrearclasePage implements OnInit {
   
-<<<<<<< HEAD
   
   constructor(private ClaseService : ClaseService, private router: Router, private toastController:ToastController,
     private usuarioService : UsuarioService,
@@ -28,18 +27,6 @@ export class CrearclasePage implements OnInit {
     
     listaUsuarioIniciado :usuarioIniciado[] = []
     langs: string[] =[];
-=======
-  langs: string[] =[];
-
-  constructor(private ClaseService : ClaseService, private router: Router, private toastController:ToastController,
-              private usuarioService : UsuarioService,
-              private apiService: ApiService,
-              private firestore : FirestoreService,
-              private transService: TranslateService) {
-                this.langs = this.transService.getLangs();
-              }
-  listaUsuarioIniciado :usuarioIniciado[] = []
->>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
   
   clase: IClase ={
     sigla: '',

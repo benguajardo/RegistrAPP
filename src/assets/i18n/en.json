@@ -124,7 +124,23 @@
     "Cerrar sesión": "Log Out",
 
     "Docente": "Teacher",
-    "Estudiante": "Student"
+    "Estudiante": "Student",
 
+    "Configuración": "Settings",
+    "Seleccionar idioma" : "Select language",
+    "Idioma predeterminado: Español" : "Default language: Spanish",
 
+    "Clases": "Classes",
+    "Crear clase" : "Create class",
+    "Ver asistencia" : "View assistance",
+
+    "Sigla:" : "Acronym:",
+    "Docente:" : "Teacher:",
+    "Fecha:" : "Date:",
+    "Hora Inicio:" : "Start Time:",
+    "Hora Término:" : "End Time:",
+    "Eliminar Clase" : "Delete Class",
+    "Escanear código QR" : "Scan QR code",
+    "Marcar asistencia" : "Mark assistance",
+    "Quitar QR" : "Remove QR"
 }

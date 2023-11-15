@@ -35,11 +35,7 @@ export class AppComponent {
     private transService: TranslateService
   ) {
     this.transService.setDefaultLang('es');
-<<<<<<< HEAD
-    this.transService.addLangs(['en','de']);
-=======
     this.transService.addLangs(['de','en']);
->>>>>>> ce97312c135241df40a66a30d2eee47e24a352d8
   }
 
   mostrarMenu(){
