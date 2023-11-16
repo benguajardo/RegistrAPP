@@ -33,7 +33,7 @@ export class ClasesPage implements OnInit {
     
   }
   listar() {
-    this.firestore.getCollection('Clases').subscribe((Clases)=>{
+    this.firestore.getClases('Clases').subscribe((Clases)=>{
       let aux = JSON.stringify(Clases)
       this.listaClases=JSON.parse(aux);
       console.log(this.listaClases[0])

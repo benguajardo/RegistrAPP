@@ -8,6 +8,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 import { IClases } from 'src/app/interfaces/iclases';
 import { ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 
 @Component({
   selector: 'app-asistencia',
@@ -22,7 +23,8 @@ export class AsistenciaPage implements OnInit {
               private activatedRoute: ActivatedRoute,
               private apiService :ApiService,
               private toastController: ToastController,
-              private transService: TranslateService) {
+              private transService: TranslateService,
+              private firestore : FirestoreService) {
       this.langs = this.transService.getLangs();
     }
   clase : IClases= {
@@ -43,29 +45,39 @@ export class AsistenciaPage implements OnInit {
   listaEstudiantePresente : any = [];
   listaUsuario : any = [];
   langs: string[] =[];
-  
+
+  v_idClase = this.getId()
+
   ngOnInit() {
-    
     this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado();
-    this.listar();
+    // this.listar();
+    this.getAsistencia()
     this.listaUser();
     this.getClase(this.getId())
+    console.log(this.listaEstudiantePresente)
   }
   
   ionViewWillEnter(){
-    
-    this.listar();
+    this.getAsistencia()
+    // this.listar();
     this.listaUser();
     this.getClase(this.getId())
   }
 
-  listar() {
-    this.apiService.listaPresentes().subscribe((resp) => {
-      //console.log(resp)
-      let aux = JSON.stringify(resp)
-      this.listaEstudiantePresente = JSON.parse(aux)
-    })
+  // listar() {
+  //   this.apiService.listaPresentes().subscribe((resp) => {
+  //     //console.log(resp)
+  //     let aux = JSON.stringify(resp)
+  //     this.listaEstudiantePresente = JSON.parse(aux)
+  //   })
 
+  // }
+
+  getAsistencia(){
+    this.firestore.getPresente('Asistencia').subscribe((asistencia)=>{
+      let aux = JSON.stringify(asistencia);
+      this.listaEstudiantePresente=JSON.parse(aux);
+    })
   }
 
   listaUser(){
@@ -85,27 +97,16 @@ export class AsistenciaPage implements OnInit {
   getId() {
     let url = this.router.url
     let aux = url.split("/",4)
-    let id = parseInt(aux[3])
+    let id = aux[3]
     return id
   }
 
-  getClase(id: Number) {
-    this.apiService.getClase(id).subscribe((resp:any) => {
-      this.clase = {
-        id: resp[0].id,
-        sigla: resp[0].sigla,
-        seccion: resp[0].seccion,
-        jornada: resp[0].jornada,
-        nombre: resp[0].nombre,
-        docente: resp[0].docente,
-        dia: resp[0].dia,
-        horaInicio: resp[0].horaInicio,
-        horaTermino: resp[0].horaTermino,
-        sede: resp[0].sede,
-        sala: resp[0].sala
-        
-      }
-    })
+  getClase(id: any) {
+    if (id){
+      this.firestore.getClaseId('Clases',id).subscribe((clase)=>{
+        this.clase = clase || {} as IClases
+      })
+    }
   }
 
   async mensajeToast(mensaje: string){

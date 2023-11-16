@@ -9,13 +9,9 @@
 
 <ion-content>
   <h1>{{ clase.nombre }}</h1>
-  <div *ngFor="let user of listaUsuarioIniciado"  class="container">
-    
-      <ion-item *ngFor="let estudiante of listaEstudiantePresente">
-          <ion-label *ngIf="estudiante.idClase == clase.id">{{ estudiante.nombre }} {{ estudiante.apellido}}<ion-icon color="primary" name="checkmark-circle"></ion-icon></ion-label>
-            <ion-button *ngIf="user.docente && estudiante.idClase == clase.id" color="danger" (click)="deletePresente(estudiante.id)">
-              <ion-icon slot="icon-only" name="trash"></ion-icon>
-            </ion-button>
+  <div *ngFor="let estudiante of listaEstudiantePresente" >
+      <ion-item >
+        <ion-label *ngIf="estudiante.idClase == v_idClase">Aquí va el nombre del estudiante<ion-icon color="primary" name="checkmark-circle"></ion-icon></ion-label>
       </ion-item> 
   </div>
 </ion-content>

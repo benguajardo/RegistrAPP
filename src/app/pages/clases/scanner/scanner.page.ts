@@ -199,7 +199,7 @@ export class ScannerPage implements OnInit {
   marcarAsistencia(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any){
     if(p_codigo === p_query){
       this.presente.rutEstudiante = rutEstudiante;
-      this.presente.idClase = idClase;
+      this.presente.idClase = this.v_idClase;
       this.presente.presente = true;
       this.presente.horaLlegada = this.hora.toLocaleTimeString();
       this.presente.nombre = p_nombre;
@@ -212,6 +212,21 @@ export class ScannerPage implements OnInit {
     }
   }
 
+  estudiantePresente(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any){
+    if(p_codigo === p_query){
+      this.presente.rutEstudiante = rutEstudiante;
+      this.presente.idClase = idClase;
+      this.presente.presente = true;
+      this.presente.horaLlegada = this.hora.toLocaleTimeString();
+      this.presente.nombre = p_nombre;
+      this.presente.apellido = p_apellido;
+      this.firestore.createPresente('Asistencia',this.presente)
+      this.router.navigate(['/clases/asistencia/'+idClase]);
+      this.mensajeToast('Asistencia Confirmada.')
+    }else{
+      this.mensajeToast('El código es incorrecto')
+    }
+  }
   async mensajeToast(mensaje: string){
     const toast = await this.toastController.create({
       message: mensaje,
