@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +11,8 @@ export class AuthService {
 
   constructor(private auth : AngularFireAuth,
               private router: Router,
-              private toastController: ToastController
+              private toastController: ToastController,
+              private firestore: AngularFirestore
     ) { }
 
 
@@ -34,17 +37,27 @@ export class AuthService {
     }
   }
 
-  async register(email: string, pass: string){
+  async register(email: any, pass: any, nombre: any, edad: any) {
     try {
-      const user = await this.auth.createUserWithEmailAndPassword(email,pass);
-      console.log(user);
-      this.login(email,pass);
-      this.mensaje("Usuario registrado con éxito");
+      const userCredential = await this.auth.createUserWithEmailAndPassword(email, pass);
+      const user = userCredential.user;
+
+      if (user) {
+        const uid = user.uid; // Obtener el UID del usuario
+
+        await this.firestore.collection('Usuarios').doc(uid).set({
+          email: user.email,
+          docente: false,
+          nombre: nombre,
+          edad: edad
+        });
+
+        this.router.navigate(['login']);
+
+      }
     } catch (error) {
-      console.error('Error en registro:',error);
-      this.mensaje("error");
+      console.error('Error en register: ', error);
     }
-    
   }
 
   async logout(){

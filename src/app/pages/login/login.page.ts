@@ -123,7 +123,7 @@ constructor(private toastController: ToastController,
     })
   }
 
-  register(correo: any, pass: any){
-    this.authService.register(correo,pass);
+  register(){
+    this.router.navigate(['formregistrar'])
   }
 }

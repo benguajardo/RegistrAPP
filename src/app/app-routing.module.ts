@@ -82,6 +82,10 @@ const routes: Routes = [
   },  {
     path: 'config',
     loadChildren: () => import('./pages/config/config.module').then( m => m.ConfigPageModule)
+  },
+  {
+    path: 'formregistrar',
+    loadChildren: () => import('./pages/formregistrar/formregistrar.module').then( m => m.FormregistrarPageModule)
   }
 
 
