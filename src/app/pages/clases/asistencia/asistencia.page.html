@@ -11,7 +11,7 @@
   <h1>{{ clase.nombre }}</h1>
   <div *ngFor="let estudiante of listaEstudiantePresente" >
       <ion-item >
-        <ion-label *ngIf="estudiante.idClase == v_idClase">Aquí va el nombre del estudiante<ion-icon color="primary" name="checkmark-circle"></ion-icon></ion-label>
+        <ion-label *ngIf="estudiante.idClase == v_idClase">{{estudiante.nombre}} {{estudiante.apellido}}<ion-icon color="primary" name="checkmark-circle"></ion-icon></ion-label>
       </ion-item> 
   </div>
 </ion-content>

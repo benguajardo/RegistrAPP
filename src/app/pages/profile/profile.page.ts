@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/firebase/auth.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
+import { IUsuario } from 'src/app/interfaces/iusuario';
 
 @Component({
   selector: 'app-profile',
@@ -19,16 +21,33 @@ export class ProfilePage implements OnInit {
     private toastController : ToastController,
     private router : Router,
     private auth: AuthService,
+    private firestore :FirestoreService,
     private transService: TranslateService){
       this.langs = this.transService.getLangs();
     }
     
   listaUsuarioIniciado : usuarioIniciado [] = [];
+  listaUsuarios : any;
   langs: string[] =[];
+  usuario : any;
+  user: IUsuario = {
+    id: '',
+    run: '',
+    apellido: '',
+    carrera: '',
+    contrasena: '',correo: '',
+    docente: false,
+    imagen: '',
+    nombre: '',
+    sede: '',
+    dv: '',
+  }
   ngOnInit() {
+    this.obtenerDatosUsuario();
   }
 
   ionViewWillEnter() {
+    this.obtenerDatosUsuario();
   }
   async mensajeToast(mensaje: string){
     const toast = await this.toastController.create({
@@ -74,4 +93,30 @@ export class ProfilePage implements OnInit {
     }
   }
 
+
+  async obtenerDatosUsuario() {
+    try {
+      const usuario = await this.auth.getCurrentUser();
+      if (usuario) {
+        this.usuario = {
+          uid: usuario.uid,
+          email: usuario.email
+        };
+        this.listar(this.usuario.email)
+        console.log('user: ',this.usuario)
+      } else {
+        console.error('No hay un usuario iniciado.');
+      }
+    } catch (error) {
+      console.error('Error al obtener datos del usuario: ', error);
+    }
+  }
+
+  listar(email : string) {
+    this.firestore.getCollection('Usuarios').subscribe((user)=>{
+      let aux = JSON.stringify(user)
+      this.listaUsuarios=JSON.parse(aux);
+      console.log('usuario',this.listaUsuarios);
+    })
+  }
 }

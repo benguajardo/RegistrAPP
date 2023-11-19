@@ -8,6 +8,8 @@ import { Usuario, usuarioIniciado } from '../profile/usuarios.model';
 import { IUsuario } from 'src/app/interfaces/iusuario';
 import { ApiService } from 'src/app/services/api/api.service';
 import { timestamp } from 'rxjs';
+import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/services/firebase/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -31,7 +33,8 @@ export class RegisterPage implements OnInit {
               private toastController:ToastController,
               private usuariosrandom: UsuariosrandomService,
               private formBuilder: FormBuilder,
-              private apiService :ApiService
+              private apiService :ApiService,
+              private authservice: AuthService
               ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required]],
@@ -144,6 +147,28 @@ export class RegisterPage implements OnInit {
         }
         this.mensaje('Se han importado 20 cuentas.')
   }
+  async registrarUsuario(correo: any, contrasena: any, rut: any, nombre: any, apellido: any, carrera: any, sede: any,) {
+    if (contrasena.length < 6) {
+      Swal.fire({
+        icon: "error",
+        title: "Contraseña con pocos carácteres!",
+        text: "Vuelva escribir la contraseña",
+        heightAuto: false,
+      });
+      return;
+    } else {
+      Swal.fire({
+        icon: "success",
+        title: "Registrado con éxito!",
+        showConfirmButton: false,
+        timer: 1500,
+        heightAuto: false,
+      });
+      const imagen = 'https://robohash.org/'+rut+nombre+apellido
+      await this.authservice.register(correo, contrasena, rut, nombre, apellido, imagen, carrera, sede, false);
+      this.router.navigate(['/login']);
+    }
 
+  }
   
 }

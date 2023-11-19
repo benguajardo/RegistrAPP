@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 import { IUsuario } from 'src/app/interfaces/iusuario';
 import { AuthService } from 'src/app/services/firebase/auth.service';
 import { TranslateService } from '@ngx-translate/core';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 
 @Component({
   selector: 'app-login',
@@ -46,7 +47,8 @@ constructor(private toastController: ToastController,
   private formBuilder: FormBuilder,
   private apiService: ApiService,
   private authService: AuthService,
-  private transService: TranslateService
+  private transService: TranslateService,
+  private firestore: FirestoreService
   ){this.langs = this.transService.getLangs();
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required]],
@@ -85,9 +87,8 @@ constructor(private toastController: ToastController,
     toast.present()
   }
   
-  login2(user:any, pass: any){
+  async login2(user:any, pass: any){
     this.authService.login(user,pass);
-    //if de error
     
   }
 
@@ -124,6 +125,6 @@ constructor(private toastController: ToastController,
   }
 
   register(){
-    this.router.navigate(['formregistrar'])
+    this.router.navigate(['register'])
   }
 }

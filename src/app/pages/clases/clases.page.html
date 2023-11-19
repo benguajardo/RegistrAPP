@@ -8,20 +8,22 @@
 </ion-header>
 
 <ion-content>
-  <div>
-    <ion-button [routerLink]="['/clases/crearclase']" color="success" expand="block">{{"Crear clase" | translate}}<ion-icon name="add-circle"></ion-icon></ion-button>
-    <div class="contaier" *ngFor="let aux of listaClases">
-      <ion-card>
-        <app-clasecard [routerLink]="['/clases/', aux.id]"
-          nombre="{{aux.nombre}}"
-          sigla= "{{aux.sigla}}"
-          seccion= "{{aux.seccion}}"
-          docente= "{{aux.docente}}"
-          horaInicio= "{{aux.horaInicio}}"
-          horaTermino= "{{aux.horaTermino}}"
-          ></app-clasecard>
-          <ion-button [routerLink]="['/clases/asistencia/',aux.id]" color="tertiary" expand="block">{{"Ver asistencia" | translate}}<ion-icon name="list"></ion-icon></ion-button>
-      </ion-card>
+  <div *ngFor="let user of listaUsuarios">
+    <div *ngIf="user.email == usuario.email">
+      <ion-button *ngIf="user.docente" [routerLink]="['/clases/crearclase']" color="success" expand="block">{{"Crear clase" | translate}}<ion-icon name="add-circle"></ion-icon></ion-button>
+      <div class="contaier" *ngFor="let aux of listaClases">
+        <ion-card>
+          <app-clasecard [routerLink]="['/clases/', aux.id]"
+            nombre="{{aux.nombre}}"
+            sigla= "{{aux.sigla}}"
+            seccion= "{{aux.seccion}}"
+            docente= "{{aux.docente}}"
+            horaInicio= "{{aux.horaInicio}}"
+            horaTermino= "{{aux.horaTermino}}"
+            ></app-clasecard>
+            <ion-button [routerLink]="['/clases/asistencia/',aux.id]" color="tertiary" expand="block">{{"Ver asistencia" | translate}}<ion-icon name="list"></ion-icon></ion-button>
+        </ion-card>
+      </div>
     </div>
   </div>
 </ion-content>

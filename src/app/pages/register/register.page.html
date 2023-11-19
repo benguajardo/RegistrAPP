@@ -7,15 +7,54 @@
 </ion-header>
 
 <ion-content>
-  <img alt="Silhouette of mountains" src="../../../assets/img/LogoRegistrAPPLight.png" />
   <ion-card>
-    <ion-title class="centrado" >Importación de cuentas</ion-title>
-      <ion-card-content>
-        <p>Ya tienes cuenta?
-          <ion-button fill="clear" [routerLink]="['/login']">Iniciar sesión</ion-button>
-          <ion-button fill="clear" (click)="Registrar20()" [routerLink]="['/login']">Importar 20 cuentas</ion-button>
-        </p>
+    <ion-card-header class="">
+      <ion-card-title>Registro Estudiante</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Correo </ion-label>
+          <ion-input #email type="email" placeholder="Ingrese correo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input #pass type="password" placeholder="Ingrese contraseña"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Rut </ion-label>
+          <ion-input #rut type="text" placeholder="Ingrese su rut"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Nombre </ion-label>
+          <ion-input #nombre type="text" placeholder="Ingrese su nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Apellido </ion-label>
+          <ion-input #apellido type="text" placeholder="Ingrese su apellido"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Carrera</ion-label>
+          <ion-input #carrera type="text" placeholder="Ingrese su carrera"></ion-input>
+        </ion-item>
         
+        <ion-item>
+          <ion-label position="stacked">Sede</ion-label>
+          <ion-input #sede type="text" placeholder="Ingrese su sede"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-card-content>
+      <div class="">
+        <ion-button size="large" color="warning" (click)="registrarUsuario(email.value, pass.value,rut.value, nombre.value,apellido.value,carrera.value, sede.value)">Registrar</ion-button>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

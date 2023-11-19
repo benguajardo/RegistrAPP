@@ -16,6 +16,7 @@ import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 import { IClase } from 'src/app/interfaces/iclase';
 import { IClases } from 'src/app/interfaces/iclases';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from 'src/app/services/firebase/auth.service';
 // import { Camera } from '@capacitor/camera';
 
 @Component({
@@ -31,7 +32,8 @@ export class ScannerPage implements OnInit {
   listaQR : any = [];
   langs: string[] =[];
   qrcode! :Qrcode;
-
+  listaUsuarios: any;
+  usuario: any;
   handleRefresh(event: any) {
     setTimeout(() => {
       this.listarQR()
@@ -53,7 +55,8 @@ export class ScannerPage implements OnInit {
               private apiService:ApiService,
               private firestore : FirestoreService,
               private route : ActivatedRoute,
-              private transService: TranslateService
+              private transService: TranslateService,
+              private auth: AuthService
               ){this.langs = this.transService.getLangs();}
 
   v_idClase:any;
@@ -64,6 +67,7 @@ export class ScannerPage implements OnInit {
     this.getClase(this.getId())
     this.getQR(this.getId())
     this.v_idClase= this.getId()
+    this.obtenerDatosUsuario()
   }
   ionViewWillEnter(){
     console.log(this.listaQR)
@@ -271,6 +275,31 @@ export class ScannerPage implements OnInit {
     console.log(this.usuarioService.estudiantePresente)
     console.log(idClase,rutEstudiante)
   }
+
+  async obtenerDatosUsuario() {
+    try {
+      const usuario = await this.auth.getCurrentUser();
+      if (usuario) {
+        this.usuario = {
+          uid: usuario.uid,
+          email: usuario.email
+        };
+        this.listarUser(this.usuario.email)
+      } else {
+        console.error('No hay un usuario iniciado.');
+      }
+    } catch (error) {
+      console.error('Error al obtener datos del usuario: ', error);
+    }
+  }
+
+  listarUser(email : string) {
+    this.firestore.getCollection('Usuarios').subscribe((user)=>{
+      let aux = JSON.stringify(user)
+      this.listaUsuarios=JSON.parse(aux);
+    })
+  }
+
 }
 
 

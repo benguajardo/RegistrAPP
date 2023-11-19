@@ -2,21 +2,29 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-      <div class="container" *ngFor="let user of listaUsuarioIniciado">
-        <ion-title *ngIf="user.docente" class="centrado">{{"Docente" | translate}}</ion-title>
-        <ion-title *ngIf="user.docente == false" class="centrado">{{"Estudiante" | translate}}</ion-title>
-
+      <div class="container">
+      </div>
+      <div *ngFor="let user of listaUsuarios">
+        <div *ngIf="user.email == usuario.email">
+          <ion-title *ngIf="user.docente" class="centrado">{{"Docente" | translate}}</ion-title>
+          <ion-title *ngIf="user.docente==false" class="centrado">{{"Estudiante" | translate}}</ion-title>
+          
+        </div>
       </div>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-header>
-    <app-card nombre="" rut="" imagen="" correo="" sede=""></app-card>
-  </ion-header>
-<div  class="container">
-  <ion-button (click)="logout()">{{ "Cerrar sesión" | translate }}</ion-button>
+  <div *ngFor="let user of listaUsuarios">
+    <div *ngIf="user.email == usuario.email">
+      <ion-header *ngIf="usuario">
+        <app-card nombre="{{user.nombre}} {{user.apellido}}" rut="{{user.rut}}" imagen="{{user.imagen}}" correo={{usuario.email}} sede="{{user.sede}}"></app-card>
+      </ion-header>
+      <div  class="container">
+      <ion-button (click)="logout()">{{ "Cerrar sesión" | translate }}</ion-button>
+    </div>
+  </div>
 
 </div>
 </ion-content>

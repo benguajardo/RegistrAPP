@@ -28,8 +28,8 @@ export class FormregistrarPage implements OnInit {
     toast.present()
   }
 
-  async registrarUsuario(correo: any, pass: any, nombre: any, edad: any) {
-    if (pass.length < 6) {
+  async registrarUsuario(correo: any, contrasena: any, rut: any, nombre: any, apellido: any, carrera: any, sede: any,) {
+    if (contrasena.length < 6) {
       Swal.fire({
         icon: "error",
         title: "Contraseña con pocos carácteres!",
@@ -45,7 +45,8 @@ export class FormregistrarPage implements OnInit {
         timer: 1500,
         heightAuto: false,
       });
-      await this.authservice.register(correo, pass, nombre, edad);
+      const imagen = 'https://source.boringavatars.com/beam/120/'+nombre+rut+apellido
+      await this.authservice.register(correo, contrasena, rut, nombre, apellido, imagen, carrera, sede, true);
       this.router.navigate(['/login']);
     }
 

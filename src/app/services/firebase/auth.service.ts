@@ -37,23 +37,26 @@ export class AuthService {
     }
   }
 
-  async register(email: any, pass: any, nombre: any, edad: any) {
+  async register(correo: any, contrasena: any, rut: any, nombre: any, apellido: any, imagen: any, carrera: any, sede: any, docente: boolean) {
     try {
-      const userCredential = await this.auth.createUserWithEmailAndPassword(email, pass);
+      const userCredential = await this.auth.createUserWithEmailAndPassword(correo, contrasena);
       const user = userCredential.user;
 
       if (user) {
-        const uid = user.uid; // Obtener el UID del usuario
-
+        const uid = user.uid;
         await this.firestore.collection('Usuarios').doc(uid).set({
           email: user.email,
-          docente: false,
+          docente: docente,
           nombre: nombre,
-          edad: edad
+          apellido: apellido,
+          rut: rut,
+          imagen: imagen,
+          carrera: carrera,
+          sede: sede,
+          
         });
-
+        this.logout();
         this.router.navigate(['login']);
-
       }
     } catch (error) {
       console.error('Error en register: ', error);
@@ -76,5 +79,9 @@ export class AuthService {
         reject(error);
       });
     });
+  }
+
+  getCurrentUser() {
+    return this.auth.currentUser;
   }
 }
