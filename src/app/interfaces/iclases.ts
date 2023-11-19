@@ -9,6 +9,8 @@ export interface IClases {
     horaInicio: String,
     horaTermino: String,
     sede: String,
-    sala: String
+    sala: String,
+    lat: number,
+    lgn: number
 }
 

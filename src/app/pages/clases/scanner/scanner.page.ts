@@ -17,6 +17,8 @@ import { IClase } from 'src/app/interfaces/iclase';
 import { IClases } from 'src/app/interfaces/iclases';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/firebase/auth.service';
+
+import { Geolocation } from '@capacitor/geolocation';
 // import { Camera } from '@capacitor/camera';
 
 @Component({
@@ -34,11 +36,12 @@ export class ScannerPage implements OnInit {
   qrcode! :Qrcode;
   listaUsuarios: any;
   usuario: any;
+  lat :any;
+  lng :any;
+  v_dist:any;
   handleRefresh(event: any) {
     setTimeout(() => {
       this.listarQR()
-      this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
-      this.listaEstudiantePresente = this.usuarioService.GetEstudiantePresente()
       this.getClase(this.getId())
       this.getQR(this.getId())
       //Soy dios
@@ -57,7 +60,11 @@ export class ScannerPage implements OnInit {
               private route : ActivatedRoute,
               private transService: TranslateService,
               private auth: AuthService
-              ){this.langs = this.transService.getLangs();}
+              ){this.langs = this.transService.getLangs();
+                setInterval(() => {
+                  this.getLocation();
+                  this.fn_Calc_Dist()
+                }, 1000);}
 
   v_idClase:any;
   ngOnInit() {
@@ -68,10 +75,13 @@ export class ScannerPage implements OnInit {
     this.getQR(this.getId())
     this.v_idClase= this.getId()
     this.obtenerDatosUsuario()
+    this.getLocation();
+    this.fn_Calc_Dist()
   }
   ionViewWillEnter(){
     console.log(this.listaQR)
     this.getClase(this.getId())
+    this.getLocation();
   }
 
   listarQR() {
@@ -93,7 +103,9 @@ export class ScannerPage implements OnInit {
     horaInicio: '',
     horaTermino: '',
     sede: '',
-    sala: ''
+    sala: '',
+    lat :0,
+    lgn: 0
   }
   
    codQR : IQrCodes = {
@@ -201,7 +213,8 @@ export class ScannerPage implements OnInit {
 
 
   marcarAsistencia(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any){
-    if(p_codigo === p_query){
+    const distancia= this.fn_Calc_Dist()
+    if(p_codigo === p_query ){
       this.presente.rutEstudiante = rutEstudiante;
       this.presente.idClase = this.v_idClase;
       this.presente.presente = true;
@@ -212,12 +225,12 @@ export class ScannerPage implements OnInit {
       this.router.navigate(['/clases/asistencia/'+idClase]);
       this.mensajeToast('Asistencia Confirmada.')
     }else{
-      this.mensajeToast('El código es incorrecto')
+      this.mensajeToast('El código es incorrecto o estás')
     }
   }
 
-  estudiantePresente(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any){
-    if(p_codigo === p_query){
+  estudiantePresente(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any, ){
+    if(p_codigo === p_query && this.v_dist<=50){
       this.presente.rutEstudiante = rutEstudiante;
       this.presente.idClase = idClase;
       this.presente.presente = true;
@@ -228,7 +241,7 @@ export class ScannerPage implements OnInit {
       this.router.navigate(['/clases/asistencia/'+idClase]);
       this.mensajeToast('Asistencia Confirmada.')
     }else{
-      this.mensajeToast('El código es incorrecto')
+      this.mensajeToast('El código es incorrecto o estás demasiado lejos de la sala')
     }
   }
   async mensajeToast(mensaje: string){
@@ -298,6 +311,66 @@ export class ScannerPage implements OnInit {
       let aux = JSON.stringify(user)
       this.listaUsuarios=JSON.parse(aux);
     })
+  }
+
+
+  async getLocation() {
+    try {
+      const coordenadas = await Geolocation.getCurrentPosition();
+      this.lat = coordenadas.coords.latitude;
+      this.lng = coordenadas.coords.longitude;
+      console.log('lat: ',this.lat, 'lng',this.lng)
+    } catch (error) {
+      console.error('Error al obtener la ubicación:', error);
+    }
+  }
+
+calcularDistancia(latitud1: number, longitud1: number, latitud2: number, longitud2: number): number {
+    const radioTierra = 6371000; // Radio de la Tierra en metros
+  
+    // Convertir las latitudes y longitudes de grados a radianes
+    const latitudRad1 = (latitud1 * Math.PI) / 180;
+    const longitudRad1 = (longitud1 * Math.PI) / 180;
+    const latitudRad2 = (latitud2 * Math.PI) / 180;
+    const longitudRad2 = (longitud2 * Math.PI) / 180;
+  
+    // Calcular las diferencias de latitud y longitud
+    const dLat = latitudRad2 - latitudRad1;
+    const dLon = longitudRad2 - longitudRad1;
+  
+    // Calcular la distancia haversine
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(latitudRad1) * Math.cos(latitudRad2) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distancia = radioTierra * c;
+  
+    return distancia;
+  }
+  
+  fn_Calc_Dist(){
+    const latitudPunto1 = this.lat; // Latitud del primer punto
+    const longitudPunto1 = this.lng; // Longitud del primer punto
+    const latitudPunto2 = this.clase.lat; // Latitud del segundo punto
+    const longitudPunto2 = this.clase.lgn; // Longitud del segundo punto
+    const distancia = this.calcularDistancia(latitudPunto1, longitudPunto1, latitudPunto2, longitudPunto2);
+    this.v_dist=Math.round(distancia)
+  }
+
+  estudiantePresente4(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any ){
+    if(p_codigo === p_query){
+      this.presente.rutEstudiante = rutEstudiante;
+      this.presente.idClase = idClase;
+      this.presente.presente = true;
+      this.presente.horaLlegada = this.hora.toLocaleTimeString();
+      this.presente.nombre = p_nombre;
+      this.presente.apellido = p_apellido;
+      this.firestore.createPresente('Asistencia',this.presente)
+      this.router.navigate(['/clases/asistencia/'+idClase]);
+      this.mensajeToast('Asistencia Confirmada.')
+    }else{
+      this.mensajeToast('El código es incorrecto')
+    }
   }
 
 }

@@ -38,7 +38,9 @@ export class AsistenciaPage implements OnInit {
     horaInicio: '',
     horaTermino: '',
     sede: '',
-    sala: ''
+    sala: '',
+    lat: 0,
+    lgn: 0
   };
   listaUsuarioIniciado : usuarioIniciado [] = [];
   

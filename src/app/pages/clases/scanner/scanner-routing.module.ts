@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ScannerPage
+  },  {
+    path: 'location',
+    loadChildren: () => import('./location/location.module').then( m => m.LocationPageModule)
   }
+
   
 
 ];

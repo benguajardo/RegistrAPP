@@ -19,16 +19,17 @@
             <ion-card-subtitle>{{"Docente" | translate}}: {{ clase.docente }}</ion-card-subtitle>
             <ion-card-subtitle>{{"Fecha:" | translate}} {{ clase.dia }}</ion-card-subtitle>
             <ion-card-subtitle>{{"Hora Inicio:" | translate}} {{ clase.horaInicio }} {{"Hora Término:" | translate}} {{ clase.horaTermino }}</ion-card-subtitle>
+            
+            
             <div *ngFor="let user of listaUsuarios">
-              <div *ngIf="user.docente">
-                <ion-button (click)="deleteClase()" color="danger"> {{"Eliminar Clase" | translate}}
-                  <ion-icon name="trash-outline"></ion-icon>
-                </ion-button>
-
+              <div *ngIf="user.email == usuario.email">
+                <div *ngIf="user.docente">
+                  <ion-button (click)="deleteClase()" color="danger"> {{"Eliminar Clase" | translate}}
+                    <ion-icon name="trash-outline"></ion-icon>
+                  </ion-button>
+                </div>
               </div>
             </div>
-
-            
         </ion-card-header>
         <ion-card-content>
             <div class="container">
@@ -46,10 +47,14 @@
               </div>
               <div *ngFor="let user of listaUsuarios">
                 <div *ngIf="user.email == usuario.email">
-
                   <div *ngIf="user.docente == false">
+                      <label>Estás a <ion-text color="success">{{v_dist}}</ion-text> metros de la sala</label>
+                      <p><ion-text color="success" *ngIf="v_dist <=50">Puedes marcar asistencia.</ion-text></p>
+                      
+                      <p><ion-text color="danger" *ngIf="v_dist >=50">Estás muy lejos, no puedes marcar asistencia.</ion-text></p>
                     <div *ngFor="let qr of listaQR">
                       <div *ngIf="qr.idClase == v_idClase">
+                        
                         <ion-item>
                           <ion-input #codigo placeholder="Ingrese el código"></ion-input>
                         </ion-item>
@@ -74,7 +79,10 @@
                   </div>
                 </div>
               </div>
+
+
             </div>
+            
           </ion-card-content>
         </ion-card>
           
