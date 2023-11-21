@@ -48,10 +48,10 @@
               <div *ngFor="let user of listaUsuarios">
                 <div *ngIf="user.email == usuario.email">
                   <div *ngIf="user.docente == false">
-                      <label>Estás a <ion-text color="success">{{v_dist}}</ion-text> metros de la sala</label>
-                      <p><ion-text color="success" *ngIf="v_dist <=50">Puedes marcar asistencia.</ion-text></p>
+                      <label>{{"Estás a "| translate}} <ion-text color="success">{{v_dist}}</ion-text> {{" metros de la sala"| translate}}</label>
+                      <p><ion-text color="success" *ngIf="v_dist <=50">{{"Puedes marcar asistencia." | translate}}</ion-text></p>
                       
-                      <p><ion-text color="danger" *ngIf="v_dist >=50">Estás muy lejos, no puedes marcar asistencia.</ion-text></p>
+                      <p><ion-text color="danger" *ngIf="v_dist >=50">{{"Estás muy lejos, no puedes marcar asistencia." | translate}}</ion-text></p>
                     <div *ngFor="let qr of listaQR">
                       <div *ngIf="qr.idClase == v_idClase">
                         

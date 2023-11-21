@@ -142,5 +142,9 @@
     "Eliminar Clase" : "Delete Class",
     "Escanear código QR" : "Scan QR code",
     "Marcar asistencia" : "Mark assistance",
-    "Quitar QR" : "Remove QR"
+    "Quitar QR" : "Remove QR",
+
+    "Estás a ": "You are  ", " metros de la sala" : " meters from the classroom",
+    "Puedes marcar asistencia." :"You can mark assistance.",
+    "Estás muy lejos, no puedes marcar asistencia." :"You are too far away, you can't mark assistance."
 }

@@ -142,5 +142,11 @@
     "Eliminar Clase" : "Klasse löschen:",
     "Escanear código QR" : "QR-Code scannen",
     "Marcar asistencia" : "Anwesenheit markieren",
-    "Quitar QR" : "QR entfernen"
+    "Quitar QR" : "QR entfernen",
+
+    "Asistencia": "Assistenz",
+
+    "Estás a ": "Sie sind ", " metros de la sala" : " Meter vom Zimmer entfernt",
+    "Puedes marcar asistencia." :"Sie können die Anwesenheit markieren.",
+    "Estás muy lejos, no puedes marcar asistencia." :"Sie sind zu weit weg, Sie können keine Hilfe markieren."
 }
