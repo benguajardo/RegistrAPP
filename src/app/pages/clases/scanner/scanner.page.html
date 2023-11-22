@@ -20,7 +20,6 @@
             <ion-card-subtitle>{{"Fecha:" | translate}} {{ clase.dia }}</ion-card-subtitle>
             <ion-card-subtitle>{{"Hora Inicio:" | translate}} {{ clase.horaInicio }} {{"Hora Término:" | translate}} {{ clase.horaTermino }}</ion-card-subtitle>
             
-            
             <div *ngFor="let user of listaUsuarios">
               <div *ngIf="user.email == usuario.email">
                 <div *ngIf="user.docente">

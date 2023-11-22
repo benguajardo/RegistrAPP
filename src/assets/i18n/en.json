@@ -146,5 +146,6 @@
 
     "Estás a ": "You are  ", " metros de la sala" : " meters from the classroom",
     "Puedes marcar asistencia." :"You can mark assistance.",
-    "Estás muy lejos, no puedes marcar asistencia." :"You are too far away, you can't mark assistance."
+    "Estás muy lejos, no puedes marcar asistencia." :"You are too far away, you can't mark assistance.",
+    "Registrar docente" : "Sign Up Teacher"
 }

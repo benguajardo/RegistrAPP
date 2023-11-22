@@ -148,5 +148,6 @@
 
     "Estás a ": "Sie sind ", " metros de la sala" : " Meter vom Zimmer entfernt",
     "Puedes marcar asistencia." :"Sie können die Anwesenheit markieren.",
-    "Estás muy lejos, no puedes marcar asistencia." :"Sie sind zu weit weg, Sie können keine Hilfe markieren."
+    "Estás muy lejos, no puedes marcar asistencia." :"Sie sind zu weit weg, Sie können keine Hilfe markieren.",
+    "Registrar docente" : "Lehrer anmelden"
 }

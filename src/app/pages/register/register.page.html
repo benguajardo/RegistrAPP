@@ -54,6 +54,7 @@
     <ion-card-content>
       <div class="">
         <ion-button size="large" color="warning" (click)="registrarUsuario(email.value, pass.value,rut.value, nombre.value,apellido.value,carrera.value, sede.value)">Registrar</ion-button>
+        <ion-button style="color: rgb(0, 17, 255); " fill="clear" [routerLink]="['/login']">Iniciar sesión</ion-button>
       </div>
     </ion-card-content>
   </ion-card>

@@ -18,10 +18,10 @@
              <ion-input #nombreAsignatura [(ngModel)]="clase.nombre" type="text" label="Nombre de asignatura" labelPlacement="floating" placeholder="Ej: Programación Aplicaciones Móviles"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #siglaAsignatura [(ngModel)]="clase.sigla" type="text" label="Sigla" labelPlacement="floating" placeholder="Ej: Juan Antonio Pérez Gómez"></ion-input>
+             <ion-input #siglaAsignatura [(ngModel)]="clase.sigla" type="text" label="Sigla" labelPlacement="floating" placeholder="Ej: PGY1234"></ion-input>
            </ion-item>
            <ion-item>
-             <ion-input #seccion [(ngModel)]="clase.seccion" type="text" label="Sección" labelPlacement="floating" placeholder="12.345.678-9"></ion-input>
+             <ion-input #seccion [(ngModel)]="clase.seccion" type="text" label="Sección" labelPlacement="floating" placeholder="007D"></ion-input>
            </ion-item>
            <ion-item>
              <ion-input #fecha [(ngModel)]="clase.dia" label="Fecha" type="text" label="Fecha" labelPlacement="floating" placeholder="2023-10-25"></ion-input>
@@ -39,7 +39,7 @@
               <ion-input #sala type="text" [(ngModel)]="clase.sala" label="Sala" labelPlacement="floating" placeholder="Lc8"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input #docente type="text" [(ngModel)]="clase.docente" label="Docente" value="" labelPlacement="floating" placeholder="Puente Alto"></ion-input>
+              <ion-input #docente type="text" [(ngModel)]="clase.docente" label="Docente" value="" labelPlacement="floating" placeholder="Freddy Bosques"></ion-input>
             </ion-item>
             <ion-button color="secondary" (click)="addClase()">{{"Crear clase" | translate}}</ion-button>
           </ion-card-content>
