@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   
-  
+  idioma!: string;
   
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
@@ -36,20 +36,19 @@ export class AppComponent {
   ) {
     this.transService.setDefaultLang('es');
     this.transService.addLangs(['de','en']);
+
+    this.idioma = this.transService.currentLang;
   }
 
   mostrarMenu(){
-    return this.router.url !== '/login';
+    const pages = ['home', 'clases','profile','asistencia','crearclase','scanner', 'config']
+    console.log(this.idioma)
+    return pages.includes(this.router.url.substring(1));
   }
 
   mostrarMenuApi(){
     const aux = ['apiHome', 'apiAdd', 'apiList', 'apiDelete', 'apiUpdate', 'apiDetail']
-    return aux.includes(this.router.url.substring(1)); //Eliminamos el "/"0
-    //return this.router.url == '/apiHome';
+    return aux.includes(this.router.url.substring(1));
   }
   
-
-
-
-
 }

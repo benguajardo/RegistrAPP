@@ -27,19 +27,9 @@ export class HomePage implements OnInit {
   listaUsuarioIniciado : usuarioIniciado [] = []
   
   ngOnInit() {
-    // this.mensajeService.avisoLogin()
-    // if(this.usuarioService.usuarioIniciado.length != 1){
-    //   this.router.navigate(['/login'])
-    // }
-    // this.listaUsuarioIniciado = this.usuarioService.GetUsuarioIniciado()
-    // console.log(this.listaUsuarioIniciado)
   }
 
   ionViewWillEnter() {
-    // if(this.usuarioService.usuarioIniciado.length != 1){
-    //   this.router.navigate(['/login'])
-    // }
-    
   }
 
   async logout(){
