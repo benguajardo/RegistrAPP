@@ -1,11 +1,32 @@
 <ion-card>
-  <ion-card-header>
-  </ion-card-header>
-  <ion-card-content>
+  
+  <ion-card-content *ngIf="this.idioma === 'es'">
     <ion-card-title>{{ nombre }}</ion-card-title>
     <img alt="Silhouette of mountains" src="{{ imagen }}"/>
     <ion-card-title>Rut: {{ rut }}</ion-card-title>
     <ion-card-subtitle>Correo electrónico: {{ correo }}</ion-card-subtitle>
     <ion-card-subtitle>Sede: {{ sede }}</ion-card-subtitle>
   </ion-card-content>
+  <ion-card-content *ngIf="this.idioma === undefined ">
+    <ion-card-title>{{ nombre }}</ion-card-title>
+    <img alt="Silhouette of mountains" src="{{ imagen }}"/>
+    <ion-card-title>Rut: {{ rut }}</ion-card-title>
+    <ion-card-subtitle>Correo electrónico: {{ correo }}</ion-card-subtitle>
+    <ion-card-subtitle>Sede: {{ sede }}</ion-card-subtitle>
+  </ion-card-content>
+  <ion-card-content *ngIf="this.idioma === 'en'">
+    <ion-card-title>{{ nombre }}</ion-card-title>
+    <img alt="Silhouette of mountains" src="{{ imagen }}"/>
+    <ion-card-title>Rut: {{ rut }}</ion-card-title>
+    <ion-card-subtitle>E-Mail: {{ correo }}</ion-card-subtitle>
+    <ion-card-subtitle>Campus: {{ sede }}</ion-card-subtitle>
+  </ion-card-content>
+  <ion-card-content *ngIf="this.idioma === 'de'">
+    <ion-card-title>{{ nombre }}</ion-card-title>
+    <img alt="Silhouette of mountains" src="{{ imagen }}"/>
+    <ion-card-title>Rut: {{ rut }}</ion-card-title>
+    <ion-card-subtitle>Email: {{ correo }}</ion-card-subtitle>
+    <ion-card-subtitle>Campus: {{ sede }}</ion-card-subtitle>
+  </ion-card-content>
+
 </ion-card>

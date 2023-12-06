@@ -36,17 +36,19 @@ export class LoadingPage implements OnInit {
         })
     }
   }
+  
   ngOnInit() {
-    this.passValue=''
-    this.emailValue=''
-    this.authService.checkAuth().then((user)=>{
-      if(user){
+    this.passValue = '';
+    this.emailValue = '';
+    this.authService.checkAuth().then((user) => {
+      if (user) {
         this.router.navigate(['home']);
+      } else {
+        setTimeout(() => {
+          this.router.navigate(['/terms']);
+        }, 2000);
       }
-    })
-      setTimeout(() => {
-      this.router.navigate(['/terms']);
-    },2000);    
+    });
   }
 
 }

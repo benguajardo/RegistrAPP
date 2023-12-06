@@ -38,17 +38,21 @@ export class AppComponent {
     this.transService.addLangs(['de','en']);
 
     this.idioma = this.transService.currentLang;
+
+    const browserLang = this.transService.getBrowserLang();
+
+    if (browserLang) {
+      this.transService.use(browserLang.match(/de|en/) ? browserLang : 'es');
+    } else {
+      this.transService.use('es');
+    }
+
   }
 
   mostrarMenu(){
-    const pages = ['home', 'clases','profile','asistencia','crearclase','scanner', 'config']
+    const pages = ['home', 'clases','profile','asistencia','scanner','crearclase','config']
     console.log(this.idioma)
     return pages.includes(this.router.url.substring(1));
   }
 
-  mostrarMenuApi(){
-    const aux = ['apiHome', 'apiAdd', 'apiList', 'apiDelete', 'apiUpdate', 'apiDetail']
-    return aux.includes(this.router.url.substring(1));
-  }
-  
 }

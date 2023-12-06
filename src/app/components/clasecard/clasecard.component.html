@@ -1,11 +1,44 @@
-<ion-card>
-<ion-card-header>
-    <ion-card-title>{{ nombre }}</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-card-subtitle>{{ sigla }} - {{ seccion }}</ion-card-subtitle>
-    <ion-card-subtitle>{{ docente }}</ion-card-subtitle>
-    <ion-card-subtitle>Horario:</ion-card-subtitle>
-    <ion-card-subtitle>{{ horaInicio }} - {{ horaTermino }}</ion-card-subtitle>
-  </ion-card-content>
-</ion-card>
+<ion-card *ngIf="this.idioma === 'es'">
+  <ion-card-header>
+      <ion-card-title>{{ nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>{{ sigla }} - {{ seccion }}</ion-card-subtitle>
+      <ion-card-subtitle>Docente: {{ docente }}</ion-card-subtitle>
+      <ion-card-subtitle>Horario:</ion-card-subtitle>
+      <ion-card-subtitle>{{ horaInicio }} - {{ horaTermino }}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="this.idioma === 'en'">
+  <ion-card-header>
+      <ion-card-title>{{ nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>{{ sigla }} - {{ seccion }}</ion-card-subtitle>
+      <ion-card-subtitle>Teacher: {{ docente }}</ion-card-subtitle>
+      <ion-card-subtitle>Schedule:</ion-card-subtitle>
+      <ion-card-subtitle>{{ horaInicio }} - {{ horaTermino }}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="this.idioma === 'de'">
+  <ion-card-header>
+      <ion-card-title>{{ nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>{{ sigla }} - {{ seccion }}</ion-card-subtitle>
+      <ion-card-subtitle>Lehrer: {{ docente }}</ion-card-subtitle>
+      <ion-card-subtitle>Zeitplan:</ion-card-subtitle>
+      <ion-card-subtitle>{{ horaInicio }} - {{ horaTermino }}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="this.idioma === undefined">
+  <ion-card-header>
+      <ion-card-title>{{ nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>{{ sigla }} - {{ seccion }}</ion-card-subtitle>
+      <ion-card-subtitle>Docente: {{ docente }}</ion-card-subtitle>
+      <ion-card-subtitle>Horario:</ion-card-subtitle>
+      <ion-card-subtitle>{{ horaInicio }} - {{ horaTermino }}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>

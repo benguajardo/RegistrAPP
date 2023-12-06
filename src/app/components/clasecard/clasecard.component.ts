@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-clasecard',
@@ -14,8 +15,22 @@ export class ClasecardComponent  implements OnInit {
   @Input() horaInicio!:string;
   @Input() horaTermino!:string;
 
-  constructor() { }
+  langs: string[] =[];
+  
+  constructor(private transService: TranslateService) {
+    this.langs = this.transService.getLangs();
+   }
+  
+  idioma = this.transService.currentLang;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.transService.currentLang;
+    console.log("Idioma",this.idioma);
+  }
+  
+  ngOnViewWillEnter(){
+    this.transService.defaultLang;
+  }
+
 
 }

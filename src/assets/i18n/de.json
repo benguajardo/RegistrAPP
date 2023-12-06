@@ -149,5 +149,9 @@
     "Estás a ": "Sie sind ", " metros de la sala" : " Meter vom Zimmer entfernt",
     "Puedes marcar asistencia." :"Sie können die Anwesenheit markieren.",
     "Estás muy lejos, no puedes marcar asistencia." :"Sie sind zu weit weg, Sie können keine Hilfe markieren.",
-    "Registrar docente" : "Lehrer anmelden"
+    "Registrar docente" : "Lehrer anmelden",
+
+    "Marca la asistencia de tus clases desde aquí!":"Markieren Sie die Anwesenheit für Ihre Kurse ab hier!",
+    "Home": "Heim",
+    "Perfil": "Profil"
 }

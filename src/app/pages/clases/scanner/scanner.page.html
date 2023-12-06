@@ -3,8 +3,6 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ clase.nombre }}</ion-title>
-    
   </ion-toolbar>
 </ion-header>
 
@@ -56,7 +54,7 @@
 
                         
                         <ion-button (click)="scan(qr.idClase,qr.idClase,user.rut,user.nombre,user.apellido)" [disabled]="!isSupported">Escanear código QR</ion-button>
-                        {{barcodes[0]}}
+                        {{v_barcode}}
 
                         <ion-item>
                           <ion-input #codigo placeholder="Ingrese el código"></ion-input>

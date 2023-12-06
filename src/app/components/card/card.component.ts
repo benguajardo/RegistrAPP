@@ -13,13 +13,23 @@ export class CardComponent  implements OnInit {
   @Input() correo!:string;
   @Input() imagen!:string;
   @Input() sede!:string;
+  @Input() docente!:boolean;
 
   langs: string[] =[];
 
   constructor(private transService: TranslateService) {
     this.langs = this.transService.getLangs();
    }
-
-  ngOnInit() {}
   
+  idioma = this.transService.currentLang;
+
+  ngOnInit() {
+    this.transService.currentLang;
+    console.log("Idioma",this.idioma);
+  }
+  
+  ngOnViewWillEnter(){
+    this.transService.defaultLang;
+  }
+
 }

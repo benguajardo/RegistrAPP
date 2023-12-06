@@ -148,5 +148,9 @@
     "Estás a ": "Estás a ", " metros de la sala" : " metros de la sala",
     "Puedes marcar asistencia." :"Puedes marcar asistencia.",
     "Estás muy lejos, no puedes marcar asistencia." :"Estás muy lejos, no puedes marcar asistencia.",
-    "Registrar docente" : "Registrar docente"
+    "Registrar docente" : "Registrar docente",
+
+    "Marca la asistencia de tus clases desde aquí!": "Marca la asistencia de tus clases desde aquí!",
+    "Home": "Inicio",
+    "Perfil": "Perfil"
 }

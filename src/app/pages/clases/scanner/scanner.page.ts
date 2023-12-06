@@ -380,10 +380,9 @@ calcularDistancia(latitud1: number, longitud1: number, latitud2: number, longitu
     }
   }
 
-
   isSupported = false;
   barcodes: Barcode[] = [];
-  v_barcode : string ='';
+  v_barcode : any;
 
   async scan(p_codigo: any, p_idClase:any, rutEstudiante: any, p_nombre: any, p_apellido: any): Promise<void> {
     const granted = await this.requestPermissions();
@@ -394,7 +393,8 @@ calcularDistancia(latitud1: number, longitud1: number, latitud2: number, longitu
     // deja la lista de barcodes vacía para que sólo haya un barcode
     this.barcodes=[];
     const { barcodes } = await BarcodeScanner.scan();
-    this.barcodes.push(...barcodes);
+    this.v_barcode=barcodes;
+
     this.estudiantePresente(p_codigo,this.barcodes[0],p_idClase,rutEstudiante,p_nombre,p_apellido)
   }
 
