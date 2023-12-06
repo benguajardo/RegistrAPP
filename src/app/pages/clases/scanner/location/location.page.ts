@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment';
 export class LocationPage implements OnInit {
 
   isSupported = false;
-  barcodes: any;
+  barcodes: Barcode[] = [];
 
   constructor(private alertController: AlertController) {}
 
@@ -25,6 +25,7 @@ export class LocationPage implements OnInit {
   }
 
   async scan(): Promise<void> {
+    this.barcodes=[];
     const granted = await this.requestPermissions();
     if (!granted) {
       this.presentAlert();
