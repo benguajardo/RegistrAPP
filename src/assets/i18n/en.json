@@ -143,6 +143,7 @@
     "Escanear código QR" : "Scan QR code",
     "Marcar asistencia" : "Mark assistance",
     "Quitar QR" : "Remove QR",
+    "Generar Código QR": "Generate QR Code",
 
     "Estás a ": "You are  ", " metros de la sala" : " meters from the classroom",
     "Puedes marcar asistencia." :"You can mark assistance.",
@@ -151,5 +152,6 @@
 
     "Marca la asistencia de tus clases desde aquí!": "Mark attendance for your classes from here!",
     "Home" : "Home",
-    "Perfil": "Profile"
+    "Perfil": "Profile",
+    "RECUPERAR CONTRASEÑA": "Recover password"
 }

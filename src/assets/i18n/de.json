@@ -143,6 +143,7 @@
     "Escanear código QR" : "QR-Code scannen",
     "Marcar asistencia" : "Anwesenheit markieren",
     "Quitar QR" : "QR entfernen",
+    "Generar Código QR": "QR generieren",
 
     "Asistencia": "Assistenz",
 
@@ -153,5 +154,6 @@
 
     "Marca la asistencia de tus clases desde aquí!":"Markieren Sie die Anwesenheit für Ihre Kurse ab hier!",
     "Home": "Heim",
-    "Perfil": "Profil"
+    "Perfil": "Profil",
+    "Recuperar contraseña": "Passwort wiederherstellen"
 }

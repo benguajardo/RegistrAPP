@@ -53,8 +53,7 @@
                       <div *ngIf="qr.idClase == v_idClase">
 
                         
-                        <ion-button (click)="scan(qr.idClase,qr.idClase,user.rut,user.nombre,user.apellido)" [disabled]="!isSupported">Escanear código QR</ion-button>
-                        {{v_barcode}}
+                        <ion-button (click)="scan(qr.idClase,qr.idClase,user.rut,user.nombre,user.apellido)" [disabled]="!isSupported">{{"Escanear código QR" | translate}}</ion-button>
 
                         <ion-item>
                           <ion-input #codigo placeholder="Ingrese el código"></ion-input>

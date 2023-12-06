@@ -84,4 +84,17 @@ export class AuthService {
   getCurrentUser() {
     return this.auth.currentUser;
   }
+
+  obtenerEmail(email: string): Promise<any> {
+    return this.firestore.collection('Usuarios', ref => ref.where('email', '==', email)).get().toPromise();
+  }
+
+  async restablecerContraseña(email: string) {
+    try {
+      await this.auth.sendPasswordResetEmail(email);
+      this.mensaje('Se ha enviado un correo electrónico.');
+    } catch (error) {
+      this.mensaje('Error al enviar correo electrónico.');
+    }
+  }
 }

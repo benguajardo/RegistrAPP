@@ -142,6 +142,7 @@
     "Escanear código QR" : "Escanear código QR",
     "Marcar asistencia" : "Marcar asistencia",
     "Quitar QR" : "Quitar QR",
+    "Generar Código QR": "Generar Código QR",
 
     "Asistencia": "Asistencia",
 
@@ -152,5 +153,6 @@
 
     "Marca la asistencia de tus clases desde aquí!": "Marca la asistencia de tus clases desde aquí!",
     "Home": "Inicio",
-    "Perfil": "Perfil"
+    "Perfil": "Perfil",
+    "Recuperar contraseña": "Recuperar contraseña"
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { UsuariosrandomService } from 'src/app/services/usuariosrandom.service';
 import { usuarioIniciado } from '../profile/usuarios.model';
@@ -47,6 +47,7 @@ constructor(private toastController: ToastController,
   private formBuilder: FormBuilder,
   private apiService: ApiService,
   private authService: AuthService,
+  private alertController: AlertController,
   private transService: TranslateService,
   private firestore: FirestoreService
   ){this.langs = this.transService.getLangs();
@@ -126,5 +127,43 @@ constructor(private toastController: ToastController,
 
   register(){
     this.router.navigate(['register'])
+  }
+
+  async recuperarContrasena() {
+    const alert = await this.alertController.create({
+        header: 'Recuperar Contraseña',
+        inputs: [
+            {
+                name: 'email',
+                type: 'text',
+                placeholder: 'Correo Electrónico',
+            },
+        ],
+        buttons: [
+            {
+                text: 'Cancelar',
+                role: 'cancel',
+            },
+            {
+                text: 'Enviar',
+                handler: async (data) => {
+                    try {
+                        const user = await this.authService.obtenerEmail(data.email);
+
+                        if (user && user.docs.length > 0) {
+                            await this.authService.restablecerContraseña(data.email);
+                            this.mensaje('Se ha enviado un correo electrónico.');
+                        } else {
+                            this.mensaje('El correo electrónico ingresado no se encuentra registrado.');
+                        }
+                    } catch (error) {
+                        this.mensaje('Hubo un error al enviar el correo electrónico.');
+                    }
+                },
+            },
+        ],
+    });
+
+    await alert.present();
   }
 }

@@ -37,8 +37,11 @@
     <ion-button  (click)="register()" style="color: rgb(255, 208, 0);" fill="clear">{{"Registrarse" | translate}}</ion-button>
   </ion-buttons>
   <ion-button style="color: rgb(0, 17, 255); " fill="clear" [routerLink]="['/formregistrar']">{{"Registrar docente" | translate}}</ion-button>
-  <ion-button style="color: rgb(0, 17, 255); " fill="clear" [routerLink]="['/formregistrar']">{{"Recuperar contraseña" | translate}}</ion-button>
-  <ion-button style="color: rgb(0, 17, 255);" fill="clear" [routerLink]="['/terms']">{{"Ver términos y condiciones" | translate}}</ion-button>
-  <ion-button style="color: rgb(0, 17, 255);" fill="clear" [routerLink]="['/clases/scanner/location']">qr</ion-button>
+  <ion-button style="color: rgb(0, 17, 255);" fill="clear" [routerLink]="['/clases/scanner/location']">QR</ion-button>
+  <ion-button style="color: rgb(0, 17, 255);" fill="clear" class="link" (click)="recuperarContrasena()">{{ 'Recuperar contraseña' | translate }}</ion-button>
+
+  <ion-item >
+    <ion-label></ion-label>
+  </ion-item>
 </ion-card>
 </ion-content>
