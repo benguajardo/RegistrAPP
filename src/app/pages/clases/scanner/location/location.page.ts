@@ -4,11 +4,7 @@ import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { AlertController } from '@ionic/angular';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { environment } from 'src/environments/environment';
-// Call the element loader before the bootstrapModule/bootstrapApplication call
-defineCustomElements(window);
-if (environment.production) {
-  enableProdMode();
-}
+
 
 @Component({
   selector: 'app-location',
@@ -18,7 +14,7 @@ if (environment.production) {
 export class LocationPage implements OnInit {
 
   isSupported = false;
-  barcodes: Barcode[] = [];
+  barcodes: any;
 
   constructor(private alertController: AlertController) {}
 

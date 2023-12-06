@@ -1,4 +1,4 @@
-package cl.duoc.registrapp;
+package cl.duoc.app;
 
 import com.getcapacitor.BridgeActivity;
 
