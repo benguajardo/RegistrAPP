@@ -36,7 +36,7 @@
                 <div *ngIf="user.email == usuario.email">
                   <div *ngIf="user.docente == true">
                     <div *ngIf="codQR.idClase != v_idClase">
-                      <ion-button (click)="cargarData(v_idClase,clase.sala,clase.sigla, clase.seccion, clase.sede)" color="warning"> {{"Generar Código QR" | translate}}
+                      <ion-button (click)="cargarData(v_idClase)" color="warning"> {{"Generar Código QR" | translate}}
                         <ion-icon name="add-outline"></ion-icon>
                       </ion-button>
                     </div>
@@ -53,7 +53,11 @@
                       <p><ion-text color="danger" *ngIf="v_dist >=50">{{"Estás muy lejos, no puedes marcar asistencia." | translate}}</ion-text></p>
                     <div *ngFor="let qr of listaQR">
                       <div *ngIf="qr.idClase == v_idClase">
+
                         
+                        <ion-button (click)="scan(qr.idClase,qr.idClase,user.rut,user.nombre,user.apellido)" [disabled]="!isSupported">Escanear código QR</ion-button>
+                        {{barcodes[0]}}
+
                         <ion-item>
                           <ion-input #codigo placeholder="Ingrese el código"></ion-input>
                         </ion-item>

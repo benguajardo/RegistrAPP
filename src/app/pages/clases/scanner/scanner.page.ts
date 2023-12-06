@@ -17,7 +17,7 @@ import { IClase } from 'src/app/interfaces/iclase';
 import { IClases } from 'src/app/interfaces/iclases';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/firebase/auth.service';
-
+import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { Geolocation } from '@capacitor/geolocation';
 // import { Camera } from '@capacitor/camera';
 
@@ -77,6 +77,11 @@ export class ScannerPage implements OnInit {
     this.obtenerDatosUsuario()
     this.getLocation();
     this.fn_Calc_Dist()
+
+    this.barcodes=[];
+    BarcodeScanner.isSupported().then((result) => {
+      this.isSupported = result.supported;
+    });
   }
   ionViewWillEnter(){
     console.log(this.listaQR)
@@ -170,7 +175,7 @@ export class ScannerPage implements OnInit {
     imagen: '',
   }
  
-  async cargarData(p_clase: any, p_sala: any, p_asignatura: any, p_seccion: any, p_sede: any) {
+  async cargarData(p_clase: any) {
     const alerta = await this.alertController.create({
       header: 'Generar código',
       message: 'Quiere generar un código QR?',
@@ -178,7 +183,7 @@ export class ScannerPage implements OnInit {
         {
           text: 'Cargar',
           handler: () => {
-            this.creaQR(p_clase, p_sala, p_asignatura, p_seccion, p_sede)
+            this.creaQR(p_clase)
             this.mensajeToast("Código generado!");
           }
         },
@@ -202,8 +207,8 @@ export class ScannerPage implements OnInit {
     apellido: ""
   }
 
-  creaQR(p_clase: any, p_sala: any, p_asignatura: any, p_seccion: any, p_sede: any){
-    const url = `https://api.qrserver.com/v1/create-qr-code/?data=${p_clase + '-' + p_sala + '-' + p_asignatura + '-' + p_seccion + '-' + p_sede +'-'+ this.listaQR.length}&size=150x150` 
+  creaQR(p_clase: any){
+    const url = `https://api.qrserver.com/v1/create-qr-code/?data=${p_clase}&size=150x150` 
     const idClase = `${p_clase}` 
     this.qr.id = this.getId();
     this.qr.imagen = url;
@@ -229,21 +234,7 @@ export class ScannerPage implements OnInit {
     }
   }
 
-  estudiantePresente(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any, ){
-    if(p_codigo === p_query && this.v_dist<=50){
-      this.presente.rutEstudiante = rutEstudiante;
-      this.presente.idClase = idClase;
-      this.presente.presente = true;
-      this.presente.horaLlegada = this.hora.toLocaleTimeString();
-      this.presente.nombre = p_nombre;
-      this.presente.apellido = p_apellido;
-      this.firestore.createPresente('Asistencia',this.presente)
-      this.router.navigate(['/clases/asistencia/'+idClase]);
-      this.mensajeToast('Asistencia Confirmada.')
-    }else{
-      this.mensajeToast('El código es incorrecto o estás demasiado lejos de la sala')
-    }
-  }
+  
   async mensajeToast(mensaje: string){
     const toast = await this.toastController.create({
       message: mensaje,
@@ -373,6 +364,53 @@ calcularDistancia(latitud1: number, longitud1: number, latitud2: number, longitu
     }
   }
 
+  estudiantePresente(p_codigo: any, p_query: any, idClase: any, rutEstudiante: any, p_nombre: any, p_apellido: any, ){
+    if(p_codigo === p_query && this.v_dist<=50){
+      this.presente.rutEstudiante = rutEstudiante;
+      this.presente.idClase = idClase;
+      this.presente.presente = true;
+      this.presente.horaLlegada = this.hora.toLocaleTimeString();
+      this.presente.nombre = p_nombre;
+      this.presente.apellido = p_apellido;
+      this.firestore.createPresente('Asistencia',this.presente)
+      this.router.navigate(['/clases/asistencia/'+idClase]);
+      this.mensajeToast('Asistencia Confirmada.')
+    }else{
+      this.mensajeToast('El código es incorrecto o estás demasiado lejos de la sala')
+    }
+  }
+
+
+  isSupported = false;
+  barcodes: Barcode[] = [];
+  v_barcode : string ='';
+
+  async scan(p_codigo: any, p_idClase:any, rutEstudiante: any, p_nombre: any, p_apellido: any): Promise<void> {
+    const granted = await this.requestPermissions();
+    if (!granted) {
+      this.presentAlert();
+      return;
+    }
+    // deja la lista de barcodes vacía para que sólo haya un barcode
+    this.barcodes=[];
+    const { barcodes } = await BarcodeScanner.scan();
+    this.barcodes.push(...barcodes);
+    this.estudiantePresente(p_codigo,this.barcodes[0],p_idClase,rutEstudiante,p_nombre,p_apellido)
+  }
+
+  async requestPermissions(): Promise<boolean> {
+    const { camera } = await BarcodeScanner.requestPermissions();
+    return camera === 'granted' || camera === 'limited';
+  }
+
+  async presentAlert(): Promise<void> {
+    const alert = await this.alertController.create({
+      header: 'Permission denied',
+      message: 'Please grant camera permission to use the barcode scanner.',
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
 }
 
 
